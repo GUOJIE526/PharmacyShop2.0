@@ -34,13 +34,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnPrinter = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.btnReturn = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl結帳數量 = new System.Windows.Forms.Label();
             this.lblTotalPay = new System.Windows.Forms.Label();
             this.btnPay = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pnlCart = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrinter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
             this.panel2.SuspendLayout();
@@ -84,13 +86,6 @@
             this.label1.Size = new System.Drawing.Size(123, 35);
             this.label1.TabIndex = 21;
             this.label1.Text = "購買清單";
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(76, 150);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(564, 364);
-            this.panel3.TabIndex = 20;
             // 
             // btnReturn
             // 
@@ -167,16 +162,46 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "PAPA Pharmacy";
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lblUser.Location = new System.Drawing.Point(517, 102);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 35);
+            this.lblUser.TabIndex = 24;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label4.Location = new System.Drawing.Point(597, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 35);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Hi";
+            // 
+            // pnlCart
+            // 
+            this.pnlCart.Location = new System.Drawing.Point(86, 164);
+            this.pnlCart.Name = "pnlCart";
+            this.pnlCart.Size = new System.Drawing.Size(520, 313);
+            this.pnlCart.TabIndex = 26;
+            // 
             // Cart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
             this.ClientSize = new System.Drawing.Size(700, 700);
+            this.Controls.Add(this.pnlCart);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPrinter);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnPay);
@@ -200,12 +225,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btnPrinter;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox btnReturn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl結帳數量;
         private System.Windows.Forms.Label lblTotalPay;
         public Guna.UI2.WinForms.Guna2GradientButton btnPay;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.FlowLayoutPanel pnlCart;
     }
 }

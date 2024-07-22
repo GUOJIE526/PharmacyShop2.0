@@ -36,7 +36,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblMamy = new System.Windows.Forms.Label();
             this.lblMamyPrice = new System.Windows.Forms.Label();
             this.btnDecrese2 = new System.Windows.Forms.PictureBox();
             this.picMamyPoko = new System.Windows.Forms.PictureBox();
@@ -45,7 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAddDiaper1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.cboxPamperSize = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblPam = new System.Windows.Forms.Label();
             this.lblPamperPrice = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnDecrese1 = new System.Windows.Forms.PictureBox();
@@ -84,7 +84,7 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.lblMamy);
             this.panel2.Controls.Add(this.lblMamyPrice);
             this.panel2.Controls.Add(this.btnDecrese2);
             this.panel2.Controls.Add(this.picMamyPoko);
@@ -92,7 +92,7 @@
             this.panel2.Controls.Add(this.txtQuantity2);
             this.panel2.Location = new System.Drawing.Point(205, 304);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(794, 195);
+            this.panel2.Size = new System.Drawing.Size(808, 195);
             this.panel2.TabIndex = 13;
             // 
             // btnAddDiaper2
@@ -112,6 +112,7 @@
             this.btnAddDiaper2.Size = new System.Drawing.Size(80, 44);
             this.btnAddDiaper2.TabIndex = 17;
             this.btnAddDiaper2.Text = "加入購物車";
+            this.btnAddDiaper2.Click += new System.EventHandler(this.btnAddDiaper2_Click);
             // 
             // cbxMamySize
             // 
@@ -157,16 +158,16 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "．指定商品滿7000送-BENZ C300";
             // 
-            // label17
+            // lblMamy
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label17.Location = new System.Drawing.Point(210, 12);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(514, 24);
-            this.label17.TabIndex = 11;
-            this.label17.Text = "【MamyPoko 滿意寶寶】極上呵護紙尿褲／尿布(日本白金)";
+            this.lblMamy.AutoSize = true;
+            this.lblMamy.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMamy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblMamy.Location = new System.Drawing.Point(210, 12);
+            this.lblMamy.Name = "lblMamy";
+            this.lblMamy.Size = new System.Drawing.Size(514, 24);
+            this.lblMamy.TabIndex = 11;
+            this.lblMamy.Text = "【MamyPoko 滿意寶寶】極上呵護紙尿褲／尿布(日本白金)";
             // 
             // lblMamyPrice
             // 
@@ -181,6 +182,7 @@
             // 
             // btnDecrese2
             // 
+            this.btnDecrese2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDecrese2.Image = ((System.Drawing.Image)(resources.GetObject("btnDecrese2.Image")));
             this.btnDecrese2.Location = new System.Drawing.Point(615, 151);
             this.btnDecrese2.Name = "btnDecrese2";
@@ -188,6 +190,7 @@
             this.btnDecrese2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDecrese2.TabIndex = 8;
             this.btnDecrese2.TabStop = false;
+            this.btnDecrese2.Click += new System.EventHandler(this.btnDecrese2_Click);
             // 
             // picMamyPoko
             // 
@@ -202,6 +205,7 @@
             // 
             // btnIncrease2
             // 
+            this.btnIncrease2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIncrease2.Image = ((System.Drawing.Image)(resources.GetObject("btnIncrease2.Image")));
             this.btnIncrease2.Location = new System.Drawing.Point(491, 151);
             this.btnIncrease2.Name = "btnIncrease2";
@@ -209,6 +213,7 @@
             this.btnIncrease2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnIncrease2.TabIndex = 7;
             this.btnIncrease2.TabStop = false;
+            this.btnIncrease2.Click += new System.EventHandler(this.btnIncrease2_Click);
             // 
             // txtQuantity2
             // 
@@ -218,12 +223,13 @@
             this.txtQuantity2.Size = new System.Drawing.Size(62, 29);
             this.txtQuantity2.TabIndex = 6;
             this.txtQuantity2.Text = "1";
+            this.txtQuantity2.TextChanged += new System.EventHandler(this.txtQuantity2_TextChanged);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnAddDiaper1);
             this.panel1.Controls.Add(this.cboxPamperSize);
-            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.lblPam);
             this.panel1.Controls.Add(this.lblPamperPrice);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnDecrese1);
@@ -234,7 +240,7 @@
             this.panel1.Controls.Add(this.picPampers);
             this.panel1.Location = new System.Drawing.Point(205, 103);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 195);
+            this.panel1.Size = new System.Drawing.Size(808, 195);
             this.panel1.TabIndex = 12;
             // 
             // btnAddDiaper1
@@ -254,6 +260,7 @@
             this.btnAddDiaper1.Size = new System.Drawing.Size(80, 44);
             this.btnAddDiaper1.TabIndex = 8;
             this.btnAddDiaper1.Text = "加入購物車";
+            this.btnAddDiaper1.Click += new System.EventHandler(this.btnAddDiaper1_Click);
             // 
             // cboxPamperSize
             // 
@@ -265,16 +272,16 @@
             this.cboxPamperSize.TabIndex = 13;
             this.cboxPamperSize.SelectedIndexChanged += new System.EventHandler(this.cboxPamperSize_SelectedIndexChanged);
             // 
-            // label18
+            // lblPam
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label18.Location = new System.Drawing.Point(204, 14);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(419, 24);
-            this.label18.TabIndex = 12;
-            this.label18.Text = "【Pampers 幫寶適】一級幫黏貼型紙尿褲／尿布";
+            this.lblPam.AutoSize = true;
+            this.lblPam.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblPam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblPam.Location = new System.Drawing.Point(204, 14);
+            this.lblPam.Name = "lblPam";
+            this.lblPam.Size = new System.Drawing.Size(419, 24);
+            this.lblPam.TabIndex = 12;
+            this.lblPam.Text = "【Pampers 幫寶適】一級幫黏貼型紙尿褲／尿布";
             // 
             // lblPamperPrice
             // 
@@ -301,6 +308,7 @@
             // 
             // btnDecrese1
             // 
+            this.btnDecrese1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDecrese1.Image = ((System.Drawing.Image)(resources.GetObject("btnDecrese1.Image")));
             this.btnDecrese1.Location = new System.Drawing.Point(615, 154);
             this.btnDecrese1.Name = "btnDecrese1";
@@ -308,9 +316,11 @@
             this.btnDecrese1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDecrese1.TabIndex = 8;
             this.btnDecrese1.TabStop = false;
+            this.btnDecrese1.Click += new System.EventHandler(this.btnDecrese1_Click);
             // 
             // btnIncrease1
             // 
+            this.btnIncrease1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIncrease1.Image = ((System.Drawing.Image)(resources.GetObject("btnIncrease1.Image")));
             this.btnIncrease1.Location = new System.Drawing.Point(491, 154);
             this.btnIncrease1.Name = "btnIncrease1";
@@ -318,6 +328,7 @@
             this.btnIncrease1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnIncrease1.TabIndex = 7;
             this.btnIncrease1.TabStop = false;
+            this.btnIncrease1.Click += new System.EventHandler(this.btnIncrease1_Click);
             // 
             // txtQuantity1
             // 
@@ -327,6 +338,7 @@
             this.txtQuantity1.Size = new System.Drawing.Size(62, 29);
             this.txtQuantity1.TabIndex = 6;
             this.txtQuantity1.Text = "1";
+            this.txtQuantity1.TextChanged += new System.EventHandler(this.txtQuantity1_TextChanged);
             // 
             // label2
             // 
@@ -398,7 +410,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblMamy;
         private System.Windows.Forms.Label lblMamyPrice;
         public System.Windows.Forms.PictureBox btnDecrese2;
         private System.Windows.Forms.PictureBox picMamyPoko;
@@ -407,7 +419,7 @@
         public System.Windows.Forms.Panel panel1;
         public Guna.UI2.WinForms.Guna2GradientButton btnAddDiaper1;
         private System.Windows.Forms.ComboBox cboxPamperSize;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblPam;
         private System.Windows.Forms.Label lblPamperPrice;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.PictureBox btnDecrese1;

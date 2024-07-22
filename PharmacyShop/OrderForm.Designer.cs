@@ -78,6 +78,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SideBartimer = new System.Windows.Forms.Timer(this.components);
             this.跑馬燈Timer = new System.Windows.Forms.Timer(this.components);
+            this.User = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnlHome.SuspendLayout();
             this.pnlOrdTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -150,6 +152,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(223)))), ((int)(((byte)(175)))));
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.User);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.btnCart);
             this.panel5.Controls.Add(this.label2);
@@ -725,6 +729,29 @@
             this.跑馬燈Timer.Interval = 200;
             this.跑馬燈Timer.Tick += new System.EventHandler(this.跑馬燈Timer_Tick);
             // 
+            // User
+            // 
+            this.User.Dock = System.Windows.Forms.DockStyle.Right;
+            this.User.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.User.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.User.Location = new System.Drawing.Point(786, 0);
+            this.User.Name = "User";
+            this.User.Size = new System.Drawing.Size(116, 25);
+            this.User.TabIndex = 7;
+            this.User.Text = "Jacob";
+            this.User.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label6.Location = new System.Drawing.Point(726, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 25);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "歡迎";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -813,5 +840,7 @@
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.Timer SideBartimer;
         private System.Windows.Forms.Timer 跑馬燈Timer;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label User;
     }
 }
