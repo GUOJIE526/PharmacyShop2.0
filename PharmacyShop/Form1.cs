@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Web;
 
 namespace PharmacyShop
 {
     public partial class Form1 : Form
     {
+        SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
         public Form1()
         {
             InitializeComponent();
@@ -52,10 +55,44 @@ namespace PharmacyShop
                     lblUserError.Text = "請輸入英文或數字";
                 }
             }
-            OrderForm orderForm = new OrderForm(this);//把Form1傳到OrderForm
-            orderForm.Show();
-            this.Hide();
-
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                    string username = txtUser.Text.Trim();
+                    string password = txtPass.Text.Trim();
+                    string sqlselect = @"select * from customers where c_name = @username and c_password = c_password";
+                    using (SqlCommand cmd = new SqlCommand(sqlselect, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@password", password);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                MessageBox.Show("登入成功，將為您轉跳...", "登入", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                OrderForm order = new OrderForm(this);
+                                order.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("帳號或密碼錯誤，請重新登入", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                txtUser.Text = "";
+                                txtPass.Text = "";
+                                txtUser.Focus();
+                            }
+                            reader.Close();
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("資料庫連接失敗: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally { conn.Close(); }
         }
 
         private void chkPass_CheckedChanged(object sender, EventArgs e)
@@ -70,12 +107,7 @@ namespace PharmacyShop
             }
         }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnResetPass_Click(object sender, EventArgs e)
+        private void createAccount_Click(object sender, EventArgs e)
         {
 
         }

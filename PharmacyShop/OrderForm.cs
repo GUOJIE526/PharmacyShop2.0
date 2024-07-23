@@ -2,61 +2,41 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace PharmacyShop
 {
     public partial class OrderForm : Form
     {
-        bool sidebarExpand = true;
-        private Form1 loginform;
-
-        public OrderForm(Form1 loginform)
+        SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
+        private Form1 login;
+        public OrderForm(Form1 login)
         {
             InitializeComponent();
-            this.loginform = loginform;
+            this.login = login;
         }
 
         public Drag drag;
-        public OpenForm open;
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
             drag = new Drag(this);
-            drag.setPanel(pnlOrdTop);
-            跑馬燈Timer.Start();
-            open = new OpenForm();
+            drag.setPanel(pnlHome);
+            ShowMilk();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DialogResult R = MessageBox.Show("是否退出應用程式?", "關閉", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (R == DialogResult.OK)
+            DialogResult R = MessageBox.Show("是否退出應用程式?", "退出", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (R == DialogResult.Yes)
             {
-                Application.Exit();
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        private void btnCart_Click(object sender, EventArgs e)
-        {
-            Cart cart = new Cart();
-            cart.ShowDialog();
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            DialogResult R = MessageBox.Show("是否登出回到登入頁面?", "登出", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (R == DialogResult.OK)
-            {
-                loginform.Show();
+                login.Show();
                 this.Close();
             }
             else
@@ -65,162 +45,34 @@ namespace PharmacyShop
             }
         }
 
-        void isVisible(Panel panel)//panel展開收起的方法
+        private void dataMilk_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (panel.Visible == true)
-            {
-                panel.Visible = false;
-            }
-            else
-            {
-                panel.Visible = true;
-            }
+
         }
 
-        private void SideBartimer_Tick(object sender, EventArgs e)
+        private void ShowMilk()
         {
-            if (sidebarExpand)
+            try
             {
-                pnlSideBar.Width += 40;
-                if (pnlSideBar.Width == pnlSideBar.MaximumSize.Width)
+                if (conn.State != ConnectionState.Open)
                 {
-                    sidebarExpand = false;
-                    SideBartimer.Stop();
+                    conn.Open();
+                    string query = "select * from milk";
+                    SqlDataAdapter sda = new SqlDataAdapter(query, conn);
+                    SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+                    var ds = new DataSet();
+                    sda.Fill(ds);
+                    dataMilk.DataSource = ds.Tables[0];
                 }
             }
-            else
+            catch (Exception ex)
             {
-                pnlSideBar.Width -= 40;
-                if (pnlSideBar.Width == pnlSideBar.MinimumSize.Width)
-                {
-                    sidebarExpand = true;
-                    SideBartimer.Stop();
-                }
+                MessageBox.Show("資料庫連接失敗: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }//SlideBar
-
-        private void 跑馬燈Timer_Tick(object sender, EventArgs e)
-        {
-            lbl跑馬燈.Left -= 30;
-            if (lbl跑馬燈.Right < 0)
+            finally
             {
-                lbl跑馬燈.Left = pnl跑馬燈.Width;
+                conn.Close();
             }
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            SideBartimer.Start();
-
-            if (lblTitle.Visible)
-            {
-                lblTitle.Visible = false;
-                pnlBaby.Visible = false;
-                pnlBeauty.Visible = false;
-                pnlHealth.Visible = false;
-                pnlAnimal.Visible = false;
-            }
-            else
-            {
-                lblTitle.Visible = true;
-            }
-            
-        }
-
-        private void btn婦幼_Click(object sender, EventArgs e)
-        {
-            isVisible(pnlBaby);
-        }
-
-        private void btnHealth_Click(object sender, EventArgs e)
-        {
-            isVisible(pnlHealth);
-        }
-
-        private void btnBeauty_Click(object sender, EventArgs e)
-        {
-            isVisible(pnlBeauty);
-        }
-
-        private void btnAnimal_Click(object sender, EventArgs e)
-        {
-            isVisible(pnlAnimal);
-        }
-
-        private void btnMilk_Click(object sender, EventArgs e)
-        {
-            open.openForm(new MilkForm(), pnlHome);
-            pnlSideBar.BringToFront();
-        }
-
-        private void btnDiaper_Click(object sender, EventArgs e)
-        {
-            open.openForm(new DiaperForm(), pnlHome);
-            pnlSideBar.BringToFront();
-        }
-
-        private void btnFood_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnToy_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnVicta_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMed_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBabyHealth_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGG_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnFace_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBody_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBabyWash_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPregMom_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAnimalStuff_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAniWash_Click(object sender, EventArgs e)
-        {
 
         }
     }
