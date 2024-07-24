@@ -20,9 +20,9 @@ namespace PharmacyShop {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("pharmacyDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("pharmacyDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class pharmacyDataSet : global::System.Data.DataSet {
+    public partial class pharmacyDataSet1 : global::System.Data.DataSet {
         
         private cartDataTable tablecart;
         
@@ -30,7 +30,7 @@ namespace PharmacyShop {
         
         private customersDataTable tablecustomers;
         
-        private diapersDataTable tablediapers;
+        private diaperDataTable tablediaper;
         
         private employeeDataTable tableemployee;
         
@@ -40,7 +40,7 @@ namespace PharmacyShop {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public pharmacyDataSet() {
+        public pharmacyDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -51,7 +51,7 @@ namespace PharmacyShop {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected pharmacyDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected pharmacyDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -73,8 +73,8 @@ namespace PharmacyShop {
                 if ((ds.Tables["customers"] != null)) {
                     base.Tables.Add(new customersDataTable(ds.Tables["customers"]));
                 }
-                if ((ds.Tables["diapers"] != null)) {
-                    base.Tables.Add(new diapersDataTable(ds.Tables["diapers"]));
+                if ((ds.Tables["diaper"] != null)) {
+                    base.Tables.Add(new diaperDataTable(ds.Tables["diaper"]));
                 }
                 if ((ds.Tables["employee"] != null)) {
                     base.Tables.Add(new employeeDataTable(ds.Tables["employee"]));
@@ -134,9 +134,9 @@ namespace PharmacyShop {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public diapersDataTable diapers {
+        public diaperDataTable diaper {
             get {
-                return this.tablediapers;
+                return this.tablediaper;
             }
         }
         
@@ -202,7 +202,7 @@ namespace PharmacyShop {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            pharmacyDataSet cln = ((pharmacyDataSet)(base.Clone()));
+            pharmacyDataSet1 cln = ((pharmacyDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -236,8 +236,8 @@ namespace PharmacyShop {
                 if ((ds.Tables["customers"] != null)) {
                     base.Tables.Add(new customersDataTable(ds.Tables["customers"]));
                 }
-                if ((ds.Tables["diapers"] != null)) {
-                    base.Tables.Add(new diapersDataTable(ds.Tables["diapers"]));
+                if ((ds.Tables["diaper"] != null)) {
+                    base.Tables.Add(new diaperDataTable(ds.Tables["diaper"]));
                 }
                 if ((ds.Tables["employee"] != null)) {
                     base.Tables.Add(new employeeDataTable(ds.Tables["employee"]));
@@ -296,10 +296,10 @@ namespace PharmacyShop {
                     this.tablecustomers.InitVars();
                 }
             }
-            this.tablediapers = ((diapersDataTable)(base.Tables["diapers"]));
+            this.tablediaper = ((diaperDataTable)(base.Tables["diaper"]));
             if ((initTable == true)) {
-                if ((this.tablediapers != null)) {
-                    this.tablediapers.InitVars();
+                if ((this.tablediaper != null)) {
+                    this.tablediaper.InitVars();
                 }
             }
             this.tableemployee = ((employeeDataTable)(base.Tables["employee"]));
@@ -319,9 +319,9 @@ namespace PharmacyShop {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "pharmacyDataSet";
+            this.DataSetName = "pharmacyDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/pharmacyDataSet.xsd";
+            this.Namespace = "http://tempuri.org/pharmacyDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablecart = new cartDataTable();
@@ -330,8 +330,8 @@ namespace PharmacyShop {
             base.Tables.Add(this.tablecategory);
             this.tablecustomers = new customersDataTable();
             base.Tables.Add(this.tablecustomers);
-            this.tablediapers = new diapersDataTable();
-            base.Tables.Add(this.tablediapers);
+            this.tablediaper = new diaperDataTable();
+            base.Tables.Add(this.tablediaper);
             this.tableemployee = new employeeDataTable();
             base.Tables.Add(this.tableemployee);
             this.tablemilks = new milksDataTable();
@@ -358,7 +358,7 @@ namespace PharmacyShop {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializediapers() {
+        private bool ShouldSerializediaper() {
             return false;
         }
         
@@ -385,7 +385,7 @@ namespace PharmacyShop {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            pharmacyDataSet ds = new pharmacyDataSet();
+            pharmacyDataSet1 ds = new pharmacyDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -439,7 +439,7 @@ namespace PharmacyShop {
         public delegate void customersRowChangeEventHandler(object sender, customersRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void diapersRowChangeEventHandler(object sender, diapersRowChangeEvent e);
+        public delegate void diaperRowChangeEventHandler(object sender, diaperRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void employeeRowChangeEventHandler(object sender, employeeRowChangeEvent e);
@@ -694,7 +694,7 @@ namespace PharmacyShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                pharmacyDataSet ds = new pharmacyDataSet();
+                pharmacyDataSet1 ds = new pharmacyDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1016,7 +1016,7 @@ namespace PharmacyShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                pharmacyDataSet ds = new pharmacyDataSet();
+                pharmacyDataSet1 ds = new pharmacyDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1367,7 +1367,7 @@ namespace PharmacyShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                pharmacyDataSet ds = new pharmacyDataSet();
+                pharmacyDataSet1 ds = new pharmacyDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1431,7 +1431,7 @@ namespace PharmacyShop {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class diapersDataTable : global::System.Data.TypedTableBase<diapersRow> {
+        public partial class diaperDataTable : global::System.Data.TypedTableBase<diaperRow> {
             
             private global::System.Data.DataColumn columnid;
             
@@ -1443,8 +1443,8 @@ namespace PharmacyShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public diapersDataTable() {
-                this.TableName = "diapers";
+            public diaperDataTable() {
+                this.TableName = "diaper";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1452,7 +1452,7 @@ namespace PharmacyShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal diapersDataTable(global::System.Data.DataTable table) {
+            internal diaperDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1469,7 +1469,7 @@ namespace PharmacyShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected diapersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected diaperDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1517,55 +1517,55 @@ namespace PharmacyShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public diapersRow this[int index] {
+            public diaperRow this[int index] {
                 get {
-                    return ((diapersRow)(this.Rows[index]));
+                    return ((diaperRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event diapersRowChangeEventHandler diapersRowChanging;
+            public event diaperRowChangeEventHandler diaperRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event diapersRowChangeEventHandler diapersRowChanged;
+            public event diaperRowChangeEventHandler diaperRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event diapersRowChangeEventHandler diapersRowDeleting;
+            public event diaperRowChangeEventHandler diaperRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event diapersRowChangeEventHandler diapersRowDeleted;
+            public event diaperRowChangeEventHandler diaperRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AdddiapersRow(diapersRow row) {
+            public void AdddiaperRow(diaperRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public diapersRow AdddiapersRow(string name, int price, int qty) {
-                diapersRow rowdiapersRow = ((diapersRow)(this.NewRow()));
+            public diaperRow AdddiaperRow(string name, decimal price, int qty) {
+                diaperRow rowdiaperRow = ((diaperRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         name,
                         price,
                         qty};
-                rowdiapersRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowdiapersRow);
-                return rowdiapersRow;
+                rowdiaperRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdiaperRow);
+                return rowdiaperRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public diapersRow FindByid(int id) {
-                return ((diapersRow)(this.Rows.Find(new object[] {
+            public diaperRow FindByid(int id) {
+                return ((diaperRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                diapersDataTable cln = ((diapersDataTable)(base.Clone()));
+                diaperDataTable cln = ((diaperDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1573,7 +1573,7 @@ namespace PharmacyShop {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new diapersDataTable();
+                return new diaperDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1592,7 +1592,7 @@ namespace PharmacyShop {
                 base.Columns.Add(this.columnid);
                 this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnname);
-                this.columnprice = new global::System.Data.DataColumn("price", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnprice = new global::System.Data.DataColumn("price", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprice);
                 this.columnqty = new global::System.Data.DataColumn("qty", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnqty);
@@ -1609,28 +1609,28 @@ namespace PharmacyShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public diapersRow NewdiapersRow() {
-                return ((diapersRow)(this.NewRow()));
+            public diaperRow NewdiaperRow() {
+                return ((diaperRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new diapersRow(builder);
+                return new diaperRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(diapersRow);
+                return typeof(diaperRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.diapersRowChanged != null)) {
-                    this.diapersRowChanged(this, new diapersRowChangeEvent(((diapersRow)(e.Row)), e.Action));
+                if ((this.diaperRowChanged != null)) {
+                    this.diaperRowChanged(this, new diaperRowChangeEvent(((diaperRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1638,8 +1638,8 @@ namespace PharmacyShop {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.diapersRowChanging != null)) {
-                    this.diapersRowChanging(this, new diapersRowChangeEvent(((diapersRow)(e.Row)), e.Action));
+                if ((this.diaperRowChanging != null)) {
+                    this.diaperRowChanging(this, new diaperRowChangeEvent(((diaperRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1647,8 +1647,8 @@ namespace PharmacyShop {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.diapersRowDeleted != null)) {
-                    this.diapersRowDeleted(this, new diapersRowChangeEvent(((diapersRow)(e.Row)), e.Action));
+                if ((this.diaperRowDeleted != null)) {
+                    this.diaperRowDeleted(this, new diaperRowChangeEvent(((diaperRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1656,14 +1656,14 @@ namespace PharmacyShop {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.diapersRowDeleting != null)) {
-                    this.diapersRowDeleting(this, new diapersRowChangeEvent(((diapersRow)(e.Row)), e.Action));
+                if ((this.diaperRowDeleting != null)) {
+                    this.diaperRowDeleting(this, new diaperRowChangeEvent(((diaperRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovediapersRow(diapersRow row) {
+            public void RemovediaperRow(diaperRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1672,7 +1672,7 @@ namespace PharmacyShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                pharmacyDataSet ds = new pharmacyDataSet();
+                pharmacyDataSet1 ds = new pharmacyDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1690,7 +1690,7 @@ namespace PharmacyShop {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "diapersDataTable";
+                attribute2.FixedValue = "diaperDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1994,7 +1994,7 @@ namespace PharmacyShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                pharmacyDataSet ds = new pharmacyDataSet();
+                pharmacyDataSet1 ds = new pharmacyDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2299,7 +2299,7 @@ namespace PharmacyShop {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                pharmacyDataSet ds = new pharmacyDataSet();
+                pharmacyDataSet1 ds = new pharmacyDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2803,25 +2803,25 @@ namespace PharmacyShop {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class diapersRow : global::System.Data.DataRow {
+        public partial class diaperRow : global::System.Data.DataRow {
             
-            private diapersDataTable tablediapers;
+            private diaperDataTable tablediaper;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal diapersRow(global::System.Data.DataRowBuilder rb) : 
+            internal diaperRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablediapers = ((diapersDataTable)(this.Table));
+                this.tablediaper = ((diaperDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tablediapers.idColumn]));
+                    return ((int)(this[this.tablediaper.idColumn]));
                 }
                 set {
-                    this[this.tablediapers.idColumn] = value;
+                    this[this.tablediaper.idColumn] = value;
                 }
             }
             
@@ -2830,30 +2830,30 @@ namespace PharmacyShop {
             public string name {
                 get {
                     try {
-                        return ((string)(this[this.tablediapers.nameColumn]));
+                        return ((string)(this[this.tablediaper.nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'diapers\' 中資料行 \'name\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'diaper\' 中資料行 \'name\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablediapers.nameColumn] = value;
+                    this[this.tablediaper.nameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int price {
+            public decimal price {
                 get {
                     try {
-                        return ((int)(this[this.tablediapers.priceColumn]));
+                        return ((decimal)(this[this.tablediaper.priceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'diapers\' 中資料行 \'price\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'diaper\' 中資料行 \'price\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablediapers.priceColumn] = value;
+                    this[this.tablediaper.priceColumn] = value;
                 }
             }
             
@@ -2862,51 +2862,51 @@ namespace PharmacyShop {
             public int qty {
                 get {
                     try {
-                        return ((int)(this[this.tablediapers.qtyColumn]));
+                        return ((int)(this[this.tablediaper.qtyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'diapers\' 中資料行 \'qty\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'diaper\' 中資料行 \'qty\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablediapers.qtyColumn] = value;
+                    this[this.tablediaper.qtyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsnameNull() {
-                return this.IsNull(this.tablediapers.nameColumn);
+                return this.IsNull(this.tablediaper.nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetnameNull() {
-                this[this.tablediapers.nameColumn] = global::System.Convert.DBNull;
+                this[this.tablediaper.nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IspriceNull() {
-                return this.IsNull(this.tablediapers.priceColumn);
+                return this.IsNull(this.tablediaper.priceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetpriceNull() {
-                this[this.tablediapers.priceColumn] = global::System.Convert.DBNull;
+                this[this.tablediaper.priceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsqtyNull() {
-                return this.IsNull(this.tablediapers.qtyColumn);
+                return this.IsNull(this.tablediaper.qtyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetqtyNull() {
-                this[this.tablediapers.qtyColumn] = global::System.Convert.DBNull;
+                this[this.tablediaper.qtyColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3264,22 +3264,22 @@ namespace PharmacyShop {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class diapersRowChangeEvent : global::System.EventArgs {
+        public class diaperRowChangeEvent : global::System.EventArgs {
             
-            private diapersRow eventRow;
+            private diaperRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public diapersRowChangeEvent(diapersRow row, global::System.Data.DataRowAction action) {
+            public diaperRowChangeEvent(diaperRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public diapersRow Row {
+            public diaperRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3363,7 +3363,7 @@ namespace PharmacyShop {
         }
     }
 }
-namespace PharmacyShop.pharmacyDataSetTableAdapters {
+namespace PharmacyShop.pharmacyDataSet1TableAdapters {
     
     
     /// <summary>
@@ -3544,7 +3544,7 @@ namespace PharmacyShop.pharmacyDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(pharmacyDataSet.cartDataTable dataTable) {
+        public virtual int Fill(pharmacyDataSet1.cartDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3557,9 +3557,9 @@ namespace PharmacyShop.pharmacyDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual pharmacyDataSet.cartDataTable GetData() {
+        public virtual pharmacyDataSet1.cartDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            pharmacyDataSet.cartDataTable dataTable = new pharmacyDataSet.cartDataTable();
+            pharmacyDataSet1.cartDataTable dataTable = new pharmacyDataSet1.cartDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3567,14 +3567,14 @@ namespace PharmacyShop.pharmacyDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet.cartDataTable dataTable) {
+        public virtual int Update(pharmacyDataSet1.cartDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet dataSet) {
+        public virtual int Update(pharmacyDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "cart");
         }
         
@@ -3897,7 +3897,7 @@ namespace PharmacyShop.pharmacyDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(pharmacyDataSet.categoryDataTable dataTable) {
+        public virtual int Fill(pharmacyDataSet1.categoryDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3910,9 +3910,9 @@ namespace PharmacyShop.pharmacyDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual pharmacyDataSet.categoryDataTable GetData() {
+        public virtual pharmacyDataSet1.categoryDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            pharmacyDataSet.categoryDataTable dataTable = new pharmacyDataSet.categoryDataTable();
+            pharmacyDataSet1.categoryDataTable dataTable = new pharmacyDataSet1.categoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3920,14 +3920,14 @@ namespace PharmacyShop.pharmacyDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet.categoryDataTable dataTable) {
+        public virtual int Update(pharmacyDataSet1.categoryDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet dataSet) {
+        public virtual int Update(pharmacyDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "category");
         }
         
@@ -4256,7 +4256,7 @@ SELECT c_id, name, password, phone, email, address, createdate FROM customers WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(pharmacyDataSet.customersDataTable dataTable) {
+        public virtual int Fill(pharmacyDataSet1.customersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4269,9 +4269,9 @@ SELECT c_id, name, password, phone, email, address, createdate FROM customers WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual pharmacyDataSet.customersDataTable GetData() {
+        public virtual pharmacyDataSet1.customersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            pharmacyDataSet.customersDataTable dataTable = new pharmacyDataSet.customersDataTable();
+            pharmacyDataSet1.customersDataTable dataTable = new pharmacyDataSet1.customersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4279,14 +4279,14 @@ SELECT c_id, name, password, phone, email, address, createdate FROM customers WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet.customersDataTable dataTable) {
+        public virtual int Update(pharmacyDataSet1.customersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet dataSet) {
+        public virtual int Update(pharmacyDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "customers");
         }
         
@@ -4477,7 +4477,7 @@ SELECT c_id, name, password, phone, email, address, createdate FROM customers WH
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class diapersTableAdapter : global::System.ComponentModel.Component {
+    public partial class diaperTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -4491,7 +4491,7 @@ SELECT c_id, name, password, phone, email, address, createdate FROM customers WH
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public diapersTableAdapter() {
+        public diaperTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4588,7 +4588,7 @@ SELECT c_id, name, password, phone, email, address, createdate FROM customers WH
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "diapers";
+            tableMapping.DataSetTable = "diaper";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("price", "price");
@@ -4596,36 +4596,36 @@ SELECT c_id, name, password, phone, email, address, createdate FROM customers WH
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[diapers] WHERE (([id] = @Original_id) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)) AND ((@IsNull_qty = 1 AND [qty] IS NULL) OR ([qty] = @Original_qty)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[diaper] WHERE (([id] = @Original_id) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)) AND ((@IsNull_qty = 1 AND [qty] IS NULL) OR ([qty] = @Original_qty)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_qty", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qty", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_qty", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qty", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[diapers] ([name], [price], [qty]) VALUES (@name, @price, @qty)" +
-                ";\r\nSELECT id, name, price, qty FROM diapers WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[diaper] ([name], [price], [qty]) VALUES (@name, @price, @qty);" +
+                "\r\nSELECT id, name, price, qty FROM diaper WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@qty", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[diapers] SET [name] = @name, [price] = @price, [qty] = @qty WHERE (([id] = @Original_id) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)) AND ((@IsNull_qty = 1 AND [qty] IS NULL) OR ([qty] = @Original_qty)));
-SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[diaper] SET [name] = @name, [price] = @price, [qty] = @qty WHERE (([id] = @Original_id) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)) AND ((@IsNull_qty = 1 AND [qty] IS NULL) OR ([qty] = @Original_qty)));
+SELECT id, name, price, qty FROM diaper WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@qty", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_qty", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qty", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_qty", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qty", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4644,7 +4644,7 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, name, price, qty FROM dbo.diapers";
+            this._commandCollection[0].CommandText = "SELECT id, name, price, qty FROM dbo.diaper";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4652,7 +4652,7 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(pharmacyDataSet.diapersDataTable dataTable) {
+        public virtual int Fill(pharmacyDataSet1.diaperDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4665,9 +4665,9 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual pharmacyDataSet.diapersDataTable GetData() {
+        public virtual pharmacyDataSet1.diaperDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            pharmacyDataSet.diapersDataTable dataTable = new pharmacyDataSet.diapersDataTable();
+            pharmacyDataSet1.diaperDataTable dataTable = new pharmacyDataSet1.diaperDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4675,15 +4675,15 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet.diapersDataTable dataTable) {
+        public virtual int Update(pharmacyDataSet1.diaperDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "diapers");
+        public virtual int Update(pharmacyDataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "diaper");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4705,7 +4705,7 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_name, global::System.Nullable<int> Original_price, global::System.Nullable<int> Original_qty) {
+        public virtual int Delete(int Original_id, string Original_name, global::System.Nullable<decimal> Original_price, global::System.Nullable<int> Original_qty) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_name == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -4717,7 +4717,7 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
             }
             if ((Original_price.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_price.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_price.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
@@ -4751,7 +4751,7 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string name, global::System.Nullable<int> price, global::System.Nullable<int> qty) {
+        public virtual int Insert(string name, global::System.Nullable<decimal> price, global::System.Nullable<int> qty) {
             if ((name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4759,7 +4759,7 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(name));
             }
             if ((price.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(price.Value));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(price.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -4790,7 +4790,7 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, global::System.Nullable<int> price, global::System.Nullable<int> qty, int Original_id, string Original_name, global::System.Nullable<int> Original_price, global::System.Nullable<int> Original_qty, int id) {
+        public virtual int Update(string name, global::System.Nullable<decimal> price, global::System.Nullable<int> qty, int Original_id, string Original_name, global::System.Nullable<decimal> Original_price, global::System.Nullable<int> Original_qty, int id) {
             if ((name == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4798,7 +4798,7 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(name));
             }
             if ((price.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(price.Value));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(price.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -4820,7 +4820,7 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
             }
             if ((Original_price.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_price.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_price.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
@@ -4855,7 +4855,7 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, global::System.Nullable<int> price, global::System.Nullable<int> qty, int Original_id, string Original_name, global::System.Nullable<int> Original_price, global::System.Nullable<int> Original_qty) {
+        public virtual int Update(string name, global::System.Nullable<decimal> price, global::System.Nullable<int> qty, int Original_id, string Original_name, global::System.Nullable<decimal> Original_price, global::System.Nullable<int> Original_qty) {
             return this.Update(name, price, qty, Original_id, Original_name, Original_price, Original_qty, Original_id);
         }
     }
@@ -5037,7 +5037,7 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(pharmacyDataSet.employeeDataTable dataTable) {
+        public virtual int Fill(pharmacyDataSet1.employeeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5050,9 +5050,9 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual pharmacyDataSet.employeeDataTable GetData() {
+        public virtual pharmacyDataSet1.employeeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            pharmacyDataSet.employeeDataTable dataTable = new pharmacyDataSet.employeeDataTable();
+            pharmacyDataSet1.employeeDataTable dataTable = new pharmacyDataSet1.employeeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5060,14 +5060,14 @@ SELECT id, name, price, qty FROM diapers WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet.employeeDataTable dataTable) {
+        public virtual int Update(pharmacyDataSet1.employeeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet dataSet) {
+        public virtual int Update(pharmacyDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "employee");
         }
         
@@ -5393,7 +5393,7 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(pharmacyDataSet.milksDataTable dataTable) {
+        public virtual int Fill(pharmacyDataSet1.milksDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5406,9 +5406,9 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual pharmacyDataSet.milksDataTable GetData() {
+        public virtual pharmacyDataSet1.milksDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            pharmacyDataSet.milksDataTable dataTable = new pharmacyDataSet.milksDataTable();
+            pharmacyDataSet1.milksDataTable dataTable = new pharmacyDataSet1.milksDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5416,14 +5416,14 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet.milksDataTable dataTable) {
+        public virtual int Update(pharmacyDataSet1.milksDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(pharmacyDataSet dataSet) {
+        public virtual int Update(pharmacyDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "milks");
         }
         
@@ -5619,7 +5619,7 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
         
         private customersTableAdapter _customersTableAdapter;
         
-        private diapersTableAdapter _diapersTableAdapter;
+        private diaperTableAdapter _diaperTableAdapter;
         
         private employeeTableAdapter _employeeTableAdapter;
         
@@ -5687,12 +5687,12 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public diapersTableAdapter diapersTableAdapter {
+        public diaperTableAdapter diaperTableAdapter {
             get {
-                return this._diapersTableAdapter;
+                return this._diaperTableAdapter;
             }
             set {
-                this._diapersTableAdapter = value;
+                this._diaperTableAdapter = value;
             }
         }
         
@@ -5755,9 +5755,9 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
                             && (this._customersTableAdapter.Connection != null))) {
                     return this._customersTableAdapter.Connection;
                 }
-                if (((this._diapersTableAdapter != null) 
-                            && (this._diapersTableAdapter.Connection != null))) {
-                    return this._diapersTableAdapter.Connection;
+                if (((this._diaperTableAdapter != null) 
+                            && (this._diaperTableAdapter.Connection != null))) {
+                    return this._diaperTableAdapter.Connection;
                 }
                 if (((this._employeeTableAdapter != null) 
                             && (this._employeeTableAdapter.Connection != null))) {
@@ -5789,7 +5789,7 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
                 if ((this._customersTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._diapersTableAdapter != null)) {
+                if ((this._diaperTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._employeeTableAdapter != null)) {
@@ -5807,7 +5807,7 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(pharmacyDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(pharmacyDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._cartTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.cart.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -5836,12 +5836,12 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._diapersTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.diapers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._diaperTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.diaper.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._diapersTableAdapter.Update(updatedRows));
+                    result = (result + this._diaperTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5871,7 +5871,7 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(pharmacyDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(pharmacyDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._cartTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.cart.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -5897,11 +5897,11 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._diapersTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.diapers.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._diaperTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.diaper.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._diapersTableAdapter.Update(addedRows));
+                    result = (result + this._diaperTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -5929,7 +5929,7 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(pharmacyDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(pharmacyDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._milksTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.milks.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -5947,11 +5947,11 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._diapersTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.diapers.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._diaperTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.diaper.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._diapersTableAdapter.Update(deletedRows));
+                    result = (result + this._diaperTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -6011,7 +6011,7 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(pharmacyDataSet dataSet) {
+        public virtual int UpdateAll(pharmacyDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -6030,8 +6030,8 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
                         && (this.MatchTableAdapterConnection(this._customersTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("所有以 TableAdapterManager 管理的 TableAdapters 必須使用相同的連接字串。");
             }
-            if (((this._diapersTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._diapersTableAdapter.Connection) == false))) {
+            if (((this._diaperTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._diaperTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("所有以 TableAdapterManager 管理的 TableAdapters 必須使用相同的連接字串。");
             }
             if (((this._employeeTableAdapter != null) 
@@ -6100,13 +6100,13 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._customersTableAdapter.Adapter);
                     }
                 }
-                if ((this._diapersTableAdapter != null)) {
-                    revertConnections.Add(this._diapersTableAdapter, this._diapersTableAdapter.Connection);
-                    this._diapersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._diapersTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._diapersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._diapersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._diapersTableAdapter.Adapter);
+                if ((this._diaperTableAdapter != null)) {
+                    revertConnections.Add(this._diaperTableAdapter, this._diaperTableAdapter.Connection);
+                    this._diaperTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._diaperTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._diaperTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._diaperTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._diaperTableAdapter.Adapter);
                     }
                 }
                 if ((this._employeeTableAdapter != null)) {
@@ -6197,9 +6197,9 @@ SELECT id, name, price, qty FROM milks WHERE (id = @id)";
                     this._customersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._customersTableAdapter]));
                     this._customersTableAdapter.Transaction = null;
                 }
-                if ((this._diapersTableAdapter != null)) {
-                    this._diapersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._diapersTableAdapter]));
-                    this._diapersTableAdapter.Transaction = null;
+                if ((this._diaperTableAdapter != null)) {
+                    this._diaperTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._diaperTableAdapter]));
+                    this._diaperTableAdapter.Transaction = null;
                 }
                 if ((this._employeeTableAdapter != null)) {
                     this._employeeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._employeeTableAdapter]));

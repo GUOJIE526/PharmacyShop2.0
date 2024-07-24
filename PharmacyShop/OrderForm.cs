@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,8 @@ namespace PharmacyShop
 {
     public partial class OrderForm : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
         private Form1 login;
+
         public OrderForm(Form1 login)
         {
             InitializeComponent();
@@ -23,17 +24,39 @@ namespace PharmacyShop
         }
 
         public Drag drag;
+        public OpenForm open;
+
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
             drag = new Drag(this);
             drag.setPanel(pnlHome);
-            ShowMilk();
+            open = new OpenForm();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnBaby_Click(object sender, EventArgs e)
         {
-            DialogResult R = MessageBox.Show("是否退出應用程式?", "退出", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            open.openForm(new BabyForm(), pnlHome);
+        }
+
+        private void btnBeauty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMedicine_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult R = MessageBox.Show("應用程式登出?", "登出", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (R == DialogResult.Yes)
             {
                 login.Show();
@@ -43,37 +66,6 @@ namespace PharmacyShop
             {
                 return;
             }
-        }
-
-        private void dataMilk_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void ShowMilk()
-        {
-            try
-            {
-                if (conn.State != ConnectionState.Open)
-                {
-                    conn.Open();
-                    string query = "select * from milk";
-                    SqlDataAdapter sda = new SqlDataAdapter(query, conn);
-                    SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-                    var ds = new DataSet();
-                    sda.Fill(ds);
-                    dataMilk.DataSource = ds.Tables[0];
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("資料庫連接失敗: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
         }
     }
 }

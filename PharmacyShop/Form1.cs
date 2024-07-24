@@ -62,7 +62,7 @@ namespace PharmacyShop
                     conn.Open();
                     string username = txtUser.Text.Trim();
                     string password = txtPass.Text.Trim();
-                    string sqlselect = @"select * from customers where c_name = @username and c_password = c_password";
+                    string sqlselect = @"select * from customers where name = @username and password = @password";
                     using (SqlCommand cmd = new SqlCommand(sqlselect, conn))
                     {
                         cmd.Parameters.AddWithValue("@username", username);

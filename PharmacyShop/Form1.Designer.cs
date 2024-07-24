@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.createAccount = new System.Windows.Forms.PictureBox();
             this.lblPassError = new System.Windows.Forms.Label();
             this.lblUserError = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,13 +50,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.createAccount = new System.Windows.Forms.PictureBox();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.createAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createAccount)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -123,6 +123,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(306, 432);
             this.panel2.TabIndex = 1;
+            // 
+            // createAccount
+            // 
+            this.createAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.createAccount.Image = ((System.Drawing.Image)(resources.GetObject("createAccount.Image")));
+            this.createAccount.Location = new System.Drawing.Point(203, 333);
+            this.createAccount.Name = "createAccount";
+            this.createAccount.Size = new System.Drawing.Size(49, 40);
+            this.createAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.createAccount.TabIndex = 26;
+            this.createAccount.TabStop = false;
+            this.createAccount.Click += new System.EventHandler(this.createAccount_Click);
             // 
             // lblPassError
             // 
@@ -204,12 +216,12 @@
             // 
             this.txtPass.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPass.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtPass.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPass.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtPass.Location = new System.Drawing.Point(120, 188);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '●';
-            this.txtPass.Size = new System.Drawing.Size(159, 22);
+            this.txtPass.Size = new System.Drawing.Size(159, 18);
             this.txtPass.TabIndex = 18;
             // 
             // panel6
@@ -235,11 +247,11 @@
             // 
             this.txtUser.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtUser.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtUser.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtUser.Location = new System.Drawing.Point(120, 127);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(159, 22);
+            this.txtUser.Size = new System.Drawing.Size(159, 18);
             this.txtUser.TabIndex = 15;
             // 
             // panel5
@@ -283,17 +295,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // createAccount
-            // 
-            this.createAccount.Image = ((System.Drawing.Image)(resources.GetObject("createAccount.Image")));
-            this.createAccount.Location = new System.Drawing.Point(203, 333);
-            this.createAccount.Name = "createAccount";
-            this.createAccount.Size = new System.Drawing.Size(49, 40);
-            this.createAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.createAccount.TabIndex = 26;
-            this.createAccount.TabStop = false;
-            this.createAccount.Click += new System.EventHandler(this.createAccount_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -312,9 +313,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.createAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createAccount)).EndInit();
             this.ResumeLayout(false);
 
         }
