@@ -241,6 +241,7 @@
             this.dataMilk.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataMilk.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataMilk.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMilk_CellContentClick);
+            this.dataMilk.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataMilk_DataBindingComplete);
             // 
             // Diaper
             // 
@@ -307,6 +308,7 @@
             this.dataDiaper.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataDiaper.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataDiaper.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDiaper_CellContentClick);
+            this.dataDiaper.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataDiaper_DataBindingComplete);
             // 
             // btnReturn
             // 

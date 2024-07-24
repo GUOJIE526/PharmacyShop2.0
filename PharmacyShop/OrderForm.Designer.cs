@@ -37,14 +37,14 @@
             this.btnBeauty = new System.Windows.Forms.PictureBox();
             this.btnBaby = new System.Windows.Forms.PictureBox();
             this.pnlHome = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCart = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.PictureBox();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMedicine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBeauty)).BeginInit();
@@ -88,6 +88,7 @@
             // 
             // btnMedicine
             // 
+            this.btnMedicine.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMedicine.Image = ((System.Drawing.Image)(resources.GetObject("btnMedicine.Image")));
             this.btnMedicine.Location = new System.Drawing.Point(55, 335);
             this.btnMedicine.Name = "btnMedicine";
@@ -99,6 +100,7 @@
             // 
             // btnBeauty
             // 
+            this.btnBeauty.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBeauty.Image = ((System.Drawing.Image)(resources.GetObject("btnBeauty.Image")));
             this.btnBeauty.Location = new System.Drawing.Point(55, 235);
             this.btnBeauty.Name = "btnBeauty";
@@ -110,6 +112,7 @@
             // 
             // btnBaby
             // 
+            this.btnBaby.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBaby.Image = ((System.Drawing.Image)(resources.GetObject("btnBaby.Image")));
             this.btnBaby.Location = new System.Drawing.Point(55, 135);
             this.btnBaby.Name = "btnBaby";
@@ -132,17 +135,6 @@
             this.pnlHome.Size = new System.Drawing.Size(765, 598);
             this.pnlHome.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Viner Hand ITC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(175, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(414, 44);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Welcome to PAPA Pharmacy";
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
@@ -157,6 +149,29 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(765, 25);
             this.panel5.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label6.Location = new System.Drawing.Point(447, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 25);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "歡迎";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblUser
+            // 
+            this.lblUser.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblUser.ForeColor = System.Drawing.Color.BlueViolet;
+            this.lblUser.Location = new System.Drawing.Point(507, 0);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(60, 25);
+            this.lblUser.TabIndex = 7;
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -208,28 +223,16 @@
             this.btnLogout.TabStop = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // lblUser
+            // label1
             // 
-            this.lblUser.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblUser.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lblUser.Location = new System.Drawing.Point(507, 0);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(60, 25);
-            this.lblUser.TabIndex = 7;
-            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label6.Location = new System.Drawing.Point(447, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 25);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "歡迎";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Viner Hand ITC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Firebrick;
+            this.label1.Location = new System.Drawing.Point(175, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(414, 44);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Welcome to PAPA Pharmacy";
             // 
             // OrderForm
             // 
