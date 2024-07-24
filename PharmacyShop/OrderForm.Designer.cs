@@ -38,6 +38,7 @@
             this.btnBaby = new System.Windows.Forms.PictureBox();
             this.pnlHome = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lbl會員中心 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbl會員中心 = new System.Windows.Forms.Label();
             this.pnlside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMedicine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBeauty)).BeginInit();
@@ -72,7 +72,7 @@
             this.pnlside.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlside.Location = new System.Drawing.Point(0, 0);
             this.pnlside.Name = "pnlside";
-            this.pnlside.Size = new System.Drawing.Size(216, 598);
+            this.pnlside.Size = new System.Drawing.Size(199, 598);
             this.pnlside.TabIndex = 2;
             // 
             // label3
@@ -91,7 +91,7 @@
             // 
             this.btnMedicine.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMedicine.Image = ((System.Drawing.Image)(resources.GetObject("btnMedicine.Image")));
-            this.btnMedicine.Location = new System.Drawing.Point(55, 335);
+            this.btnMedicine.Location = new System.Drawing.Point(41, 335);
             this.btnMedicine.Name = "btnMedicine";
             this.btnMedicine.Size = new System.Drawing.Size(115, 66);
             this.btnMedicine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,7 +103,7 @@
             // 
             this.btnBeauty.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBeauty.Image = ((System.Drawing.Image)(resources.GetObject("btnBeauty.Image")));
-            this.btnBeauty.Location = new System.Drawing.Point(55, 235);
+            this.btnBeauty.Location = new System.Drawing.Point(41, 237);
             this.btnBeauty.Name = "btnBeauty";
             this.btnBeauty.Size = new System.Drawing.Size(115, 66);
             this.btnBeauty.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,7 +115,7 @@
             // 
             this.btnBaby.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBaby.Image = ((System.Drawing.Image)(resources.GetObject("btnBaby.Image")));
-            this.btnBaby.Location = new System.Drawing.Point(55, 135);
+            this.btnBaby.Location = new System.Drawing.Point(41, 131);
             this.btnBaby.Name = "btnBaby";
             this.btnBaby.Size = new System.Drawing.Size(115, 66);
             this.btnBaby.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,9 +131,9 @@
             this.pnlHome.Controls.Add(this.panel5);
             this.pnlHome.Controls.Add(this.label1);
             this.pnlHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHome.Location = new System.Drawing.Point(216, 0);
+            this.pnlHome.Location = new System.Drawing.Point(199, 0);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(765, 598);
+            this.pnlHome.Size = new System.Drawing.Size(782, 598);
             this.pnlHome.TabIndex = 3;
             // 
             // panel5
@@ -149,15 +149,28 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 573);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(765, 25);
+            this.panel5.Size = new System.Drawing.Size(782, 25);
             this.panel5.TabIndex = 7;
+            // 
+            // lbl會員中心
+            // 
+            this.lbl會員中心.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl會員中心.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbl會員中心.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbl會員中心.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lbl會員中心.Location = new System.Drawing.Point(384, 0);
+            this.lbl會員中心.Name = "lbl會員中心";
+            this.lbl會員中心.Size = new System.Drawing.Size(80, 25);
+            this.lbl會員中心.TabIndex = 9;
+            this.lbl會員中心.Text = "會員中心";
+            this.lbl會員中心.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label6.Location = new System.Drawing.Point(447, 0);
+            this.label6.Location = new System.Drawing.Point(464, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 25);
             this.label6.TabIndex = 8;
@@ -169,7 +182,7 @@
             this.lblUser.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblUser.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lblUser.Location = new System.Drawing.Point(507, 0);
+            this.lblUser.Location = new System.Drawing.Point(524, 0);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(60, 25);
             this.lblUser.TabIndex = 7;
@@ -180,7 +193,7 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(567, 0);
+            this.label4.Location = new System.Drawing.Point(584, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 25);
             this.label4.TabIndex = 6;
@@ -192,7 +205,7 @@
             this.btnCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCart.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCart.Image = ((System.Drawing.Image)(resources.GetObject("btnCart.Image")));
-            this.btnCart.Location = new System.Drawing.Point(627, 0);
+            this.btnCart.Location = new System.Drawing.Point(644, 0);
             this.btnCart.Name = "btnCart";
             this.btnCart.Size = new System.Drawing.Size(47, 25);
             this.btnCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -205,7 +218,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(674, 0);
+            this.label2.Location = new System.Drawing.Point(691, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 25);
             this.label2.TabIndex = 4;
@@ -217,7 +230,7 @@
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(726, 0);
+            this.btnLogout.Location = new System.Drawing.Point(743, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(39, 25);
             this.btnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -235,19 +248,6 @@
             this.label1.Size = new System.Drawing.Size(414, 44);
             this.label1.TabIndex = 4;
             this.label1.Text = "Welcome to PAPA Pharmacy";
-            // 
-            // lbl會員中心
-            // 
-            this.lbl會員中心.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl會員中心.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbl會員中心.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbl會員中心.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl會員中心.Location = new System.Drawing.Point(367, 0);
-            this.lbl會員中心.Name = "lbl會員中心";
-            this.lbl會員中心.Size = new System.Drawing.Size(80, 25);
-            this.lbl會員中心.TabIndex = 9;
-            this.lbl會員中心.Text = "會員中心";
-            this.lbl會員中心.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // OrderForm
             // 
