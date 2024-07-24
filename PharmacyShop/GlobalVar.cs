@@ -10,6 +10,7 @@ namespace PharmacyShop
 {
     internal class GlobalVar
     {
+        public static string User = "";
         public static List<ArrayList> listProductCollection = new List<ArrayList>();
     }
 }

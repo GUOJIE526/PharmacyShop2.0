@@ -16,11 +16,16 @@ namespace PharmacyShop
     public partial class OrderForm : Form
     {
         private Form1 login;
+        private string username;
 
-        public OrderForm(Form1 login)
+        SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
+
+
+        public OrderForm(Form1 login, string username)
         {
             InitializeComponent();
             this.login = login;
+            this.username = username;
         }
 
         public Drag drag;
@@ -33,6 +38,7 @@ namespace PharmacyShop
             drag.setPanel(pnlHome);
             drag.setPanel(pnlside);
             open = new OpenForm();
+            lblUser.Text = $"{username}";
         }
 
         private void btnBaby_Click(object sender, EventArgs e)
@@ -42,7 +48,7 @@ namespace PharmacyShop
 
         private void btnBeauty_Click(object sender, EventArgs e)
         {
-
+            open.openForm(new BeautyForm(), pnlHome);
         }
 
         private void btnMedicine_Click(object sender, EventArgs e)
@@ -52,7 +58,8 @@ namespace PharmacyShop
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-
+            CartForm cart = new CartForm();
+            cart.ShowDialog();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

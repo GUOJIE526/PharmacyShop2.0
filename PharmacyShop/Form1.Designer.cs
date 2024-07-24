@@ -337,11 +337,11 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox createAccount;
+        public System.Windows.Forms.TextBox txtUser;
     }
 }
 

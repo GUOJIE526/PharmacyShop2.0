@@ -72,7 +72,7 @@ namespace PharmacyShop
                             if (reader.HasRows)
                             {
                                 MessageBox.Show("登入成功，將為您轉跳...", "登入", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                OrderForm order = new OrderForm(this);
+                                OrderForm order = new OrderForm(this, username);
                                 order.Show();
                                 this.Hide();
                             }

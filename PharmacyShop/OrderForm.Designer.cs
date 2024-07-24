@@ -45,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl會員中心 = new System.Windows.Forms.Label();
             this.pnlside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMedicine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBeauty)).BeginInit();
@@ -138,6 +139,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panel5.Controls.Add(this.lbl會員中心);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.lblUser);
             this.panel5.Controls.Add(this.label4);
@@ -234,6 +236,19 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Welcome to PAPA Pharmacy";
             // 
+            // lbl會員中心
+            // 
+            this.lbl會員中心.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl會員中心.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbl會員中心.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbl會員中心.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lbl會員中心.Location = new System.Drawing.Point(367, 0);
+            this.lbl會員中心.Name = "lbl會員中心";
+            this.lbl會員中心.Size = new System.Drawing.Size(80, 25);
+            this.lbl會員中心.TabIndex = 9;
+            this.lbl會員中心.Text = "會員中心";
+            this.lbl會員中心.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -277,5 +292,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label lbl會員中心;
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PharmacyShop
 {
-    public partial class BabyForm : Form
+    public partial class BeautyForm : Form
     {
         SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
 
@@ -22,41 +22,31 @@ namespace PharmacyShop
         int price = 0;
         int sumprice = 0;
 
-        public BabyForm()
+        public BeautyForm()
         {
             InitializeComponent();
-        }
-
-        private void BabyForm_Load(object sender, EventArgs e)
-        {
-            ShowMilk();
-            ShowDiaper();
-
-            //預設
-            qty = 1;
-            txtqty.Text = qty.ToString();
-            lblSumPrice.Text = "$0";
         }
 
         private void UpdateSumPrice()
         {
             sumprice = price * qty;
             lblSumPrice.Text = $"${sumprice}";
+            
         }
 
-        private void ShowMilk()
+        private void ShowBeauty()
         {
             try
             {
                 if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
-                    string query = "select * from milks";
+                    string query = "select * from beauty";
                     SqlDataAdapter sda = new SqlDataAdapter(query, conn);
                     SqlCommandBuilder builder = new SqlCommandBuilder(sda);
                     var ds = new DataSet();
                     sda.Fill(ds);
-                    dataMilk.DataSource = ds.Tables[0];
+                    dataBeauty.DataSource = ds.Tables[0];
                 }
             }
             catch (Exception ex)
@@ -70,19 +60,19 @@ namespace PharmacyShop
 
         }
 
-        private void ShowDiaper()
+        private void ShowPerfume()
         {
             try
             {
                 if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
-                    string query = "select * from diapers";
+                    string query = "select * from perfume";
                     SqlDataAdapter sda = new SqlDataAdapter(query, conn);
                     SqlCommandBuilder builder = new SqlCommandBuilder(sda);
                     var ds = new DataSet();
                     sda.Fill(ds);
-                    dataDiaper.DataSource = ds.Tables[0];
+                    dataPerfume.DataSource = ds.Tables[0];
                 }
             }
             catch (Exception ex)
@@ -96,24 +86,21 @@ namespace PharmacyShop
 
         }
 
-        private void dataMilk_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void BeautyForm_Load(object sender, EventArgs e)
         {
-            if (dataMilk.SelectedRows.Count > 0)
-            {
-                txtProd.Text = dataMilk.SelectedRows[0].Cells[1].Value.ToString();
-                price = (int)dataMilk.SelectedRows[0].Cells[2].Value;
-                UpdateSumPrice();
-            }
+            ShowBeauty();
+            ShowPerfume();
+
+            //預設
+            qty = 1;
+            txtqty.Text = qty.ToString();
+            lblSumPrice.Text = "$0";
+
         }
 
-        private void dataDiaper_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e)
         {
-            if (dataDiaper.SelectedRows.Count > 0)
-            {
-                txtProd.Text = dataDiaper.SelectedRows[0].Cells[1].Value.ToString();
-                price = (int)dataDiaper.SelectedRows[0].Cells[2].Value;
-                UpdateSumPrice();
-            }
+            Close();
         }
 
         private void txtqty_TextChanged(object sender, EventArgs e)
@@ -135,6 +122,22 @@ namespace PharmacyShop
             }
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtqty.Text = $"{++qty}";
+            UpdateSumPrice();
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            if (qty > 1)
+            {
+                txtqty.Text = $"{--qty}";
+                UpdateSumPrice();
+            }
+
+        }
+
         private void btnAddCart_Click(object sender, EventArgs e)
         {
             if (txtProd.Text != "")
@@ -142,15 +145,15 @@ namespace PharmacyShop
 
                 DataGridViewRow selectRow = null;
                 string table = "";
-                if ((dataMilk.SelectedRows.Count > 0) && (tabBaby.SelectedTab == Milk))
+                if ((dataBeauty.SelectedRows.Count > 0) && (tabBeauty.SelectedTab == Beauty))
                 {
-                    selectRow = dataMilk.SelectedRows[0];
-                    table = "milks";//對應的資料表
+                    selectRow = dataBeauty.SelectedRows[0];
+                    table = "beauty";//對應的資料表
                 }
-                else if((dataDiaper.SelectedRows.Count > 0) && (tabBaby.SelectedTab == Diaper))
+                else if ((dataPerfume.SelectedRows.Count > 0) && (tabBeauty.SelectedTab == Perfume))
                 {
-                    selectRow = dataDiaper.SelectedRows[0];
-                    table = "diapers";//對應的資料表
+                    selectRow = dataPerfume.SelectedRows[0];
+                    table = "perfume";//對應的資料表
                 }
 
                 if (selectRow != null && !string.IsNullOrEmpty(table))
@@ -215,31 +218,32 @@ namespace PharmacyShop
                 MessageBox.Show("請選擇要購買的產品", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtProd.Text = "";
             }
+
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void dataBeauty_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtqty.Text = $"{++qty}";
-            UpdateSumPrice();
-        }
-
-        private void btnMinus_Click(object sender, EventArgs e)
-        {
-            if (qty > 1)
+            if (dataBeauty.SelectedRows.Count > 0)
             {
-                txtqty.Text = $"{--qty}";
+                txtProd.Text = dataBeauty.SelectedRows[0].Cells[1].Value.ToString();
+                price = (int)dataBeauty.SelectedRows[0].Cells[2].Value;
                 UpdateSumPrice();
             }
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void dataPerfume_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Close();
+            if (dataPerfume.SelectedRows.Count > 0)
+            {
+                txtProd.Text = dataPerfume.SelectedRows[0].Cells[1].Value.ToString();
+                price = (int)dataPerfume.SelectedRows[0].Cells[2].Value;
+                UpdateSumPrice();
+            }
         }
 
-        private void dataMilk_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void dataBeauty_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            foreach (DataGridViewRow row in dataMilk.Rows)
+            foreach (DataGridViewRow row in dataBeauty.Rows)
             {
                 if (row.Cells["qty"].Value != null)
                 {
@@ -252,11 +256,12 @@ namespace PharmacyShop
                     }
                 }
             }
+
         }
 
-        private void dataDiaper_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void dataPerfume_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            foreach (DataGridViewRow row in dataDiaper.Rows)
+            foreach (DataGridViewRow row in dataPerfume.Rows)
             {
                 if (row.Cells["qty"].Value != null)
                 {
@@ -269,6 +274,7 @@ namespace PharmacyShop
                     }
                 }
             }
+
         }
     }
 }

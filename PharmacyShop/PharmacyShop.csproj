@@ -65,6 +65,12 @@
     <Compile Include="BabyForm.Designer.cs">
       <DependentUpon>BabyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BeautyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeautyForm.Designer.cs">
+      <DependentUpon>BeautyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CartForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BabyForm.resx">
       <DependentUpon>BabyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BeautyForm.resx">
+      <DependentUpon>BeautyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CartForm.resx">
       <DependentUpon>CartForm.cs</DependentUpon>
