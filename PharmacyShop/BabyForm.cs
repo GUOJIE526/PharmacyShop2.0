@@ -27,12 +27,8 @@ namespace PharmacyShop
             InitializeComponent();
         }
 
-        public Drag drag;
-
         private void BabyForm_Load(object sender, EventArgs e)
         {
-            drag = new Drag(this);
-            drag.setPanel(pnlbaby);
             ShowMilk();
             ShowDiaper();
 

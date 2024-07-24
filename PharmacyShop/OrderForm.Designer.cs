@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlside = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnMedicine = new System.Windows.Forms.PictureBox();
             this.btnBeauty = new System.Windows.Forms.PictureBox();
@@ -45,7 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMedicine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBeauty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBaby)).BeginInit();
@@ -62,17 +62,17 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // panel1
+            // pnlside
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.btnMedicine);
-            this.panel1.Controls.Add(this.btnBeauty);
-            this.panel1.Controls.Add(this.btnBaby);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(216, 598);
-            this.panel1.TabIndex = 2;
+            this.pnlside.Controls.Add(this.label3);
+            this.pnlside.Controls.Add(this.btnMedicine);
+            this.pnlside.Controls.Add(this.btnBeauty);
+            this.pnlside.Controls.Add(this.btnBaby);
+            this.pnlside.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlside.Location = new System.Drawing.Point(0, 0);
+            this.pnlside.Name = "pnlside";
+            this.pnlside.Size = new System.Drawing.Size(216, 598);
+            this.pnlside.TabIndex = 2;
             // 
             // label3
             // 
@@ -240,14 +240,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 598);
             this.Controls.Add(this.pnlHome);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlside);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderForm";
             this.Load += new System.EventHandler(this.OrderForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlside.ResumeLayout(false);
+            this.pnlside.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMedicine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBeauty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBaby)).EndInit();
@@ -263,7 +263,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlside;
         private System.Windows.Forms.PictureBox btnBaby;
         private System.Windows.Forms.PictureBox btnMedicine;
         private System.Windows.Forms.PictureBox btnBeauty;

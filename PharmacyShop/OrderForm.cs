@@ -31,6 +31,7 @@ namespace PharmacyShop
         {
             drag = new Drag(this);
             drag.setPanel(pnlHome);
+            drag.setPanel(pnlside);
             open = new OpenForm();
         }
 
