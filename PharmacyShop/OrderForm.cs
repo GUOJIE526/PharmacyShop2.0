@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace PharmacyShop
@@ -17,7 +18,6 @@ namespace PharmacyShop
     {
         private Form1 login;
         private string username;
-
         SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
 
 
@@ -40,6 +40,8 @@ namespace PharmacyShop
             open = new OpenForm();
             lblUser.Text = $"{username}";
         }
+
+
 
         private void btnBaby_Click(object sender, EventArgs e)
         {

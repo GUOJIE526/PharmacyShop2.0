@@ -124,7 +124,6 @@ namespace PharmacyShop
             dataPerfume.RowTemplate.Height += 50;
         }
 
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Close();

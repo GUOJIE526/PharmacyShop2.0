@@ -85,7 +85,7 @@
             this.lblSumPrice.AutoSize = true;
             this.lblSumPrice.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblSumPrice.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblSumPrice.Location = new System.Drawing.Point(699, 68);
+            this.lblSumPrice.Location = new System.Drawing.Point(751, 68);
             this.lblSumPrice.Name = "lblSumPrice";
             this.lblSumPrice.Size = new System.Drawing.Size(25, 26);
             this.lblSumPrice.TabIndex = 29;
@@ -95,7 +95,7 @@
             // 
             this.btnAddCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCart.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCart.Image")));
-            this.btnAddCart.Location = new System.Drawing.Point(601, 57);
+            this.btnAddCart.Location = new System.Drawing.Point(653, 57);
             this.btnAddCart.Name = "btnAddCart";
             this.btnAddCart.Size = new System.Drawing.Size(37, 36);
             this.btnAddCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -107,7 +107,7 @@
             // 
             this.btnMinus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinus.Image = ((System.Drawing.Image)(resources.GetObject("btnMinus.Image")));
-            this.btnMinus.Location = new System.Drawing.Point(521, 57);
+            this.btnMinus.Location = new System.Drawing.Point(573, 57);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(37, 36);
             this.btnMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,7 +119,7 @@
             // 
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(428, 57);
+            this.btnAdd.Location = new System.Drawing.Point(480, 57);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(37, 36);
             this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -130,7 +130,7 @@
             // txtqty
             // 
             this.txtqty.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtqty.Location = new System.Drawing.Point(471, 68);
+            this.txtqty.Location = new System.Drawing.Point(523, 68);
             this.txtqty.Name = "txtqty";
             this.txtqty.Size = new System.Drawing.Size(44, 25);
             this.txtqty.TabIndex = 25;
@@ -142,24 +142,24 @@
             this.txtProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProd.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtProd.Location = new System.Drawing.Point(292, 68);
+            this.txtProd.Location = new System.Drawing.Point(208, 68);
             this.txtProd.Name = "txtProd";
-            this.txtProd.Size = new System.Drawing.Size(119, 22);
+            this.txtProd.Size = new System.Drawing.Size(220, 22);
             this.txtProd.TabIndex = 24;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(292, 92);
+            this.panel2.Location = new System.Drawing.Point(208, 92);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(119, 1);
+            this.panel2.Size = new System.Drawing.Size(220, 1);
             this.panel2.TabIndex = 23;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(206, 72);
+            this.label1.Location = new System.Drawing.Point(122, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 21);
             this.label1.TabIndex = 22;
