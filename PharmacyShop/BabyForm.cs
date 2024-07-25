@@ -31,6 +31,7 @@ namespace PharmacyShop
         {
             ShowMilk();
             ShowDiaper();
+            AdjustDataGridViewSettings();
 
             //預設
             qty = 1;
@@ -44,6 +45,13 @@ namespace PharmacyShop
             lblSumPrice.Text = $"${sumprice}";
         }
 
+        private void AdjustDataGridViewSettings()
+        {
+            // 調整間距和樣式
+            dataMilk.RowTemplate.Height += 50; // 調整行高以增加行間距
+
+            dataDiaper.RowTemplate.Height += 50; 
+        }
         private void ShowMilk()
         {
             try
@@ -57,6 +65,15 @@ namespace PharmacyShop
                     var ds = new DataSet();
                     sda.Fill(ds);
                     dataMilk.DataSource = ds.Tables[0];
+
+                    foreach (DataGridViewColumn col in dataMilk.Columns)
+                    {
+                        if (col is DataGridViewImageColumn imgcol)
+                        {
+                            imgcol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                        }
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -83,6 +100,15 @@ namespace PharmacyShop
                     var ds = new DataSet();
                     sda.Fill(ds);
                     dataDiaper.DataSource = ds.Tables[0];
+
+                    foreach (DataGridViewColumn col in dataDiaper.Columns)
+                    {
+                        if (col is DataGridViewImageColumn imgcol)
+                        {
+                            imgcol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                        }
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -98,21 +124,35 @@ namespace PharmacyShop
 
         private void dataMilk_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataMilk.SelectedRows.Count > 0)
+            if (dataMilk.SelectedRows.Count > 0 && dataMilk.SelectedRows[0].Cells[1] != null && dataMilk.SelectedRows[0].Cells[2] != null && dataMilk.SelectedRows[0].Cells[3] != null)
             {
-                txtProd.Text = dataMilk.SelectedRows[0].Cells[1].Value.ToString();
-                price = (int)dataMilk.SelectedRows[0].Cells[2].Value;
-                UpdateSumPrice();
+                txtProd.Text = dataMilk.SelectedRows[0].Cells[2].Value.ToString();
+                try
+                {
+                    price = Convert.ToInt32(dataMilk.SelectedRows[0].Cells[3].Value);
+                    UpdateSumPrice();
+                }
+                catch (InvalidCastException)
+                {
+                    MessageBox.Show("沒有商品項目", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void dataDiaper_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataDiaper.SelectedRows.Count > 0)
+            if (dataDiaper.SelectedRows.Count > 0 && dataDiaper.SelectedRows[0].Cells[1] != null && dataDiaper.SelectedRows[0].Cells[2] != null && dataDiaper.SelectedRows[0].Cells[3] != null)
             {
-                txtProd.Text = dataDiaper.SelectedRows[0].Cells[1].Value.ToString();
-                price = (int)dataDiaper.SelectedRows[0].Cells[2].Value;
-                UpdateSumPrice();
+                txtProd.Text = dataDiaper.SelectedRows[0].Cells[2].Value.ToString();
+                try
+                {
+                    price = Convert.ToInt32(dataDiaper.SelectedRows[0].Cells[3].Value);
+                    UpdateSumPrice();
+                }
+                catch (InvalidCastException)
+                {
+                    MessageBox.Show("沒有商品項目", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

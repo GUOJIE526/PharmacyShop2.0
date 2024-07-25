@@ -47,6 +47,14 @@ namespace PharmacyShop
                     var ds = new DataSet();
                     sda.Fill(ds);
                     dataBeauty.DataSource = ds.Tables[0];
+
+                    foreach (DataGridViewColumn col in dataBeauty.Columns)
+                    {
+                        if (col is DataGridViewImageColumn imgcol)
+                        {
+                            imgcol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -73,6 +81,15 @@ namespace PharmacyShop
                     var ds = new DataSet();
                     sda.Fill(ds);
                     dataPerfume.DataSource = ds.Tables[0];
+
+                    foreach (DataGridViewColumn col in dataPerfume.Columns)
+                    {
+                        if (col is DataGridViewImageColumn imgcol)
+                        {
+                            imgcol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                        }
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -90,6 +107,7 @@ namespace PharmacyShop
         {
             ShowBeauty();
             ShowPerfume();
+            AdjustDataGridViewSettings();
 
             //預設
             qty = 1;
@@ -97,6 +115,15 @@ namespace PharmacyShop
             lblSumPrice.Text = "$0";
 
         }
+
+        private void AdjustDataGridViewSettings()
+        {
+            // 調整間距和樣式
+            dataBeauty.RowTemplate.Height += 50; // 調整行高以增加行間距
+
+            dataPerfume.RowTemplate.Height += 50;
+        }
+
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -223,21 +250,35 @@ namespace PharmacyShop
 
         private void dataBeauty_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataBeauty.SelectedRows.Count > 0)
+            if (dataBeauty.SelectedRows.Count > 0 && dataBeauty.SelectedRows[0].Cells[1] != null && dataBeauty.SelectedRows[0].Cells[2] != null && dataBeauty.SelectedRows[0].Cells[3] != null)
             {
-                txtProd.Text = dataBeauty.SelectedRows[0].Cells[1].Value.ToString();
-                price = (int)dataBeauty.SelectedRows[0].Cells[2].Value;
-                UpdateSumPrice();
+                txtProd.Text = dataBeauty.SelectedRows[0].Cells[2].Value.ToString();
+                try
+                {
+                    price = Convert.ToInt32(dataBeauty.SelectedRows[0].Cells[3].Value);
+                    UpdateSumPrice();
+                }
+                catch (InvalidCastException)
+                {
+                    MessageBox.Show("沒有商品項目", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void dataPerfume_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataPerfume.SelectedRows.Count > 0)
+            if (dataPerfume.SelectedRows.Count > 0 && dataPerfume.SelectedRows[0].Cells[1] != null && dataPerfume.SelectedRows[0].Cells[2] != null && dataPerfume.SelectedRows[0].Cells[3] != null)
             {
-                txtProd.Text = dataPerfume.SelectedRows[0].Cells[1].Value.ToString();
-                price = (int)dataPerfume.SelectedRows[0].Cells[2].Value;
-                UpdateSumPrice();
+                txtProd.Text = dataPerfume.SelectedRows[0].Cells[2].Value.ToString();
+                try
+                {
+                    price = Convert.ToInt32(dataPerfume.SelectedRows[0].Cells[3].Value);
+                    UpdateSumPrice();
+                }
+                catch (InvalidCastException)
+                {
+                    MessageBox.Show("沒有商品項目", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
