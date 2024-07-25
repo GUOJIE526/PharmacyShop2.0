@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,8 @@ namespace PharmacyShop
 
         List<string> listProd = new List<string>();
         List<int> listPdPrice = new List<int>();
+        Guna2DataGridView gridView1 = new Guna2DataGridView();
+        Guna2DataGridView gridView2 = new Guna2DataGridView();
         int qty = 0;
         int price = 0;
         int sumprice = 0;
@@ -27,11 +30,14 @@ namespace PharmacyShop
             InitializeComponent();
         }
 
+        public ProductClass product = new ProductClass(); 
+
         private void BabyForm_Load(object sender, EventArgs e)
         {
-            ShowMilk();
-            ShowDiaper();
-            AdjustDataGridViewSettings();
+            gridView1 = dataMilk;
+            product.ShowData("milks", gridView1);
+            gridView2 = dataDiaper;
+            product.ShowData("diapers", gridView2);
 
             //預設
             qty = 1;
@@ -43,83 +49,6 @@ namespace PharmacyShop
         {
             sumprice = price * qty;
             lblSumPrice.Text = $"${sumprice}";
-        }
-
-        private void AdjustDataGridViewSettings()
-        {
-            // 調整間距和樣式
-            dataMilk.RowTemplate.Height += 50; // 調整行高以增加行間距
-
-            dataDiaper.RowTemplate.Height += 50; 
-        }
-        private void ShowMilk()
-        {
-            try
-            {
-                if (conn.State != ConnectionState.Open)
-                {
-                    conn.Open();
-                    string query = "select * from milks";
-                    SqlDataAdapter sda = new SqlDataAdapter(query, conn);
-                    SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-                    var ds = new DataSet();
-                    sda.Fill(ds);
-                    dataMilk.DataSource = ds.Tables[0];
-
-                    foreach (DataGridViewColumn col in dataMilk.Columns)
-                    {
-                        if (col is DataGridViewImageColumn imgcol)
-                        {
-                            imgcol.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                        }
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("資料庫連接失敗: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-        }
-
-        private void ShowDiaper()
-        {
-            try
-            {
-                if (conn.State != ConnectionState.Open)
-                {
-                    conn.Open();
-                    string query = "select * from diapers";
-                    SqlDataAdapter sda = new SqlDataAdapter(query, conn);
-                    SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-                    var ds = new DataSet();
-                    sda.Fill(ds);
-                    dataDiaper.DataSource = ds.Tables[0];
-
-                    foreach (DataGridViewColumn col in dataDiaper.Columns)
-                    {
-                        if (col is DataGridViewImageColumn imgcol)
-                        {
-                            imgcol.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                        }
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("資料庫連接失敗: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
         }
 
         private void dataMilk_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -156,7 +85,41 @@ namespace PharmacyShop
             }
         }
 
-        private void txtqty_TextChanged(object sender, EventArgs e)
+        private void dataMilk_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataMilk.Rows)
+            {
+                if (row.Cells["qty"].Value != null)
+                {
+                    int quantity = Convert.ToInt32(row.Cells["qty"].Value);
+                    if (quantity <= 0)
+                    {
+                        row.Cells["name"].Style.ForeColor = Color.Red;
+                        row.Cells["price"].Style.ForeColor = Color.Red;
+                        row.Cells["qty"].Style.ForeColor = Color.Red;
+                    }
+                }
+            }
+        }
+
+        private void dataDiaper_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataDiaper.Rows)
+            {
+                if (row.Cells["qty"].Value != null)
+                {
+                    int quantity = Convert.ToInt32(row.Cells["qty"].Value);
+                    if (quantity <= 0)
+                    {
+                        row.Cells["name"].Style.ForeColor = Color.Red;
+                        row.Cells["price"].Style.ForeColor = Color.Red;
+                        row.Cells["qty"].Style.ForeColor = Color.Red;
+                    }
+                }
+            }
+        }
+
+        private void txtqty_TextChanged_1(object sender, EventArgs e)
         {
             if (txtqty.Text != "")
             {
@@ -175,7 +138,22 @@ namespace PharmacyShop
             }
         }
 
-        private void btnAddCart_Click(object sender, EventArgs e)
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            txtqty.Text = $"{++qty}";
+            UpdateSumPrice();
+        }
+
+        private void btnMinus_Click_1(object sender, EventArgs e)
+        {
+            if (qty > 1)
+            {
+                txtqty.Text = $"{--qty}";
+                UpdateSumPrice();
+            }
+        }
+
+        private void btnAddCart_Click_1(object sender, EventArgs e)
         {
             if (txtProd.Text != "")
             {//挑選中的row
@@ -187,7 +165,7 @@ namespace PharmacyShop
                     selectRow = dataMilk.SelectedRows[0];
                     table = "milks";//對應的資料表
                 }
-                else if((dataDiaper.SelectedRows.Count > 0) && (tabBaby.SelectedTab == Diaper))
+                else if ((dataDiaper.SelectedRows.Count > 0) && (tabBaby.SelectedTab == Diaper))
                 {
                     selectRow = dataDiaper.SelectedRows[0];
                     table = "diapers";//對應的資料表
@@ -257,58 +235,9 @@ namespace PharmacyShop
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            txtqty.Text = $"{++qty}";
-            UpdateSumPrice();
-        }
-
-        private void btnMinus_Click(object sender, EventArgs e)
-        {
-            if (qty > 1)
-            {
-                txtqty.Text = $"{--qty}";
-                UpdateSumPrice();
-            }
-        }
-
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void btnReturn_Click_1(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void dataMilk_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow row in dataMilk.Rows)
-            {
-                if (row.Cells["qty"].Value != null)
-                {
-                    int quantity = Convert.ToInt32(row.Cells["qty"].Value);
-                    if (quantity <= 0)
-                    {
-                        row.Cells["name"].Style.ForeColor = Color.Red;
-                        row.Cells["price"].Style.ForeColor = Color.Red;
-                        row.Cells["qty"].Style.ForeColor = Color.Red;
-                    }
-                }
-            }
-        }
-
-        private void dataDiaper_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow row in dataDiaper.Rows)
-            {
-                if (row.Cells["qty"].Value != null)
-                {
-                    int quantity = Convert.ToInt32(row.Cells["qty"].Value);
-                    if (quantity <= 0)
-                    {
-                        row.Cells["name"].Style.ForeColor = Color.Red;
-                        row.Cells["price"].Style.ForeColor = Color.Red;
-                        row.Cells["qty"].Style.ForeColor = Color.Red;
-                    }
-                }
-            }
         }
     }
 }
