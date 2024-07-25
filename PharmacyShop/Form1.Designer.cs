@@ -218,7 +218,7 @@
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPass.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPass.Location = new System.Drawing.Point(120, 188);
+            this.txtPass.Location = new System.Drawing.Point(120, 192);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '●';
             this.txtPass.Size = new System.Drawing.Size(159, 18);
@@ -249,7 +249,7 @@
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUser.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtUser.Location = new System.Drawing.Point(120, 127);
+            this.txtUser.Location = new System.Drawing.Point(120, 131);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(159, 18);
             this.txtUser.TabIndex = 15;
