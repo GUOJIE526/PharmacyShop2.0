@@ -16,7 +16,6 @@ namespace PharmacyShop
     public partial class BabyForm : Form
     {
         SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
-
         List<string> listProd = new List<string>();
         List<int> listPdPrice = new List<int>();
         Guna2DataGridView gridView1 = new Guna2DataGridView();
@@ -184,11 +183,9 @@ namespace PharmacyShop
 
                     // 添加商品到購物車
                     ArrayList listProdAll = new ArrayList();
-                    listProd.Add(txtProd.Text);
-                    listPdPrice.Add(sumprice);
-                    listProdAll.Add(listProd);
+                    listProdAll.Add(txtProd.Text);
                     listProdAll.Add(qty);
-                    listProdAll.Add(listPdPrice);
+                    listProdAll.Add(sumprice);
                     GlobalVar.listProductCollection.Add(listProdAll);
 
                     int ProdID = (int)selectRow.Cells["id"].Value;

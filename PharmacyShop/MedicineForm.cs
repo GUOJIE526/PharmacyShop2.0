@@ -190,11 +190,9 @@ namespace PharmacyShop
 
                     // 添加商品到購物車
                     ArrayList listProdAll = new ArrayList();
-                    listProd.Add(txtProd.Text);
-                    listPdPrice.Add(sumprice);
-                    listProdAll.Add(listProd);
+                    listProdAll.Add(txtProd.Text);
                     listProdAll.Add(qty);
-                    listProdAll.Add(listPdPrice);
+                    listProdAll.Add(sumprice);
                     GlobalVar.listProductCollection.Add(listProdAll);
 
                     int ProdID = (int)selectRow.Cells["id"].Value;

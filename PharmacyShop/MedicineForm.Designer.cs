@@ -111,7 +111,6 @@
             this.dataMed.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataMed.Location = new System.Drawing.Point(6, 6);
             this.dataMed.Name = "dataMed";
-            this.dataMed.ReadOnly = true;
             this.dataMed.RowHeadersVisible = false;
             this.dataMed.RowTemplate.Height = 50;
             this.dataMed.Size = new System.Drawing.Size(856, 377);
@@ -129,7 +128,7 @@
             this.dataMed.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dataMed.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataMed.ThemeStyle.HeaderStyle.Height = 30;
-            this.dataMed.ThemeStyle.ReadOnly = true;
+            this.dataMed.ThemeStyle.ReadOnly = false;
             this.dataMed.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dataMed.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataMed.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -148,7 +147,7 @@
             this.MM.Location = new System.Drawing.Point(4, 33);
             this.MM.Name = "MM";
             this.MM.Padding = new System.Windows.Forms.Padding(3);
-            this.MM.Size = new System.Drawing.Size(859, 389);
+            this.MM.Size = new System.Drawing.Size(868, 389);
             this.MM.TabIndex = 1;
             this.MM.Text = "醫材";
             this.MM.UseVisualStyleBackColor = true;
@@ -178,10 +177,9 @@
             this.dataMM.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataMM.Location = new System.Drawing.Point(6, 6);
             this.dataMM.Name = "dataMM";
-            this.dataMM.ReadOnly = true;
             this.dataMM.RowHeadersVisible = false;
             this.dataMM.RowTemplate.Height = 50;
-            this.dataMM.Size = new System.Drawing.Size(847, 377);
+            this.dataMM.Size = new System.Drawing.Size(856, 377);
             this.dataMM.TabIndex = 0;
             this.dataMM.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataMM.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -196,7 +194,7 @@
             this.dataMM.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dataMM.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataMM.ThemeStyle.HeaderStyle.Height = 30;
-            this.dataMM.ThemeStyle.ReadOnly = true;
+            this.dataMM.ThemeStyle.ReadOnly = false;
             this.dataMM.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dataMM.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataMM.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));

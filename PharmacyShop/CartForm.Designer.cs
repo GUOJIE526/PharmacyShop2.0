@@ -29,21 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartForm));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.dataCart = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnReturn = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPrinter = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl結帳數量 = new System.Windows.Forms.Label();
             this.lblTotalPay = new System.Windows.Forms.Label();
             this.btnPay = new Guna.UI2.WinForms.Guna2GradientButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataCart)).BeginInit();
+            this.btnDeleteAll = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.cbxOnSale = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.購物清單 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrinter)).BeginInit();
             this.panel2.SuspendLayout();
@@ -66,57 +65,6 @@
             this.label3.Size = new System.Drawing.Size(256, 44);
             this.label3.TabIndex = 4;
             this.label3.Text = "PAPA Pharmacy";
-            // 
-            // dataCart
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataCart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataCart.ColumnHeadersHeight = 4;
-            this.dataCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataCart.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataCart.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataCart.Location = new System.Drawing.Point(31, 96);
-            this.dataCart.Name = "dataCart";
-            this.dataCart.RowHeadersVisible = false;
-            this.dataCart.RowTemplate.Height = 24;
-            this.dataCart.Size = new System.Drawing.Size(536, 321);
-            this.dataCart.TabIndex = 5;
-            this.dataCart.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataCart.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dataCart.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dataCart.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dataCart.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataCart.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dataCart.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataCart.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dataCart.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataCart.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dataCart.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataCart.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataCart.ThemeStyle.HeaderStyle.Height = 4;
-            this.dataCart.ThemeStyle.ReadOnly = false;
-            this.dataCart.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataCart.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataCart.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dataCart.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataCart.ThemeStyle.RowsStyle.Height = 24;
-            this.dataCart.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataCart.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // btnReturn
             // 
@@ -149,27 +97,17 @@
             this.btnPrinter.Size = new System.Drawing.Size(54, 50);
             this.btnPrinter.TabIndex = 18;
             this.btnPrinter.TabStop = false;
+            this.btnPrinter.Click += new System.EventHandler(this.btnPrinter_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lbl結帳數量);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.cbxOnSale);
             this.panel2.Controls.Add(this.lblTotalPay);
             this.panel2.Location = new System.Drawing.Point(24, 437);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(564, 77);
             this.panel2.TabIndex = 17;
-            // 
-            // lbl結帳數量
-            // 
-            this.lbl結帳數量.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbl結帳數量.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbl結帳數量.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl結帳數量.Location = new System.Drawing.Point(292, 0);
-            this.lbl結帳數量.Name = "lbl結帳數量";
-            this.lbl結帳數量.Size = new System.Drawing.Size(136, 77);
-            this.lbl結帳數量.TabIndex = 1;
-            this.lbl結帳數量.Text = "共0件商品";
-            this.lbl結帳數量.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTotalPay
             // 
@@ -196,11 +134,83 @@
             this.btnPay.FillColor2 = System.Drawing.Color.DarkGreen;
             this.btnPay.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnPay.ForeColor = System.Drawing.Color.White;
-            this.btnPay.Location = new System.Drawing.Point(195, 520);
+            this.btnPay.Location = new System.Drawing.Point(359, 520);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(203, 48);
+            this.btnPay.Size = new System.Drawing.Size(103, 48);
             this.btnPay.TabIndex = 16;
             this.btnPay.Text = "立即結帳";
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // btnDeleteAll
+            // 
+            this.btnDeleteAll.BorderRadius = 15;
+            this.btnDeleteAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteAll.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteAll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(49)))));
+            this.btnDeleteAll.FillColor2 = System.Drawing.Color.DarkGreen;
+            this.btnDeleteAll.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnDeleteAll.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteAll.Location = new System.Drawing.Point(221, 522);
+            this.btnDeleteAll.Name = "btnDeleteAll";
+            this.btnDeleteAll.Size = new System.Drawing.Size(114, 46);
+            this.btnDeleteAll.TabIndex = 21;
+            this.btnDeleteAll.Text = "清空購物車";
+            this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BorderRadius = 15;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(142)))), ((int)(((byte)(49)))));
+            this.btnDelete.FillColor2 = System.Drawing.Color.DarkGreen;
+            this.btnDelete.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(96, 520);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(93, 48);
+            this.btnDelete.TabIndex = 22;
+            this.btnDelete.Text = "刪除";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // cbxOnSale
+            // 
+            this.cbxOnSale.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cbxOnSale.FormattingEnabled = true;
+            this.cbxOnSale.Location = new System.Drawing.Point(24, 34);
+            this.cbxOnSale.Name = "cbxOnSale";
+            this.cbxOnSale.Size = new System.Drawing.Size(170, 24);
+            this.cbxOnSale.TabIndex = 2;
+            this.cbxOnSale.SelectedIndexChanged += new System.EventHandler(this.cbxOnSale_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(21, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "促銷活動";
+            // 
+            // 購物清單
+            // 
+            this.購物清單.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.購物清單.ForeColor = System.Drawing.Color.DarkCyan;
+            this.購物清單.FormattingEnabled = true;
+            this.購物清單.ItemHeight = 26;
+            this.購物清單.Location = new System.Drawing.Point(12, 82);
+            this.購物清單.Name = "購物清單";
+            this.購物清單.Size = new System.Drawing.Size(576, 316);
+            this.購物清單.TabIndex = 23;
             // 
             // CartForm
             // 
@@ -208,21 +218,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(223)))), ((int)(((byte)(175)))));
             this.ClientSize = new System.Drawing.Size(600, 600);
+            this.Controls.Add(this.購物清單);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnDeleteAll);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPrinter);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.dataCart);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CartForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CartForm";
             this.Load += new System.EventHandler(this.CartForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrinter)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,12 +246,15 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox btnReturn;
-        private Guna.UI2.WinForms.Guna2DataGridView dataCart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btnPrinter;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lbl結帳數量;
         private System.Windows.Forms.Label lblTotalPay;
         public Guna.UI2.WinForms.Guna2GradientButton btnPay;
+        public Guna.UI2.WinForms.Guna2GradientButton btnDelete;
+        public Guna.UI2.WinForms.Guna2GradientButton btnDeleteAll;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbxOnSale;
+        private System.Windows.Forms.ListBox 購物清單;
     }
 }
