@@ -153,6 +153,7 @@
             this.txtProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtProd.Location = new System.Drawing.Point(143, 72);
             this.txtProd.Name = "txtProd";
+            this.txtProd.ReadOnly = true;
             this.txtProd.Size = new System.Drawing.Size(316, 22);
             this.txtProd.TabIndex = 33;
             // 

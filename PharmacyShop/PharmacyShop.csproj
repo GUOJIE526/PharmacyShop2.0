@@ -150,6 +150,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="pharmacyDataSet.xsc">
       <DependentUpon>pharmacyDataSet.xsd</DependentUpon>

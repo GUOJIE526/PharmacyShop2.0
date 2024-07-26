@@ -62,7 +62,7 @@ namespace PharmacyShop
                     conn.Open();
                     string username = txtUser.Text.Trim();
                     string password = txtPass.Text.Trim();
-                    string sqlselect = @"select * from customers where name = @username and password = @password";
+                    string sqlselect = @"select * from customer where name = @username and password = @password";
                     using (SqlCommand cmd = new SqlCommand(sqlselect, conn))
                     {
                         cmd.Parameters.AddWithValue("@username", username);
@@ -109,7 +109,8 @@ namespace PharmacyShop
 
         private void createAccount_Click(object sender, EventArgs e)
         {
-
+            SignUpForm sign = new SignUpForm();
+            sign.ShowDialog();
         }
     }
 }
