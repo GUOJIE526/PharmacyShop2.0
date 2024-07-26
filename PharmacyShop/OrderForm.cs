@@ -77,5 +77,35 @@ namespace PharmacyShop
                 return;
             }
         }
+
+        private void btnBaby_MouseHover(object sender, EventArgs e)
+        {
+            btnBaby.BackColor = Color.SeaGreen;
+        }
+
+        private void btnBeauty_MouseHover(object sender, EventArgs e)
+        {
+            btnBeauty.BackColor = Color.SeaGreen;
+        }
+
+        private void btnMedicine_MouseHover(object sender, EventArgs e)
+        {
+            btnMedicine.BackColor = Color.SeaGreen;
+        }
+
+        private void btnBaby_MouseLeave(object sender, EventArgs e)
+        {
+            btnBaby.BackColor = SystemColors.Control;
+        }
+
+        private void btnBeauty_MouseLeave(object sender, EventArgs e)
+        {
+            btnBeauty.BackColor = SystemColors.Control;
+        }
+
+        private void btnMedicine_MouseLeave(object sender, EventArgs e)
+        {
+            btnMedicine.BackColor = SystemColors.Control;
+        }
     }
 }

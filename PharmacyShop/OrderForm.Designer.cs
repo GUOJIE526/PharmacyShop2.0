@@ -72,18 +72,18 @@
             this.pnlside.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlside.Location = new System.Drawing.Point(0, 0);
             this.pnlside.Name = "pnlside";
-            this.pnlside.Size = new System.Drawing.Size(199, 664);
+            this.pnlside.Size = new System.Drawing.Size(158, 664);
             this.pnlside.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("Viner Hand ITC", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Viner Hand ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(200, 34);
+            this.label3.Size = new System.Drawing.Size(158, 26);
             this.label3.TabIndex = 3;
             this.label3.Text = "PAPA Pharmacy";
             // 
@@ -91,49 +91,55 @@
             // 
             this.btnMedicine.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMedicine.Image = ((System.Drawing.Image)(resources.GetObject("btnMedicine.Image")));
-            this.btnMedicine.Location = new System.Drawing.Point(41, 335);
+            this.btnMedicine.Location = new System.Drawing.Point(28, 360);
             this.btnMedicine.Name = "btnMedicine";
-            this.btnMedicine.Size = new System.Drawing.Size(115, 66);
+            this.btnMedicine.Size = new System.Drawing.Size(130, 66);
             this.btnMedicine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMedicine.TabIndex = 2;
             this.btnMedicine.TabStop = false;
             this.btnMedicine.Click += new System.EventHandler(this.btnMedicine_Click);
+            this.btnMedicine.MouseLeave += new System.EventHandler(this.btnMedicine_MouseLeave);
+            this.btnMedicine.MouseHover += new System.EventHandler(this.btnMedicine_MouseHover);
             // 
             // btnBeauty
             // 
             this.btnBeauty.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBeauty.Image = ((System.Drawing.Image)(resources.GetObject("btnBeauty.Image")));
-            this.btnBeauty.Location = new System.Drawing.Point(41, 237);
+            this.btnBeauty.Location = new System.Drawing.Point(28, 255);
             this.btnBeauty.Name = "btnBeauty";
-            this.btnBeauty.Size = new System.Drawing.Size(115, 66);
+            this.btnBeauty.Size = new System.Drawing.Size(130, 66);
             this.btnBeauty.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBeauty.TabIndex = 1;
             this.btnBeauty.TabStop = false;
             this.btnBeauty.Click += new System.EventHandler(this.btnBeauty_Click);
+            this.btnBeauty.MouseLeave += new System.EventHandler(this.btnBeauty_MouseLeave);
+            this.btnBeauty.MouseHover += new System.EventHandler(this.btnBeauty_MouseHover);
             // 
             // btnBaby
             // 
             this.btnBaby.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBaby.Image = ((System.Drawing.Image)(resources.GetObject("btnBaby.Image")));
-            this.btnBaby.Location = new System.Drawing.Point(41, 131);
+            this.btnBaby.Location = new System.Drawing.Point(28, 150);
             this.btnBaby.Name = "btnBaby";
-            this.btnBaby.Size = new System.Drawing.Size(115, 66);
+            this.btnBaby.Size = new System.Drawing.Size(130, 66);
             this.btnBaby.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBaby.TabIndex = 0;
             this.btnBaby.TabStop = false;
             this.btnBaby.Click += new System.EventHandler(this.btnBaby_Click);
+            this.btnBaby.MouseLeave += new System.EventHandler(this.btnBaby_MouseLeave);
+            this.btnBaby.MouseHover += new System.EventHandler(this.btnBaby_MouseHover);
             // 
             // pnlHome
             // 
-            this.pnlHome.BackColor = System.Drawing.Color.LimeGreen;
+            this.pnlHome.BackColor = System.Drawing.Color.SeaGreen;
             this.pnlHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlHome.BackgroundImage")));
             this.pnlHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnlHome.Controls.Add(this.panel5);
             this.pnlHome.Controls.Add(this.label1);
             this.pnlHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHome.Location = new System.Drawing.Point(199, 0);
+            this.pnlHome.Location = new System.Drawing.Point(158, 0);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(1069, 664);
+            this.pnlHome.Size = new System.Drawing.Size(1039, 664);
             this.pnlHome.TabIndex = 3;
             // 
             // panel5
@@ -149,7 +155,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 639);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1069, 25);
+            this.panel5.Size = new System.Drawing.Size(1039, 25);
             this.panel5.TabIndex = 7;
             // 
             // lbl會員中心
@@ -158,7 +164,7 @@
             this.lbl會員中心.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl會員中心.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbl會員中心.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl會員中心.Location = new System.Drawing.Point(671, 0);
+            this.lbl會員中心.Location = new System.Drawing.Point(641, 0);
             this.lbl會員中心.Name = "lbl會員中心";
             this.lbl會員中心.Size = new System.Drawing.Size(80, 25);
             this.lbl會員中心.TabIndex = 9;
@@ -170,7 +176,7 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label6.Location = new System.Drawing.Point(751, 0);
+            this.label6.Location = new System.Drawing.Point(721, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 25);
             this.label6.TabIndex = 8;
@@ -182,7 +188,7 @@
             this.lblUser.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblUser.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lblUser.Location = new System.Drawing.Point(811, 0);
+            this.lblUser.Location = new System.Drawing.Point(781, 0);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(60, 25);
             this.lblUser.TabIndex = 7;
@@ -193,7 +199,7 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(871, 0);
+            this.label4.Location = new System.Drawing.Point(841, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 25);
             this.label4.TabIndex = 6;
@@ -205,7 +211,7 @@
             this.btnCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCart.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCart.Image = ((System.Drawing.Image)(resources.GetObject("btnCart.Image")));
-            this.btnCart.Location = new System.Drawing.Point(931, 0);
+            this.btnCart.Location = new System.Drawing.Point(901, 0);
             this.btnCart.Name = "btnCart";
             this.btnCart.Size = new System.Drawing.Size(47, 25);
             this.btnCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -218,7 +224,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(978, 0);
+            this.label2.Location = new System.Drawing.Point(948, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 25);
             this.label2.TabIndex = 4;
@@ -230,7 +236,7 @@
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(1030, 0);
+            this.btnLogout.Location = new System.Drawing.Point(1000, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(39, 25);
             this.btnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -242,7 +248,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Viner Hand ITC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Firebrick;
+            this.label1.ForeColor = System.Drawing.Color.Tomato;
             this.label1.Location = new System.Drawing.Point(328, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(414, 44);
@@ -253,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1268, 664);
+            this.ClientSize = new System.Drawing.Size(1197, 664);
             this.Controls.Add(this.pnlHome);
             this.Controls.Add(this.pnlside);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
