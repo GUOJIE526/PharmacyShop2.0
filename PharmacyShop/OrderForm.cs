@@ -60,7 +60,7 @@ namespace PharmacyShop
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-            CartForm cart = new CartForm();
+            CartForm cart = new CartForm(username);
             cart.ShowDialog();
         }
 

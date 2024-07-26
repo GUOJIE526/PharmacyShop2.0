@@ -19,13 +19,15 @@ namespace PharmacyShop
         SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
         List<string> listOnSale = new List<string>();
         string OnSale = "";
-        public CartForm()
+        public CartForm(string user)
         {
             InitializeComponent();
+            GlobalVar.User = user;
         }
 
         private void CartForm_Load(object sender, EventArgs e)
         {
+            lblUser.Text = GlobalVar.User;
             listOnSale.Add("第二件75折");
             listOnSale.Add("岡本買一送一");
             foreach (string item in listOnSale)
@@ -51,10 +53,18 @@ namespace PharmacyShop
             int sum = 0;
             foreach (ArrayList item in GlobalVar.listProductCollection)
             {
+                int ProdQty = (int)item[1];
                 int price = (int)item[2];
                 sum += price;
+                if ((cbxOnSale.SelectedIndex == 0) && (ProdQty >= 2))
+                {
+                    lblTotalPay.Text = $"優惠價: ${sum}";
+                }
+                else
+                {
+                    lblTotalPay.Text = $"${sum}";
+                }
             }
-            lblTotalPay.Text = $"${sum}";
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -122,11 +132,11 @@ namespace PharmacyShop
             }
             //輸出訂單
             List<string> list訂單輸出 = new List<string>();
-            list訂單輸出.Add("************ 冷飲訂購單 *************");
+            list訂單輸出.Add("************ PA PA Pharmacy訂購單 *************");
             list訂單輸出.Add("------------------------------------");
             list訂單輸出.Add($"訂購時間: {DateTime.Now}");
             list訂單輸出.Add($"訂購人: {GlobalVar.User}");
-            list訂單輸出.Add("========== << 訂購品項 >> =========");
+            list訂單輸出.Add("========== << 訂購明細 >> =========");
             foreach (ArrayList item in GlobalVar.listProductCollection)
             {
                 string ProdName = (string)item[0];
@@ -141,6 +151,9 @@ namespace PharmacyShop
             list訂單輸出.Add("===================================");
             list訂單輸出.Add("************ 謝謝光臨 **************");
             System.IO.File.WriteAllLines(FullSavePath, list訂單輸出, Encoding.UTF8);
+            GlobalVar.listProductCollection.Clear();
+            購物清單.Items.Clear();
+            TotalPrice();
             MessageBox.Show("訂購單儲存成功", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -150,6 +163,9 @@ namespace PharmacyShop
             foreach (ArrayList item in GlobalVar.listProductCollection)
             {
                 string ProdName = (string)item[0];
+                int ProdQty = (int)item[1];
+                int ProdPrice = (int)item[2];
+                
                 if (cbxOnSale.SelectedIndex == 1 && ProdName == "【Okamoto岡本】 002 Hydro水感勁薄")
                 {
                     string freeItem = "【Okamoto岡本】 002 Hydro水感勁薄      1個      $FREE";
@@ -159,8 +175,13 @@ namespace PharmacyShop
                     }
                     else
                     {
-                        MessageBox.Show("你不需要這麼多", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show("你用不到這麼多", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
+                }
+                if ((cbxOnSale.SelectedIndex == 0) && (ProdQty >= 2))
+                {
+                    double price = Convert.ToDouble(ProdPrice * 0.75);
+                    item[2] = (int)Math.Round(price, MidpointRounding.AwayFromZero);
                 }
             }
         }

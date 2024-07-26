@@ -36,13 +36,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnPrinter = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbxOnSale = new System.Windows.Forms.ComboBox();
             this.lblTotalPay = new System.Windows.Forms.Label();
             this.btnPay = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnDeleteAll = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnDelete = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.cbxOnSale = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.購物清單 = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrinter)).BeginInit();
             this.panel2.SuspendLayout();
@@ -108,6 +110,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(564, 77);
             this.panel2.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(21, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "促銷活動";
+            // 
+            // cbxOnSale
+            // 
+            this.cbxOnSale.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cbxOnSale.FormattingEnabled = true;
+            this.cbxOnSale.Location = new System.Drawing.Point(24, 34);
+            this.cbxOnSale.Name = "cbxOnSale";
+            this.cbxOnSale.Size = new System.Drawing.Size(170, 24);
+            this.cbxOnSale.TabIndex = 2;
+            this.cbxOnSale.SelectedIndexChanged += new System.EventHandler(this.cbxOnSale_SelectedIndexChanged);
             // 
             // lblTotalPay
             // 
@@ -181,36 +203,39 @@
             this.btnDelete.Text = "刪除";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // cbxOnSale
-            // 
-            this.cbxOnSale.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cbxOnSale.FormattingEnabled = true;
-            this.cbxOnSale.Location = new System.Drawing.Point(24, 34);
-            this.cbxOnSale.Name = "cbxOnSale";
-            this.cbxOnSale.Size = new System.Drawing.Size(170, 24);
-            this.cbxOnSale.TabIndex = 2;
-            this.cbxOnSale.SelectedIndexChanged += new System.EventHandler(this.cbxOnSale_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(21, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "促銷活動";
-            // 
             // 購物清單
             // 
+            this.購物清單.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.購物清單.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.購物清單.ForeColor = System.Drawing.Color.DarkCyan;
             this.購物清單.FormattingEnabled = true;
             this.購物清單.ItemHeight = 26;
-            this.購物清單.Location = new System.Drawing.Point(12, 82);
+            this.購物清單.Location = new System.Drawing.Point(12, 108);
             this.購物清單.Name = "購物清單";
-            this.購物清單.Size = new System.Drawing.Size(576, 316);
+            this.購物清單.Size = new System.Drawing.Size(576, 290);
             this.購物清單.TabIndex = 23;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.Location = new System.Drawing.Point(396, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 21);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Hi";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblUser.ForeColor = System.Drawing.Color.Indigo;
+            this.lblUser.Location = new System.Drawing.Point(467, 73);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 21);
+            this.lblUser.TabIndex = 25;
             // 
             // CartForm
             // 
@@ -218,6 +243,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(223)))), ((int)(((byte)(175)))));
             this.ClientSize = new System.Drawing.Size(600, 600);
+            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.購物清單);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnDeleteAll);
@@ -256,5 +283,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxOnSale;
         private System.Windows.Forms.ListBox 購物清單;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblUser;
     }
 }
