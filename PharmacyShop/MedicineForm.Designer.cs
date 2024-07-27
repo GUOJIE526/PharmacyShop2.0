@@ -66,7 +66,7 @@
             this.tabBaby.Controls.Add(this.Med);
             this.tabBaby.Controls.Add(this.MM);
             this.tabBaby.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tabBaby.Location = new System.Drawing.Point(55, 160);
+            this.tabBaby.Location = new System.Drawing.Point(81, 162);
             this.tabBaby.Name = "tabBaby";
             this.tabBaby.SelectedIndex = 0;
             this.tabBaby.Size = new System.Drawing.Size(876, 426);
@@ -112,7 +112,7 @@
             this.dataMed.Name = "dataMed";
             this.dataMed.RowHeadersVisible = false;
             this.dataMed.RowTemplate.Height = 50;
-            this.dataMed.Size = new System.Drawing.Size(856, 377);
+            this.dataMed.Size = new System.Drawing.Size(862, 377);
             this.dataMed.TabIndex = 0;
             this.dataMed.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataMed.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -217,7 +217,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(979, 144);
+            this.panel1.Size = new System.Drawing.Size(1037, 144);
             this.panel1.TabIndex = 40;
             // 
             // lblSumPrice
@@ -225,7 +225,7 @@
             this.lblSumPrice.AutoSize = true;
             this.lblSumPrice.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblSumPrice.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblSumPrice.Location = new System.Drawing.Point(785, 82);
+            this.lblSumPrice.Location = new System.Drawing.Point(875, 73);
             this.lblSumPrice.Name = "lblSumPrice";
             this.lblSumPrice.Size = new System.Drawing.Size(25, 26);
             this.lblSumPrice.TabIndex = 48;
@@ -235,7 +235,7 @@
             // 
             this.btnAddCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCart.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCart.Image")));
-            this.btnAddCart.Location = new System.Drawing.Point(706, 57);
+            this.btnAddCart.Location = new System.Drawing.Point(796, 48);
             this.btnAddCart.Name = "btnAddCart";
             this.btnAddCart.Size = new System.Drawing.Size(55, 50);
             this.btnAddCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -247,7 +247,7 @@
             // 
             this.btnMinus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinus.Image = ((System.Drawing.Image)(resources.GetObject("btnMinus.Image")));
-            this.btnMinus.Location = new System.Drawing.Point(622, 57);
+            this.btnMinus.Location = new System.Drawing.Point(712, 48);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(55, 50);
             this.btnMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -259,7 +259,7 @@
             // 
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(462, 58);
+            this.btnAdd.Location = new System.Drawing.Point(552, 49);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(55, 50);
             this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -270,7 +270,7 @@
             // txtqty
             // 
             this.txtqty.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtqty.Location = new System.Drawing.Point(539, 76);
+            this.txtqty.Location = new System.Drawing.Point(629, 67);
             this.txtqty.Name = "txtqty";
             this.txtqty.Size = new System.Drawing.Size(60, 25);
             this.txtqty.TabIndex = 44;
@@ -278,11 +278,11 @@
             // 
             // txtProd
             // 
-            this.txtProd.BackColor = System.Drawing.Color.LimeGreen;
+            this.txtProd.BackColor = System.Drawing.Color.White;
             this.txtProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProd.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtProd.Location = new System.Drawing.Point(146, 76);
+            this.txtProd.Location = new System.Drawing.Point(170, 77);
             this.txtProd.Name = "txtProd";
             this.txtProd.ReadOnly = true;
             this.txtProd.Size = new System.Drawing.Size(288, 22);
@@ -292,7 +292,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(60, 77);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(84, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 21);
             this.label1.TabIndex = 41;
@@ -304,7 +305,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(925, 12);
+            this.btnReturn.Location = new System.Drawing.Point(983, 12);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(42, 36);
             this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -317,7 +318,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(979, 598);
+            this.ClientSize = new System.Drawing.Size(1037, 600);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabBaby);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

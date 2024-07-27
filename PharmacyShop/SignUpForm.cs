@@ -41,7 +41,7 @@ namespace PharmacyShop
             }
             else if (string.IsNullOrEmpty(txtName.Text))
             {
-                lblError1.Text = "請輸入使用者帳號";
+                lblError1.Text = "使用者帳號不可為空";
                 isValid = false;
             }
             else
@@ -71,7 +71,7 @@ namespace PharmacyShop
             }
             string email = txtEmail.Text;
             bool contains = email.Contains('@');
-            if (!contains || string.IsNullOrEmpty(email) || !email.EndsWith(".com"))
+            if (!contains || string.IsNullOrEmpty(email) || !email.EndsWith("gmail.com"))
             {
                 lblError4.Text = "請輸入有效信箱";
                 isValid = false;

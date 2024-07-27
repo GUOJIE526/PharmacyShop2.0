@@ -28,19 +28,6 @@ namespace PharmacyShop
             drag.setPanel(pnlTop);
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            DialogResult R = MessageBox.Show("是否退出應用程式?", "關閉", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (R == DialogResult.OK)
-            {
-                Application.Exit();
-            }
-            else
-            {
-                return;
-            }
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUser.Text == "" && txtPass.Text == "")
@@ -55,6 +42,8 @@ namespace PharmacyShop
                     lblUserError.Text = "請輸入英文或數字";
                 }
             }
+
+            //Customer login
             try
             {
                 if (conn.State != ConnectionState.Open)
@@ -62,7 +51,9 @@ namespace PharmacyShop
                     conn.Open();
                     string username = txtUser.Text.Trim();
                     string password = txtPass.Text.Trim();
-                    string sqlselect = @"select * from customer where name = @username and password = @password";
+                    string sqlselect = @"select 'customer' as userType, * from customer where name = @username and password = @password 
+                      UNION 
+                      select 'employee' as userType, * from employee where name = @username and password = @password";
                     using (SqlCommand cmd = new SqlCommand(sqlselect, conn))
                     {
                         cmd.Parameters.AddWithValue("@username", username);
@@ -71,9 +62,20 @@ namespace PharmacyShop
                         {
                             if (reader.HasRows)
                             {
+                                reader.Read();
+                                string userType = reader["userType"].ToString();
                                 MessageBox.Show("登入成功，將為您轉跳...", "登入", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                OrderForm order = new OrderForm(this, username);
-                                order.Show();
+                                
+                                if(userType == "customer")
+                                {
+                                    OrderForm order = new OrderForm(this, username);
+                                    order.Show();
+                                }
+                                else if (userType == "employee")
+                                {
+                                    MangementForm mgr = new MangementForm(this, username);
+                                    mgr.Show();
+                                }
                                 this.Hide();
                             }
                             else
@@ -111,6 +113,19 @@ namespace PharmacyShop
         {
             SignUpForm sign = new SignUpForm();
             sign.ShowDialog();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult R = MessageBox.Show("退出應用程式", "退出", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (R == DialogResult.Yes)
+            {
+                Close();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

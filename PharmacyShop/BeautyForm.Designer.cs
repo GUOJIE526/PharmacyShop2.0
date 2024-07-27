@@ -113,7 +113,7 @@
             this.dataBeauty.ReadOnly = true;
             this.dataBeauty.RowHeadersVisible = false;
             this.dataBeauty.RowTemplate.Height = 50;
-            this.dataBeauty.Size = new System.Drawing.Size(914, 377);
+            this.dataBeauty.Size = new System.Drawing.Size(867, 377);
             this.dataBeauty.TabIndex = 0;
             this.dataBeauty.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataBeauty.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -280,20 +280,21 @@
             // 
             // txtProd
             // 
-            this.txtProd.BackColor = System.Drawing.Color.LimeGreen;
+            this.txtProd.BackColor = System.Drawing.Color.White;
             this.txtProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProd.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.txtProd.Location = new System.Drawing.Point(163, 73);
             this.txtProd.Name = "txtProd";
             this.txtProd.ReadOnly = true;
-            this.txtProd.Size = new System.Drawing.Size(351, 22);
+            this.txtProd.Size = new System.Drawing.Size(342, 22);
             this.txtProd.TabIndex = 43;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(77, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 21);
