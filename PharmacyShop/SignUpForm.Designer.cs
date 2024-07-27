@@ -50,6 +50,7 @@
             this.lblError3 = new System.Windows.Forms.Label();
             this.lblError4 = new System.Windows.Forms.Label();
             this.lblError5 = new System.Windows.Forms.Label();
+            this.chkShowPass = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -190,7 +191,7 @@
             this.txtPass.Location = new System.Drawing.Point(121, 300);
             this.txtPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '●';
             this.txtPass.PlaceholderText = "輸入密碼";
             this.txtPass.SelectedText = "";
             this.txtPass.Size = new System.Drawing.Size(259, 31);
@@ -268,6 +269,7 @@
             // btnBKLogin
             // 
             this.btnBKLogin.AutoSize = true;
+            this.btnBKLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBKLogin.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBKLogin.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnBKLogin.Location = new System.Drawing.Point(151, 634);
@@ -347,11 +349,26 @@
             this.lblError5.Size = new System.Drawing.Size(0, 16);
             this.lblError5.TabIndex = 47;
             // 
+            // chkShowPass
+            // 
+            this.chkShowPass.AutoSize = true;
+            this.chkShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkShowPass.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.chkShowPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.chkShowPass.Location = new System.Drawing.Point(292, 335);
+            this.chkShowPass.Name = "chkShowPass";
+            this.chkShowPass.Size = new System.Drawing.Size(120, 20);
+            this.chkShowPass.TabIndex = 48;
+            this.chkShowPass.Text = "Show Password";
+            this.chkShowPass.UseVisualStyleBackColor = true;
+            this.chkShowPass.CheckedChanged += new System.EventHandler(this.chkShowPass_CheckedChanged);
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 679);
+            this.Controls.Add(this.chkShowPass);
             this.Controls.Add(this.lblError5);
             this.Controls.Add(this.lblError4);
             this.Controls.Add(this.lblError3);
@@ -408,5 +425,6 @@
         private System.Windows.Forms.Label lblError3;
         private System.Windows.Forms.Label lblError4;
         private System.Windows.Forms.Label lblError5;
+        private System.Windows.Forms.CheckBox chkShowPass;
     }
 }

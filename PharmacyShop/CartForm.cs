@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -60,11 +61,8 @@ namespace PharmacyShop
                 {
                     lblTotalPay.Text = $"優惠價: ${sum}";
                 }
-                else
-                {
-                    lblTotalPay.Text = $"${sum}";
-                }
             }
+            lblTotalPay.Text = $"${sum}";
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -178,10 +176,11 @@ namespace PharmacyShop
                         MessageBox.Show("你用不到這麼多", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
                 }
-                if ((cbxOnSale.SelectedIndex == 0) && (ProdQty >= 2))
+                if ((cbxOnSale.SelectedIndex == 0) && (ProdQty >= 2) || 購物清單.Items.Contains(item))
                 {
                     double price = Convert.ToDouble(ProdPrice * 0.75);
                     item[2] = (int)Math.Round(price, MidpointRounding.AwayFromZero);
+                    TotalPrice();
                 }
             }
         }
