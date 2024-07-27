@@ -187,12 +187,27 @@ namespace PharmacyShop
                         return;
                     }
 
-                    // 添加商品到購物車
-                    ArrayList listProdAll = new ArrayList();
-                    listProdAll.Add(txtProd.Text);
-                    listProdAll.Add(qty);
-                    listProdAll.Add(sumprice);
-                    GlobalVar.listProductCollection.Add(listProdAll);
+                    // 檢查裡面有沒有重複商品，有的話qty+qty
+                    bool found = false;
+                    foreach (ArrayList item in GlobalVar.listProductCollection)
+                    {
+                        if (item[0].ToString() == txtProd.Text)
+                        {
+                            item[1] = (int)item[1] + qty;
+                            item[2] = (int)item[2] + sumprice;
+                            found = true;
+                            break;
+                        }
+                    }
+                    //沒有重複再加進去
+                    if (!found)
+                    {
+                        ArrayList listProdAll = new ArrayList();
+                        listProdAll.Add(txtProd.Text);
+                        listProdAll.Add(qty);
+                        listProdAll.Add(sumprice);
+                        GlobalVar.listProductCollection.Add(listProdAll);
+                    }
 
                     int ProdID = (int)selectRow.Cells["id"].Value;
                     string updatequery = $"update {table} set qty = qty - @qty where id = @ProdID";

@@ -57,10 +57,6 @@ namespace PharmacyShop
                 int ProdQty = (int)item[1];
                 int price = (int)item[2];
                 sum += price;
-                if ((cbxOnSale.SelectedIndex == 0) && (ProdQty >= 2))
-                {
-                    lblTotalPay.Text = $"優惠價: ${sum}";
-                }
             }
             lblTotalPay.Text = $"${sum}";
         }
@@ -182,11 +178,6 @@ namespace PharmacyShop
                     item[2] = (int)Math.Round(price, MidpointRounding.AwayFromZero);
                 }
             }
-        }
-
-        private void 購物清單_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
