@@ -176,13 +176,17 @@ namespace PharmacyShop
                         MessageBox.Show("你用不到這麼多", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
                 }
-                if ((cbxOnSale.SelectedIndex == 0) && (ProdQty >= 2) || 購物清單.Items.Contains(item))
+                if ((cbxOnSale.SelectedIndex == 0) && (ProdQty >= 2))
                 {
                     double price = Convert.ToDouble(ProdPrice * 0.75);
                     item[2] = (int)Math.Round(price, MidpointRounding.AwayFromZero);
-                    TotalPrice();
                 }
             }
+        }
+
+        private void 購物清單_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

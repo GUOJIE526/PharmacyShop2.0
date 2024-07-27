@@ -216,6 +216,7 @@
             this.購物清單.Name = "購物清單";
             this.購物清單.Size = new System.Drawing.Size(576, 290);
             this.購物清單.TabIndex = 23;
+            this.購物清單.SelectedIndexChanged += new System.EventHandler(this.購物清單_SelectedIndexChanged);
             // 
             // label4
             // 
