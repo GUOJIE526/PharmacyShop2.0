@@ -176,6 +176,7 @@ namespace PharmacyShop
                 {
                     double price = Convert.ToDouble(ProdPrice * 0.75);
                     item[2] = (int)Math.Round(price, MidpointRounding.AwayFromZero);
+                    break;
                 }
             }
         }
