@@ -29,18 +29,17 @@ namespace PharmacyShop
         private void CartForm_Load(object sender, EventArgs e)
         {
             lblUser.Text = GlobalVar.User;
-            listOnSale.Add("第二件75折");
+            listOnSale.Add("第二件半價");
             listOnSale.Add("岡本買一送一");
             foreach (string item in listOnSale)
             {
                 cbxOnSale.Items.Add(item);
-            }
+            } 
 
-            cbxOnSale.SelectedIndex = 0;
-            OnSale = listOnSale[cbxOnSale.SelectedIndex];
+            //cbxOnSale.SelectedIndex = 0;
+            //OnSale = listOnSale[cbxOnSale.SelectedIndex];
             foreach (ArrayList item in GlobalVar.listProductCollection)
             {
-                //MessageBox.Show($"Item Structure: {item[0]}, {item[1]}, {item[2]}");
                 string ProdName = (string)item[0];
                 int ProdQty = (int)item[1];
                 int ProdPrice = (int)item[2];
@@ -54,11 +53,19 @@ namespace PharmacyShop
             int sum = 0;
             foreach (ArrayList item in GlobalVar.listProductCollection)
             {
-                int ProdQty = (int)item[1];
-                int price = (int)item[2];
-                sum += price;
+                sum += (int)item[2];
             }
             lblTotalPay.Text = $"${sum}";
+        }
+
+        void OnSalePrice()
+        {
+            double sum = 0;
+            foreach (ArrayList item in GlobalVar.listProductCollection)
+            {
+                sum += (int)item[2] * 0.75;
+            }
+            lblTotalPay.Text = $"優惠價: ${Math.Round(sum, MidpointRounding.AwayFromZero)}";
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -172,13 +179,12 @@ namespace PharmacyShop
                         MessageBox.Show("你用不到這麼多", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
                 }
-                if ((cbxOnSale.SelectedIndex == 0) && (ProdQty >= 2))
-                {
-                    double price = Convert.ToDouble(ProdPrice * 0.75);
-                    item[2] = (int)Math.Round(price, MidpointRounding.AwayFromZero);
-                    break;
-                }
+            }
+            if (cbxOnSale.SelectedIndex == 0)
+            {
+                OnSalePrice();
             }
         }
+
     }
 }

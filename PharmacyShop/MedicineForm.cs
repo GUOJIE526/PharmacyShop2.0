@@ -189,6 +189,7 @@ namespace PharmacyShop
                     }
 
                     // 檢查裡面有沒有重複商品，有的話qty+qty
+                    // 檢查裡面有沒有重複商品，有的話qty+qty
                     bool found = false;
                     foreach (ArrayList item in GlobalVar.listProductCollection)
                     {

@@ -281,9 +281,9 @@
         public Guna.UI2.WinForms.Guna2GradientButton btnDelete;
         public Guna.UI2.WinForms.Guna2GradientButton btnDeleteAll;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbxOnSale;
         private System.Windows.Forms.ListBox 購物清單;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblUser;
+        public System.Windows.Forms.ComboBox cbxOnSale;
     }
 }

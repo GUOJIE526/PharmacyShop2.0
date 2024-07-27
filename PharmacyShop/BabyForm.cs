@@ -16,8 +16,6 @@ namespace PharmacyShop
     public partial class BabyForm : Form
     {
         SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
-        List<string> listProd = new List<string>();
-        List<int> listPdPrice = new List<int>();
         Guna2DataGridView gridView1 = new Guna2DataGridView();
         Guna2DataGridView gridView2 = new Guna2DataGridView();
         int qty = 0;
