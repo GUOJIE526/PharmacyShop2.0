@@ -64,13 +64,16 @@ namespace PharmacyShop
             {
                 int qty = (int)item[1];
                 int price = (int)item[2];
-                double singlePrice = price / qty;
 
-                if (qty >= 2)
+                if (qty >= 2 && qty % 2 == 0)
                 {
-                    int newqty = qty / 2;
-                    int totalqty = qty - newqty;
-                    sum += ((newqty * singlePrice * 0.5) + (totalqty * singlePrice));
+                    sum += price * 0.75;
+                }
+                else if(qty >= 2 && qty % 2 != 0)
+                {
+                    int singleprice = price / qty;
+                    int evenQtyPrice = price - singleprice;
+                    sum += (evenQtyPrice * 0.75) + singleprice;
                 }
                 else
                 {
@@ -175,13 +178,20 @@ namespace PharmacyShop
                         string ProdName = (string)item[0];
                         int Prodqty = (int)item[1];
                         int ProdPrice = (int)item[2];
-                        double singleprice = ProdPrice / Prodqty; 
-                        if (Prodqty >= 2)
+                        double sum = 0;
+                        if (Prodqty >= 2 && Prodqty % 2 == 0)
                         {
-                            int newqty = Prodqty / 2;
-                            int totalqty = Prodqty - newqty;
-                            double sum = ((newqty * singleprice * 0.5) + (totalqty * singleprice));
-                            ProdPrice = Convert.ToInt32(sum);
+                            ProdPrice = Convert.ToInt32(Math.Round(sum += ProdPrice * 0.75, MidpointRounding.AwayFromZero));
+                        }
+                        else if (Prodqty >= 2 && Prodqty % 2 != 0)
+                        {
+                            int singleprice = ProdPrice / Prodqty;
+                            int evenQtyPrice = ProdPrice - singleprice;
+                            ProdPrice = Convert.ToInt32(Math.Round(sum += (evenQtyPrice * 0.75) + singleprice, MidpointRounding.AwayFromZero));
+                        }
+                        else
+                        {
+                            sum += ProdPrice;
                         }
 
                         int userid = GlobalVar.id;
