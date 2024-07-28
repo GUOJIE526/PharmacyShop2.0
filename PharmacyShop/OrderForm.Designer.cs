@@ -170,6 +170,7 @@
             this.lbl會員中心.TabIndex = 9;
             this.lbl會員中心.Text = "會員中心";
             this.lbl會員中心.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl會員中心.Click += new System.EventHandler(this.lbl會員中心_Click);
             // 
             // label6
             // 

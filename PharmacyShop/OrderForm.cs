@@ -109,5 +109,10 @@ namespace PharmacyShop
         {
             btnMedicine.BackColor = SystemColors.Control;
         }
+
+        private void lbl會員中心_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

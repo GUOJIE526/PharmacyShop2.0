@@ -62,9 +62,22 @@ namespace PharmacyShop
             double sum = 0;
             foreach (ArrayList item in GlobalVar.listProductCollection)
             {
-                sum += (int)item[2] * 0.75;
+                int qty = (int)item[1];
+                int price = (int)item[2];
+                double singlePrice = price / qty;
+
+                if (qty >= 2)
+                {
+                    int newqty = qty / 2;
+                    int totalqty = qty - newqty;
+                    sum += ((newqty * singlePrice * 0.5) + (totalqty * singlePrice));
+                }
+                else
+                {
+                    sum += price;
+                }
             }
-            lblTotalPay.Text = $"優惠價: ${Math.Round(sum, MidpointRounding.AwayFromZero)}";
+            lblTotalPay.Text = $"${Math.Round(sum, MidpointRounding.AwayFromZero)}";
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -89,7 +102,7 @@ namespace PharmacyShop
         {
             GlobalVar.listProductCollection.Clear();
             購物清單.Items.Clear();
-            TotalPrice();
+            OnSalePrice();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -99,7 +112,7 @@ namespace PharmacyShop
                 int select = 購物清單.SelectedIndex;
                 購物清單.Items.RemoveAt(select);
                 GlobalVar.listProductCollection.RemoveAt(select);
-                TotalPrice();
+                OnSalePrice();
             }
             else
             {
@@ -158,10 +171,19 @@ namespace PharmacyShop
                 {
                     conn.Open();
                     foreach (ArrayList item in GlobalVar.listProductCollection)
-                    {
+                    {//記錄優惠後的價格
                         string ProdName = (string)item[0];
                         int Prodqty = (int)item[1];
                         int ProdPrice = (int)item[2];
+                        double singleprice = ProdPrice / Prodqty; 
+                        if (Prodqty >= 2)
+                        {
+                            int newqty = Prodqty / 2;
+                            int totalqty = Prodqty - newqty;
+                            double sum = ((newqty * singleprice * 0.5) + (totalqty * singleprice));
+                            ProdPrice = Convert.ToInt32(sum);
+                        }
+
                         int userid = GlobalVar.id;
                         string query = $"insert into historycart (name, qty, price, cust_id, buydate) values (@ProdName, @Prodqty, @ProdPrice, @userid, @date)";
                         DateTime date = DateTime.Today;
@@ -182,7 +204,7 @@ namespace PharmacyShop
                     }
                     GlobalVar.listProductCollection.Clear();
                     購物清單.Items.Clear();
-                    TotalPrice();
+                    OnSalePrice();
                 }
             }
             catch (Exception ex)

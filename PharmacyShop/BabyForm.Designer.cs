@@ -234,6 +234,7 @@
             this.dataMilk.ReadOnly = true;
             this.dataMilk.RowHeadersVisible = false;
             this.dataMilk.RowTemplate.Height = 50;
+            this.dataMilk.RowTemplate.ReadOnly = true;
             this.dataMilk.Size = new System.Drawing.Size(862, 377);
             this.dataMilk.TabIndex = 0;
             this.dataMilk.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -301,6 +302,7 @@
             this.dataDiaper.ReadOnly = true;
             this.dataDiaper.RowHeadersVisible = false;
             this.dataDiaper.RowTemplate.Height = 50;
+            this.dataDiaper.RowTemplate.ReadOnly = true;
             this.dataDiaper.Size = new System.Drawing.Size(862, 377);
             this.dataDiaper.TabIndex = 0;
             this.dataDiaper.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;

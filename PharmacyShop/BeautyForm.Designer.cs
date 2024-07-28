@@ -113,6 +113,7 @@
             this.dataBeauty.ReadOnly = true;
             this.dataBeauty.RowHeadersVisible = false;
             this.dataBeauty.RowTemplate.Height = 50;
+            this.dataBeauty.RowTemplate.ReadOnly = true;
             this.dataBeauty.Size = new System.Drawing.Size(867, 377);
             this.dataBeauty.TabIndex = 0;
             this.dataBeauty.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -180,6 +181,7 @@
             this.dataPerfume.ReadOnly = true;
             this.dataPerfume.RowHeadersVisible = false;
             this.dataPerfume.RowTemplate.Height = 50;
+            this.dataPerfume.RowTemplate.ReadOnly = true;
             this.dataPerfume.Size = new System.Drawing.Size(872, 377);
             this.dataPerfume.TabIndex = 0;
             this.dataPerfume.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
