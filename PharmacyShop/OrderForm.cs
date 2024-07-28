@@ -18,14 +18,16 @@ namespace PharmacyShop
     {
         private Form1 login;
         private string username;
+        private int id;
         SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
 
 
-        public OrderForm(Form1 login, string username)
+        public OrderForm(Form1 login, string username, int id)
         {
             InitializeComponent();
             this.login = login;
             this.username = username;
+            this.id = id;
         }
 
         public Drag drag;
@@ -60,7 +62,7 @@ namespace PharmacyShop
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-            CartForm cart = new CartForm(username);
+            CartForm cart = new CartForm(username, id);
             cart.ShowDialog();
         }
 

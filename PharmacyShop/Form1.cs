@@ -51,9 +51,9 @@ namespace PharmacyShop
                     conn.Open();
                     string username = txtUser.Text.Trim();
                     string password = txtPass.Text.Trim();
-                    string sqlselect = @"select 'customer' as userType, * from customer where name = @username and password = @password 
+                    string sqlselect = @"select 'customer' as userType, id, name from customer where name = @username and password = @password 
                       UNION 
-                      select 'employee' as userType, * from employee where name = @username and password = @password";
+                      select 'employee' as userType, id, name from employee where name = @username and password = @password";
                     using (SqlCommand cmd = new SqlCommand(sqlselect, conn))
                     {
                         cmd.Parameters.AddWithValue("@username", username);
@@ -64,16 +64,19 @@ namespace PharmacyShop
                             {
                                 reader.Read();
                                 string userType = reader["userType"].ToString();
+                                int userid = (int)reader["id"];
                                 MessageBox.Show("登入成功，將為您轉跳...", "登入", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 
+                                GlobalVar.id = userid;
+
                                 if(userType == "customer")
                                 {
-                                    OrderForm order = new OrderForm(this, username);
+                                    OrderForm order = new OrderForm(this, username, userid);
                                     order.Show();
                                 }
                                 else if (userType == "employee")
                                 {
-                                    MangementForm mgr = new MangementForm(this, username);
+                                    MangementForm mgr = new MangementForm(this, username, userid);
                                     mgr.Show();
                                 }
                                 this.Hide();

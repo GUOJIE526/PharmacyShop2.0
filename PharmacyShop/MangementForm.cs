@@ -14,12 +14,14 @@ namespace PharmacyShop
     {
         private Form1 login;
         private string username;
+        private int id;
         public Drag drag;
-        public MangementForm(Form1 login, string username)
+        public MangementForm(Form1 login, string username, int id)
         {
             InitializeComponent();
             this.login = login;
             this.username = username;
+            this.id = id;
         }
 
         private void MangementForm_Load(object sender, EventArgs e)

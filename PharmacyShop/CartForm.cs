@@ -20,10 +20,11 @@ namespace PharmacyShop
         SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
         List<string> listOnSale = new List<string>();
         string OnSale = "";
-        public CartForm(string user)
+        public CartForm(string user, int id)
         {
             InitializeComponent();
             GlobalVar.User = user;
+            GlobalVar.id = id;
         }
 
         private void CartForm_Load(object sender, EventArgs e)
@@ -36,8 +37,6 @@ namespace PharmacyShop
                 cbxOnSale.Items.Add(item);
             } 
 
-            //cbxOnSale.SelectedIndex = 0;
-            //OnSale = listOnSale[cbxOnSale.SelectedIndex];
             foreach (ArrayList item in GlobalVar.listProductCollection)
             {
                 string ProdName = (string)item[0];
@@ -152,10 +151,46 @@ namespace PharmacyShop
             list訂單輸出.Add("===================================");
             list訂單輸出.Add("************ 謝謝光臨 **************");
             System.IO.File.WriteAllLines(FullSavePath, list訂單輸出, Encoding.UTF8);
-            GlobalVar.listProductCollection.Clear();
-            購物清單.Items.Clear();
-            TotalPrice();
-            MessageBox.Show("訂購單儲存成功", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //輸出資料表
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                    foreach (ArrayList item in GlobalVar.listProductCollection)
+                    {
+                        string ProdName = (string)item[0];
+                        int Prodqty = (int)item[1];
+                        int ProdPrice = (int)item[2];
+                        int userid = GlobalVar.id;
+                        string query = $"insert into historycart (name, qty, price, cust_id, buydate) values (@ProdName, @Prodqty, @ProdPrice, @userid, @date)";
+                        DateTime date = DateTime.Today;
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@ProdName", ProdName);
+                        cmd.Parameters.AddWithValue("@Prodqty", Prodqty);
+                        cmd.Parameters.AddWithValue("@ProdPrice", ProdPrice);
+                        cmd.Parameters.AddWithValue("@userid", userid);
+                        cmd.Parameters.AddWithValue("@date", date);
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            MessageBox.Show("訂購單儲存成功", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("訂購單儲存失敗", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    GlobalVar.listProductCollection.Clear();
+                    購物清單.Items.Clear();
+                    TotalPrice();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally { conn.Close(); }
+
         }
 
         private void cbxOnSale_SelectedIndexChanged(object sender, EventArgs e)
