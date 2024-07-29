@@ -72,7 +72,7 @@
             this.pnlside.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlside.Location = new System.Drawing.Point(0, 0);
             this.pnlside.Name = "pnlside";
-            this.pnlside.Size = new System.Drawing.Size(158, 664);
+            this.pnlside.Size = new System.Drawing.Size(158, 744);
             this.pnlside.TabIndex = 2;
             // 
             // label3
@@ -139,7 +139,7 @@
             this.pnlHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlHome.Location = new System.Drawing.Point(158, 0);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(1039, 664);
+            this.pnlHome.Size = new System.Drawing.Size(1202, 744);
             this.pnlHome.TabIndex = 3;
             // 
             // panel5
@@ -153,9 +153,9 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.btnLogout);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 639);
+            this.panel5.Location = new System.Drawing.Point(0, 719);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1039, 25);
+            this.panel5.Size = new System.Drawing.Size(1202, 25);
             this.panel5.TabIndex = 7;
             // 
             // lbl會員中心
@@ -164,7 +164,7 @@
             this.lbl會員中心.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl會員中心.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbl會員中心.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl會員中心.Location = new System.Drawing.Point(641, 0);
+            this.lbl會員中心.Location = new System.Drawing.Point(804, 0);
             this.lbl會員中心.Name = "lbl會員中心";
             this.lbl會員中心.Size = new System.Drawing.Size(80, 25);
             this.lbl會員中心.TabIndex = 9;
@@ -177,7 +177,7 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label6.Location = new System.Drawing.Point(721, 0);
+            this.label6.Location = new System.Drawing.Point(884, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 25);
             this.label6.TabIndex = 8;
@@ -189,7 +189,7 @@
             this.lblUser.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblUser.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lblUser.Location = new System.Drawing.Point(781, 0);
+            this.lblUser.Location = new System.Drawing.Point(944, 0);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(60, 25);
             this.lblUser.TabIndex = 7;
@@ -200,7 +200,7 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(841, 0);
+            this.label4.Location = new System.Drawing.Point(1004, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 25);
             this.label4.TabIndex = 6;
@@ -212,7 +212,7 @@
             this.btnCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCart.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCart.Image = ((System.Drawing.Image)(resources.GetObject("btnCart.Image")));
-            this.btnCart.Location = new System.Drawing.Point(901, 0);
+            this.btnCart.Location = new System.Drawing.Point(1064, 0);
             this.btnCart.Name = "btnCart";
             this.btnCart.Size = new System.Drawing.Size(47, 25);
             this.btnCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -225,7 +225,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(948, 0);
+            this.label2.Location = new System.Drawing.Point(1111, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 25);
             this.label2.TabIndex = 4;
@@ -237,7 +237,7 @@
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(1000, 0);
+            this.btnLogout.Location = new System.Drawing.Point(1163, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(39, 25);
             this.btnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -248,11 +248,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Viner Hand ITC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Viner Hand ITC", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(307, 0);
+            this.label1.Location = new System.Drawing.Point(369, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(414, 44);
+            this.label1.Size = new System.Drawing.Size(439, 47);
             this.label1.TabIndex = 4;
             this.label1.Text = "Welcome to PAPA Pharmacy";
             // 
@@ -260,7 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 664);
+            this.ClientSize = new System.Drawing.Size(1360, 744);
             this.Controls.Add(this.pnlHome);
             this.Controls.Add(this.pnlside);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

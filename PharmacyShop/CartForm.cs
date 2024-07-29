@@ -37,7 +37,7 @@ namespace PharmacyShop
             strDBConnectionString = scsb.ConnectionString.ToString();
 
             lblUser.Text = GlobalVar.User;
-            listOnSale.Add("第二件半價");
+            listOnSale.Add("同商品第二件半價");
             listOnSale.Add("岡本買一送一");
             foreach (string item in listOnSale)
             {
@@ -165,8 +165,15 @@ namespace PharmacyShop
                 string ProdName = (string)item[0];
                 int Prodqty = (int)item[1];
                 int ProdPrice = (int)item[2];
-
-                list訂單輸出.Add($"{ProdName}    {Prodqty}件    ${ProdPrice}");
+                if(ProdName == "【Okamoto岡本】 002 Hydro水感勁薄")
+                {
+                    list訂單輸出.Add($"{ProdName}    {Prodqty}件    ${ProdPrice}");
+                    list訂單輸出.Add("【Okamoto岡本】 002 Hydro水感勁薄    1件    $FREE");
+                }
+                else
+                {
+                    list訂單輸出.Add($"{ProdName}    {Prodqty}件    ${ProdPrice}");
+                }
             }
             list訂單輸出.Add("=====================================");
             list訂單輸出.Add("-------------------------------------");
