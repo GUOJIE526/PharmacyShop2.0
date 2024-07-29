@@ -61,7 +61,7 @@ namespace PharmacyShop
 
         private void dataBeauty_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataBeauty.SelectedRows.Count > 0 && dataBeauty.SelectedRows[0].Cells[1] != null && dataBeauty.SelectedRows[0].Cells[2] != null && dataBeauty.SelectedRows[0].Cells[3] != null)
+            if (dataBeauty.SelectedRows.Count > 0)
             {
                 txtProd.Text = dataBeauty.SelectedRows[0].Cells[1].Value.ToString();
                 try
@@ -78,7 +78,7 @@ namespace PharmacyShop
 
         private void dataPerfume_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataPerfume.SelectedRows.Count > 0 && dataPerfume.SelectedRows[0].Cells[1] != null && dataPerfume.SelectedRows[0].Cells[2] != null && dataPerfume.SelectedRows[0].Cells[3] != null)
+            if (dataPerfume.SelectedRows.Count > 0)
             {
                 txtProd.Text = dataPerfume.SelectedRows[0].Cells[1].Value.ToString();
                 try
