@@ -213,13 +213,14 @@ namespace PharmacyShop
                         cmd.Parameters.AddWithValue("@date", date);
                         if (cmd.ExecuteNonQuery() > 0)
                         {
-                            MessageBox.Show("訂購單儲存成功", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         }
                         else
                         {
                             MessageBox.Show("訂購單儲存失敗", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+                    MessageBox.Show("訂購單傳送成功", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GlobalVar.listProductCollection.Clear();
                     購物清單.Items.Clear();
                     OnSalePrice();

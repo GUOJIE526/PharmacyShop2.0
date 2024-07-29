@@ -63,10 +63,10 @@ namespace PharmacyShop
         {
             if (dataBeauty.SelectedRows.Count > 0 && dataBeauty.SelectedRows[0].Cells[1] != null && dataBeauty.SelectedRows[0].Cells[2] != null && dataBeauty.SelectedRows[0].Cells[3] != null)
             {
-                txtProd.Text = dataBeauty.SelectedRows[0].Cells[2].Value.ToString();
+                txtProd.Text = dataBeauty.SelectedRows[0].Cells[1].Value.ToString();
                 try
                 {
-                    price = Convert.ToInt32(dataBeauty.SelectedRows[0].Cells[3].Value);
+                    price = Convert.ToInt32(dataBeauty.SelectedRows[0].Cells[2].Value);
                     UpdateSumPrice();
                 }
                 catch (InvalidCastException)
@@ -80,10 +80,10 @@ namespace PharmacyShop
         {
             if (dataPerfume.SelectedRows.Count > 0 && dataPerfume.SelectedRows[0].Cells[1] != null && dataPerfume.SelectedRows[0].Cells[2] != null && dataPerfume.SelectedRows[0].Cells[3] != null)
             {
-                txtProd.Text = dataPerfume.SelectedRows[0].Cells[2].Value.ToString();
+                txtProd.Text = dataPerfume.SelectedRows[0].Cells[1].Value.ToString();
                 try
                 {
-                    price = Convert.ToInt32(dataPerfume.SelectedRows[0].Cells[3].Value);
+                    price = Convert.ToInt32(dataPerfume.SelectedRows[0].Cells[2].Value);
                     UpdateSumPrice();
                 }
                 catch (InvalidCastException)

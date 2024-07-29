@@ -38,9 +38,9 @@ namespace PharmacyShop
             strDBConnectionString = scsb.ConnectionString.ToString();
 
             gridView1 = dataMilk;
-            product.ShowData("milks", gridView1);
+            product.ShowData("milk", gridView1);
             gridView2 = dataDiaper;
-            product.ShowData("diapers", gridView2);
+            product.ShowData("diaper", gridView2);
 
             //預設
             qty = 1;
@@ -56,12 +56,12 @@ namespace PharmacyShop
 
         private void dataMilk_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataMilk.SelectedRows.Count > 0 && dataMilk.SelectedRows[0].Cells[1] != null && dataMilk.SelectedRows[0].Cells[2] != null && dataMilk.SelectedRows[0].Cells[3] != null)
+            if (dataMilk.SelectedRows.Count > 0)
             {
-                txtProd.Text = dataMilk.SelectedRows[0].Cells[2].Value.ToString();
+                txtProd.Text = dataMilk.SelectedRows[0].Cells[1].Value.ToString();
                 try
                 {
-                    price = Convert.ToInt32(dataMilk.SelectedRows[0].Cells[3].Value);
+                    price = Convert.ToInt32(dataMilk.SelectedRows[0].Cells[2].Value);
                     UpdateSumPrice();
                 }
                 catch (InvalidCastException)
@@ -73,12 +73,12 @@ namespace PharmacyShop
 
         private void dataDiaper_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataDiaper.SelectedRows.Count > 0 && dataDiaper.SelectedRows[0].Cells[1] != null && dataDiaper.SelectedRows[0].Cells[2] != null && dataDiaper.SelectedRows[0].Cells[3] != null)
+            if (dataDiaper.SelectedRows.Count > 0)
             {
-                txtProd.Text = dataDiaper.SelectedRows[0].Cells[2].Value.ToString();
+                txtProd.Text = dataDiaper.SelectedRows[0].Cells[1].Value.ToString();
                 try
                 {
-                    price = Convert.ToInt32(dataDiaper.SelectedRows[0].Cells[3].Value);
+                    price = Convert.ToInt32(dataDiaper.SelectedRows[0].Cells[2].Value);
                     UpdateSumPrice();
                 }
                 catch (InvalidCastException)
@@ -166,12 +166,12 @@ namespace PharmacyShop
                 if ((dataMilk.SelectedRows.Count > 0) && (tabBaby.SelectedTab == Milk))
                 {
                     selectRow = dataMilk.SelectedRows[0];
-                    table = "milks";//對應的資料表
+                    table = "milk";//對應的資料表
                 }
                 else if ((dataDiaper.SelectedRows.Count > 0) && (tabBaby.SelectedTab == Diaper))
                 {
                     selectRow = dataDiaper.SelectedRows[0];
-                    table = "diapers";//對應的資料表
+                    table = "diaper";//對應的資料表
                 }
 
                 if (selectRow != null && !string.IsNullOrEmpty(table))

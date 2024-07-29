@@ -62,10 +62,10 @@ namespace PharmacyShop
         {
             if (dataMed.SelectedRows.Count > 0 && dataMed.SelectedRows[0].Cells[1] != null && dataMed.SelectedRows[0].Cells[2] != null && dataMed.SelectedRows[0].Cells[3] != null)
             {
-                txtProd.Text = dataMed.SelectedRows[0].Cells[2].Value.ToString();
+                txtProd.Text = dataMed.SelectedRows[0].Cells[1].Value.ToString();
                 try
                 {
-                    price = Convert.ToInt32(dataMed.SelectedRows[0].Cells[3].Value);
+                    price = Convert.ToInt32(dataMed.SelectedRows[0].Cells[2].Value);
                     UpdateSumPrice();
                 }
                 catch (InvalidCastException)
@@ -79,10 +79,10 @@ namespace PharmacyShop
         {
             if (dataMM.SelectedRows.Count > 0 && dataMM.SelectedRows[0].Cells[1] != null && dataMM.SelectedRows[0].Cells[2] != null && dataMM.SelectedRows[0].Cells[3] != null)
             {
-                txtProd.Text = dataMM.SelectedRows[0].Cells[2].Value.ToString();
+                txtProd.Text = dataMM.SelectedRows[0].Cells[1].Value.ToString();
                 try
                 {
-                    price = Convert.ToInt32(dataMM.SelectedRows[0].Cells[3].Value);
+                    price = Convert.ToInt32(dataMM.SelectedRows[0].Cells[2].Value);
                     UpdateSumPrice();
                 }
                 catch (InvalidCastException)

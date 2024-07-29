@@ -13,28 +13,32 @@ namespace PharmacyShop
 {
     public class ProductClass
     {
-        private SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
+        SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
+        string strDBConnectionString = "";
+        
 
         public void ShowData(string tableName, Guna2DataGridView gridView)
         {
+            scsb.DataSource = @".";
+            scsb.InitialCatalog = "pharmacy";
+            scsb.IntegratedSecurity = true;
+            strDBConnectionString = scsb.ConnectionString.ToString();
+
+            SqlConnection conn = new SqlConnection(strDBConnectionString);
             try
             {
                 if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
                     string query = $"SELECT * FROM {tableName}";
-                    SqlDataAdapter sda = new SqlDataAdapter(query, conn);
-                    SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-                    var ds = new DataSet();
-                    sda.Fill(ds);
-                    gridView.DataSource = ds.Tables[0];
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader dr = cmd.ExecuteReader();
 
-                    foreach (DataGridViewColumn col in gridView.Columns)
+                    if (dr.HasRows)
                     {
-                        if (col is DataGridViewImageColumn imgcol)
-                        {
-                            imgcol.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                        }
+                        DataTable dt = new DataTable();
+                        dt.Load(dr);
+                        gridView.DataSource = dt;
                     }
                 }
             }
