@@ -64,6 +64,9 @@ namespace PharmacyShop
             if (dataBeauty.SelectedRows.Count > 0)
             {
                 txtProd.Text = dataBeauty.SelectedRows[0].Cells[1].Value.ToString();
+                picProd.Image = Image.FromFile(dataBeauty.SelectedRows[0].Cells[4].Value.ToString());
+                picProd.SizeMode = PictureBoxSizeMode.Zoom;
+
                 try
                 {
                     price = Convert.ToInt32(dataBeauty.SelectedRows[0].Cells[2].Value);
@@ -81,6 +84,9 @@ namespace PharmacyShop
             if (dataPerfume.SelectedRows.Count > 0)
             {
                 txtProd.Text = dataPerfume.SelectedRows[0].Cells[1].Value.ToString();
+                picProd.Image = Image.FromFile(dataPerfume.SelectedRows[0].Cells[4].Value.ToString());
+                picProd.SizeMode = PictureBoxSizeMode.Zoom;
+
                 try
                 {
                     price = Convert.ToInt32(dataPerfume.SelectedRows[0].Cells[2].Value);

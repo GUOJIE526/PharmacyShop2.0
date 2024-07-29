@@ -59,6 +59,8 @@ namespace PharmacyShop
             if (dataMilk.SelectedRows.Count > 0)
             {
                 txtProd.Text = dataMilk.SelectedRows[0].Cells[1].Value.ToString();
+                picProd.Image = Image.FromFile(dataMilk.SelectedRows[0].Cells[4].Value.ToString());
+                picProd.SizeMode = PictureBoxSizeMode.Zoom;
                 try
                 {
                     price = Convert.ToInt32(dataMilk.SelectedRows[0].Cells[2].Value);
@@ -76,6 +78,9 @@ namespace PharmacyShop
             if (dataDiaper.SelectedRows.Count > 0)
             {
                 txtProd.Text = dataDiaper.SelectedRows[0].Cells[1].Value.ToString();
+                picProd.Image = Image.FromFile(dataDiaper.SelectedRows[0].Cells[4].Value.ToString());
+                picProd.SizeMode = PictureBoxSizeMode.Zoom;
+
                 try
                 {
                     price = Convert.ToInt32(dataDiaper.SelectedRows[0].Cells[2].Value);
