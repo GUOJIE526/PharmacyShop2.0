@@ -17,7 +17,9 @@ namespace PharmacyShop
 {
     public partial class CartForm : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
+        SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
+        string strDBConnectionString = "";
+
         List<string> listOnSale = new List<string>();
         string OnSale = "";
         public CartForm(string user, int id)
@@ -29,6 +31,11 @@ namespace PharmacyShop
 
         private void CartForm_Load(object sender, EventArgs e)
         {
+            scsb.DataSource = @"."; //伺服器名稱
+            scsb.InitialCatalog = "pharmacy"; //資料庫名稱
+            scsb.IntegratedSecurity = true; //Windows驗證: true
+            strDBConnectionString = scsb.ConnectionString.ToString();
+
             lblUser.Text = GlobalVar.User;
             listOnSale.Add("第二件半價");
             listOnSale.Add("岡本買一送一");
@@ -168,6 +175,7 @@ namespace PharmacyShop
             list訂單輸出.Add("************ 謝謝光臨 **************");
             System.IO.File.WriteAllLines(FullSavePath, list訂單輸出, Encoding.UTF8);
             //輸出資料表
+            SqlConnection conn = new SqlConnection(strDBConnectionString);
             try
             {
                 if (conn.State != ConnectionState.Open)

@@ -14,7 +14,9 @@ namespace PharmacyShop
 {
     public partial class Form1 : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
+        SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
+        string strDBConnectionString = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -24,6 +26,11 @@ namespace PharmacyShop
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            scsb.DataSource = @"."; //伺服器名稱
+            scsb.InitialCatalog = "pharmacy"; //資料庫名稱
+            scsb.IntegratedSecurity = true; //Windows驗證: true
+            strDBConnectionString = scsb.ConnectionString.ToString();
+
             drag = new Drag(this);
             drag.setPanel(pnlTop);
         }
@@ -44,6 +51,7 @@ namespace PharmacyShop
             }
 
             //Customer login
+            SqlConnection conn = new SqlConnection(strDBConnectionString);
             try
             {
                 if (conn.State != ConnectionState.Open)
@@ -54,43 +62,41 @@ namespace PharmacyShop
                     string sqlselect = @"select 'customer' as userType, id, name from customer where name = @username and password = @password 
                       UNION 
                       select 'employee' as userType, id, name from employee where name = @username and password = @password";
-                    using (SqlCommand cmd = new SqlCommand(sqlselect, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@username", username);
-                        cmd.Parameters.AddWithValue("@password", password);
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.HasRows)
-                            {
-                                reader.Read();
-                                string userType = reader["userType"].ToString();
-                                int userid = (int)reader["id"];
-                                MessageBox.Show("登入成功，將為您轉跳...", "登入", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                
-                                GlobalVar.id = userid;
+                    SqlCommand cmd = new SqlCommand(sqlselect, conn);
+                    
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                                if(userType == "customer")
-                                {
-                                    OrderForm order = new OrderForm(this, username, userid);
-                                    order.Show();
-                                }
-                                else if (userType == "employee")
-                                {
-                                    MangementForm mgr = new MangementForm(this, username, userid);
-                                    mgr.Show();
-                                }
-                                this.Hide();
-                            }
-                            else
-                            {
-                                MessageBox.Show("帳號或密碼錯誤，請重新登入", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                txtUser.Text = "";
-                                txtPass.Text = "";
-                                txtUser.Focus();
-                            }
-                            reader.Close();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        string userType = reader["userType"].ToString();
+                        int userid = (int)reader["id"];
+                        MessageBox.Show("登入成功，將為您轉跳...", "登入", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        GlobalVar.id = userid;
+
+                        if (userType == "customer")
+                        {
+                            OrderForm order = new OrderForm(this, username, userid);
+                            order.Show();
                         }
+                        else if (userType == "employee")
+                        {
+                            MangementForm mgr = new MangementForm(this, username, userid);
+                            mgr.Show();
+                        }
+                        this.Hide();
                     }
+                    else
+                    {
+                        MessageBox.Show("帳號或密碼錯誤，請重新登入", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtUser.Text = "";
+                        txtPass.Text = "";
+                        txtUser.Focus();
+                    }
+                    reader.Close();
                 }
             }
             catch(Exception ex)

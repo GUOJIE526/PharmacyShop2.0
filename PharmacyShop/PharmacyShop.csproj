@@ -112,11 +112,6 @@
     <Compile Include="PayForm.Designer.cs">
       <DependentUpon>PayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="pharmacyDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>pharmacyDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ProductClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,17 +158,6 @@
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="pharmacyDataSet.xsc">
-      <DependentUpon>pharmacyDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="pharmacyDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>pharmacyDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="pharmacyDataSet.xss">
-      <DependentUpon>pharmacyDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

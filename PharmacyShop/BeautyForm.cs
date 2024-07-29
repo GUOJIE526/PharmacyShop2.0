@@ -15,8 +15,8 @@ namespace PharmacyShop
 {
     public partial class BeautyForm : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
-
+        SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
+        string strDBConnectionString = "";
         List<string> listProd = new List<string>();
         List<int> listPdPrice = new List<int>();
         Guna2DataGridView gridView1 = new Guna2DataGridView();
@@ -35,6 +35,11 @@ namespace PharmacyShop
 
         private void BeautyForm_Load(object sender, EventArgs e)
         {
+            scsb.DataSource = @"."; //伺服器名稱
+            scsb.InitialCatalog = "pharmacy"; //資料庫名稱
+            scsb.IntegratedSecurity = true; //Windows驗證: true
+            strDBConnectionString = scsb.ConnectionString.ToString();
+
             gridView1 = dataBeauty;
             product.ShowData("beauty", dataBeauty);
             gridView2 = dataPerfume;
@@ -211,7 +216,8 @@ namespace PharmacyShop
 
                     int ProdID = (int)selectRow.Cells["id"].Value;
                     string updatequery = $"update {table} set qty = qty - @qty where id = @ProdID";
-
+                    
+                    SqlConnection conn = new SqlConnection(strDBConnectionString);
                     try
                     {
                         if (conn.State != ConnectionState.Open)
