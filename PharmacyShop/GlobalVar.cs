@@ -12,6 +12,7 @@ namespace PharmacyShop
     {
         public static string User = "";
         public static int id = 0;
+        public static string strDBConnectionString = "";
         public static List<ArrayList> listProductCollection = new List<ArrayList>();
     }
 }

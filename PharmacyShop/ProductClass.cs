@@ -13,18 +13,10 @@ namespace PharmacyShop
 {
     public class ProductClass
     {
-        SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-        string strDBConnectionString = "";
-        
-
         public void ShowData(string tableName, Guna2DataGridView gridView)
         {
-            scsb.DataSource = @".";
-            scsb.InitialCatalog = "pharmacy";
-            scsb.IntegratedSecurity = true;
-            strDBConnectionString = scsb.ConnectionString.ToString();
 
-            SqlConnection conn = new SqlConnection(strDBConnectionString);
+            SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
             try
             {
                 if (conn.State != ConnectionState.Open)

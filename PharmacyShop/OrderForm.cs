@@ -19,8 +19,6 @@ namespace PharmacyShop
         private Form1 login;
         private string username;
         private int id;
-        SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
-
 
         public OrderForm(Form1 login, string username, int id)
         {
@@ -36,6 +34,7 @@ namespace PharmacyShop
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
+            GlobalVar.id = (int)id;
             drag = new Drag(this);
             drag.setPanel(pnlHome);
             drag.setPanel(pnlside);
@@ -112,7 +111,7 @@ namespace PharmacyShop
 
         private void lbl會員中心_Click(object sender, EventArgs e)
         {
-
+            open.openForm(new CustCenter(), pnlHome);
         }
     }
 }

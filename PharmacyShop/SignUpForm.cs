@@ -14,8 +14,6 @@ namespace PharmacyShop
 {
     public partial class SignUpForm : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=pharmacy;Integrated Security=True;Encrypt=False");
-        
         public SignUpForm()
         {
             InitializeComponent();
@@ -111,6 +109,7 @@ namespace PharmacyShop
             }
             else
             {
+                SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
                 if (conn.State != ConnectionState.Open)
                 {
                     try

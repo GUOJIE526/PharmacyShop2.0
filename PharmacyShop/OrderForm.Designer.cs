@@ -153,9 +153,9 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.btnLogout);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 719);
+            this.panel5.Location = new System.Drawing.Point(0, 706);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1202, 25);
+            this.panel5.Size = new System.Drawing.Size(1202, 38);
             this.panel5.TabIndex = 7;
             // 
             // lbl會員中心
@@ -166,7 +166,7 @@
             this.lbl會員中心.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbl會員中心.Location = new System.Drawing.Point(804, 0);
             this.lbl會員中心.Name = "lbl會員中心";
-            this.lbl會員中心.Size = new System.Drawing.Size(80, 25);
+            this.lbl會員中心.Size = new System.Drawing.Size(80, 38);
             this.lbl會員中心.TabIndex = 9;
             this.lbl會員中心.Text = "會員中心";
             this.lbl會員中心.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,7 +179,7 @@
             this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label6.Location = new System.Drawing.Point(884, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 25);
+            this.label6.Size = new System.Drawing.Size(60, 38);
             this.label6.TabIndex = 8;
             this.label6.Text = "歡迎";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -191,7 +191,7 @@
             this.lblUser.ForeColor = System.Drawing.Color.BlueViolet;
             this.lblUser.Location = new System.Drawing.Point(944, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(60, 25);
+            this.lblUser.Size = new System.Drawing.Size(60, 38);
             this.lblUser.TabIndex = 7;
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -202,7 +202,7 @@
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Location = new System.Drawing.Point(1004, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 25);
+            this.label4.Size = new System.Drawing.Size(60, 38);
             this.label4.TabIndex = 6;
             this.label4.Text = "購物車";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -214,7 +214,7 @@
             this.btnCart.Image = ((System.Drawing.Image)(resources.GetObject("btnCart.Image")));
             this.btnCart.Location = new System.Drawing.Point(1064, 0);
             this.btnCart.Name = "btnCart";
-            this.btnCart.Size = new System.Drawing.Size(47, 25);
+            this.btnCart.Size = new System.Drawing.Size(47, 38);
             this.btnCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCart.TabIndex = 5;
             this.btnCart.TabStop = false;
@@ -227,7 +227,7 @@
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label2.Location = new System.Drawing.Point(1111, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 25);
+            this.label2.Size = new System.Drawing.Size(52, 38);
             this.label2.TabIndex = 4;
             this.label2.Text = "登出";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -239,7 +239,7 @@
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.Location = new System.Drawing.Point(1163, 0);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(39, 25);
+            this.btnLogout.Size = new System.Drawing.Size(39, 38);
             this.btnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnLogout.TabIndex = 3;
             this.btnLogout.TabStop = false;

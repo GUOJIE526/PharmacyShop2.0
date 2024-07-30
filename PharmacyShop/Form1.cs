@@ -15,7 +15,6 @@ namespace PharmacyShop
     public partial class Form1 : Form
     {
         SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-        string strDBConnectionString = "";
 
         public Form1()
         {
@@ -29,7 +28,7 @@ namespace PharmacyShop
             scsb.DataSource = @"."; //伺服器名稱
             scsb.InitialCatalog = "pharmacy"; //資料庫名稱
             scsb.IntegratedSecurity = true; //Windows驗證: true
-            strDBConnectionString = scsb.ConnectionString.ToString();
+            GlobalVar.strDBConnectionString = scsb.ConnectionString.ToString();
 
             drag = new Drag(this);
             drag.setPanel(pnlTop);
@@ -51,7 +50,7 @@ namespace PharmacyShop
             }
 
             //Customer login
-            SqlConnection conn = new SqlConnection(strDBConnectionString);
+            SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
             try
             {
                 if (conn.State != ConnectionState.Open)

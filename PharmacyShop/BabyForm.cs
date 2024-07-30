@@ -15,8 +15,6 @@ namespace PharmacyShop
 {
     public partial class BabyForm : Form
     {
-        SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-        string strDBConnectionString = "";
         Guna2DataGridView gridView1 = new Guna2DataGridView();
         Guna2DataGridView gridView2 = new Guna2DataGridView();
         int qty = 0;
@@ -32,11 +30,6 @@ namespace PharmacyShop
 
         private void BabyForm_Load(object sender, EventArgs e)
         {
-            scsb.DataSource = @"."; //伺服器名稱
-            scsb.InitialCatalog = "pharmacy"; //資料庫名稱
-            scsb.IntegratedSecurity = true; //Windows驗證: true
-            strDBConnectionString = scsb.ConnectionString.ToString();
-
             gridView1 = dataMilk;
             product.ShowData("milk", gridView1);
             gridView2 = dataDiaper;
@@ -215,7 +208,7 @@ namespace PharmacyShop
                     int ProdID = (int)selectRow.Cells["id"].Value;
                     string updatequery = $"update {table} set qty = qty - @qty where id = @ProdID";
 
-                    SqlConnection conn = new SqlConnection(strDBConnectionString);
+                    SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
                     try
                     {
                         if (conn.State != ConnectionState.Open)
