@@ -35,11 +35,12 @@ namespace PharmacyShop
         private void OrderForm_Load(object sender, EventArgs e)
         {
             GlobalVar.id = (int)id;
+            GlobalVar.User = username;
             drag = new Drag(this);
             drag.setPanel(pnlHome);
             drag.setPanel(pnlside);
             open = new OpenForm();
-            lblUser.Text = $"{username}";
+            lblUser.Text = $"{GlobalVar.User}";
         }
 
 

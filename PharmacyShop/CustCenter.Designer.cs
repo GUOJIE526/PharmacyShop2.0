@@ -29,16 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustCenter));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnHistory = new System.Windows.Forms.Label();
-            this.btnCallus = new System.Windows.Forms.Label();
             this.btnCustInfo = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.PictureBox();
             this.DataHistory = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ShowPass = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblid = new System.Windows.Forms.Label();
+            this.lbluser = new System.Windows.Forms.Label();
+            this.lblpass = new System.Windows.Forms.Label();
+            this.lblemail = new System.Windows.Forms.Label();
+            this.lbladdress = new System.Windows.Forms.Label();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtphone = new System.Windows.Forms.TextBox();
+            this.lblphone = new System.Windows.Forms.Label();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPass)).BeginInit();
@@ -51,28 +63,12 @@
             this.btnHistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHistory.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnHistory.ForeColor = System.Drawing.Color.White;
-            this.btnHistory.Location = new System.Drawing.Point(193, 107);
-            this.btnHistory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btnHistory.Location = new System.Drawing.Point(145, 86);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(125, 37);
+            this.btnHistory.Size = new System.Drawing.Size(98, 28);
             this.btnHistory.TabIndex = 2;
             this.btnHistory.Text = "歷史訂單";
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
-            // 
-            // btnCallus
-            // 
-            this.btnCallus.AutoSize = true;
-            this.btnCallus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnCallus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCallus.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnCallus.ForeColor = System.Drawing.Color.White;
-            this.btnCallus.Location = new System.Drawing.Point(355, 107);
-            this.btnCallus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.btnCallus.Name = "btnCallus";
-            this.btnCallus.Size = new System.Drawing.Size(125, 37);
-            this.btnCallus.TabIndex = 3;
-            this.btnCallus.Text = "聯絡客服";
-            this.btnCallus.Click += new System.EventHandler(this.btnCallus_Click);
             // 
             // btnCustInfo
             // 
@@ -81,10 +77,9 @@
             this.btnCustInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustInfo.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCustInfo.ForeColor = System.Drawing.Color.White;
-            this.btnCustInfo.Location = new System.Drawing.Point(518, 107);
-            this.btnCustInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btnCustInfo.Location = new System.Drawing.Point(281, 86);
             this.btnCustInfo.Name = "btnCustInfo";
-            this.btnCustInfo.Size = new System.Drawing.Size(125, 37);
+            this.btnCustInfo.Size = new System.Drawing.Size(98, 28);
             this.btnCustInfo.TabIndex = 15;
             this.btnCustInfo.Text = "會員資料";
             this.btnCustInfo.Click += new System.EventHandler(this.btnCustInfo_Click);
@@ -93,10 +88,9 @@
             // 
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(44, 13);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReturn.Location = new System.Drawing.Point(33, 10);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(133, 62);
+            this.btnReturn.Size = new System.Drawing.Size(100, 50);
             this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnReturn.TabIndex = 16;
             this.btnReturn.TabStop = false;
@@ -104,36 +98,35 @@
             // 
             // DataHistory
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DataHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.DataHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DataHistory.ColumnHeadersHeight = 30;
             this.DataHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataHistory.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataHistory.DefaultCellStyle = dataGridViewCellStyle9;
             this.DataHistory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataHistory.Location = new System.Drawing.Point(595, 314);
-            this.DataHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataHistory.Location = new System.Drawing.Point(446, 251);
             this.DataHistory.Name = "DataHistory";
             this.DataHistory.ReadOnly = true;
             this.DataHistory.RowHeadersVisible = false;
             this.DataHistory.RowHeadersWidth = 51;
             this.DataHistory.RowTemplate.Height = 50;
             this.DataHistory.RowTemplate.ReadOnly = true;
-            this.DataHistory.Size = new System.Drawing.Size(955, 549);
+            this.DataHistory.Size = new System.Drawing.Size(716, 439);
             this.DataHistory.TabIndex = 17;
             this.DataHistory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataHistory.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -161,43 +154,219 @@
             // 
             this.ShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPass.Image = ((System.Drawing.Image)(resources.GetObject("ShowPass.Image")));
-            this.ShowPass.Location = new System.Drawing.Point(1027, 186);
-            this.ShowPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ShowPass.Location = new System.Drawing.Point(299, 394);
             this.ShowPass.Name = "ShowPass";
-            this.ShowPass.Size = new System.Drawing.Size(48, 36);
+            this.ShowPass.Size = new System.Drawing.Size(36, 29);
             this.ShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ShowPass.TabIndex = 19;
             this.ShowPass.TabStop = false;
+            this.ShowPass.Visible = false;
+            this.ShowPass.MouseLeave += new System.EventHandler(this.ShowPass_MouseLeave);
+            this.ShowPass.MouseHover += new System.EventHandler(this.ShowPass_MouseHover);
             // 
-            // label1
+            // lblid
             // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(693, 107);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 37);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "會員資料";
+            this.lblid.AutoSize = true;
+            this.lblid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblid.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblid.ForeColor = System.Drawing.Color.White;
+            this.lblid.Location = new System.Drawing.Point(29, 263);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(27, 21);
+            this.lblid.TabIndex = 20;
+            this.lblid.Text = "ID";
+            this.lblid.Visible = false;
+            // 
+            // lbluser
+            // 
+            this.lbluser.AutoSize = true;
+            this.lbluser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbluser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbluser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbluser.ForeColor = System.Drawing.Color.White;
+            this.lbluser.Location = new System.Drawing.Point(29, 330);
+            this.lbluser.Name = "lbluser";
+            this.lbluser.Size = new System.Drawing.Size(58, 21);
+            this.lbluser.TabIndex = 21;
+            this.lbluser.Text = "用戶名";
+            this.lbluser.Visible = false;
+            // 
+            // lblpass
+            // 
+            this.lblpass.AutoSize = true;
+            this.lblpass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblpass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblpass.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblpass.ForeColor = System.Drawing.Color.White;
+            this.lblpass.Location = new System.Drawing.Point(29, 397);
+            this.lblpass.Name = "lblpass";
+            this.lblpass.Size = new System.Drawing.Size(42, 21);
+            this.lblpass.TabIndex = 22;
+            this.lblpass.Text = "密碼";
+            this.lblpass.Visible = false;
+            // 
+            // lblemail
+            // 
+            this.lblemail.AutoSize = true;
+            this.lblemail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblemail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblemail.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblemail.ForeColor = System.Drawing.Color.White;
+            this.lblemail.Location = new System.Drawing.Point(29, 531);
+            this.lblemail.Name = "lblemail";
+            this.lblemail.Size = new System.Drawing.Size(51, 21);
+            this.lblemail.TabIndex = 23;
+            this.lblemail.Text = "Email";
+            this.lblemail.Visible = false;
+            // 
+            // lbladdress
+            // 
+            this.lbladdress.AutoSize = true;
+            this.lbladdress.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbladdress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbladdress.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbladdress.ForeColor = System.Drawing.Color.White;
+            this.lbladdress.Location = new System.Drawing.Point(29, 598);
+            this.lbladdress.Name = "lbladdress";
+            this.lbladdress.Size = new System.Drawing.Size(42, 21);
+            this.lbladdress.TabIndex = 24;
+            this.lbladdress.Text = "地址";
+            this.lbladdress.Visible = false;
+            // 
+            // txtid
+            // 
+            this.txtid.BackColor = System.Drawing.Color.DarkGray;
+            this.txtid.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtid.Location = new System.Drawing.Point(107, 260);
+            this.txtid.Name = "txtid";
+            this.txtid.ReadOnly = true;
+            this.txtid.Size = new System.Drawing.Size(77, 29);
+            this.txtid.TabIndex = 25;
+            this.txtid.Visible = false;
+            // 
+            // txtUser
+            // 
+            this.txtUser.BackColor = System.Drawing.Color.DarkGray;
+            this.txtUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtUser.Location = new System.Drawing.Point(107, 327);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.ReadOnly = true;
+            this.txtUser.Size = new System.Drawing.Size(186, 29);
+            this.txtUser.TabIndex = 26;
+            this.txtUser.Visible = false;
+            // 
+            // txtPass
+            // 
+            this.txtPass.BackColor = System.Drawing.Color.DarkGray;
+            this.txtPass.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtPass.Location = new System.Drawing.Point(107, 394);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '●';
+            this.txtPass.ReadOnly = true;
+            this.txtPass.Size = new System.Drawing.Size(186, 29);
+            this.txtPass.TabIndex = 27;
+            this.txtPass.Visible = false;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.DarkGray;
+            this.txtEmail.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtEmail.Location = new System.Drawing.Point(107, 528);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(272, 29);
+            this.txtEmail.TabIndex = 28;
+            this.txtEmail.Visible = false;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.BackColor = System.Drawing.Color.DarkGray;
+            this.txtAddress.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtAddress.Location = new System.Drawing.Point(107, 595);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
+            this.txtAddress.Size = new System.Drawing.Size(272, 29);
+            this.txtAddress.TabIndex = 29;
+            this.txtAddress.Visible = false;
+            // 
+            // txtphone
+            // 
+            this.txtphone.BackColor = System.Drawing.Color.DarkGray;
+            this.txtphone.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtphone.Location = new System.Drawing.Point(107, 461);
+            this.txtphone.Name = "txtphone";
+            this.txtphone.ReadOnly = true;
+            this.txtphone.Size = new System.Drawing.Size(186, 29);
+            this.txtphone.TabIndex = 31;
+            this.txtphone.Visible = false;
+            // 
+            // lblphone
+            // 
+            this.lblphone.AutoSize = true;
+            this.lblphone.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblphone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblphone.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblphone.ForeColor = System.Drawing.Color.White;
+            this.lblphone.Location = new System.Drawing.Point(29, 464);
+            this.lblphone.Name = "lblphone";
+            this.lblphone.Size = new System.Drawing.Size(42, 21);
+            this.lblphone.TabIndex = 30;
+            this.lblphone.Text = "電話";
+            this.lblphone.Visible = false;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.Silver;
+            this.btnConfirm.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnConfirm.Location = new System.Drawing.Point(209, 188);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(61, 28);
+            this.btnConfirm.TabIndex = 33;
+            this.btnConfirm.Text = "確認";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Visible = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Silver;
+            this.btnUpdate.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnUpdate.Location = new System.Drawing.Point(33, 188);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(135, 28);
+            this.btnUpdate.TabIndex = 34;
+            this.btnUpdate.Text = "修改會員資料";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // CustCenter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(1603, 930);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1201, 744);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.txtphone);
+            this.Controls.Add(this.lblphone);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.txtid);
+            this.Controls.Add(this.lbladdress);
+            this.Controls.Add(this.lblemail);
+            this.Controls.Add(this.lblpass);
+            this.Controls.Add(this.lbluser);
+            this.Controls.Add(this.lblid);
             this.Controls.Add(this.ShowPass);
             this.Controls.Add(this.DataHistory);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnCustInfo);
-            this.Controls.Add(this.btnCallus);
             this.Controls.Add(this.btnHistory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CustCenter";
             this.Text = "CustCenter";
             this.Load += new System.EventHandler(this.CustCenter_Load);
@@ -211,11 +380,23 @@
 
         #endregion
         private System.Windows.Forms.Label btnHistory;
-        private System.Windows.Forms.Label btnCallus;
         private System.Windows.Forms.Label btnCustInfo;
         private System.Windows.Forms.PictureBox btnReturn;
         private Guna.UI2.WinForms.Guna2DataGridView DataHistory;
         private System.Windows.Forms.PictureBox ShowPass;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblid;
+        private System.Windows.Forms.Label lbluser;
+        private System.Windows.Forms.Label lblpass;
+        private System.Windows.Forms.Label lblemail;
+        private System.Windows.Forms.Label lbladdress;
+        private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtphone;
+        private System.Windows.Forms.Label lblphone;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
