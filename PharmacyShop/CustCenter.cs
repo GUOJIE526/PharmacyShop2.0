@@ -21,9 +21,6 @@ namespace PharmacyShop
 
         private void CustCenter_Load(object sender, EventArgs e)
         {
-            txtChangePass.Visible = false;
-            btnConfirm.Visible = false;
-            lbl指示.Visible = false;
             ShowPass.Visible = false;
             DataHistory.Visible = false;
         }
@@ -58,41 +55,6 @@ namespace PharmacyShop
 
         }
 
-        private void btnChangePass_Click(object sender, EventArgs e)
-        {
-            txtChangePass.Visible = true;
-            btnConfirm.Visible = true;
-            lbl指示.Visible = true;
-            ShowPass.Visible = true;
-        }
-
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
-            conn.Open();
-            try
-            {
-                string query = "update customer set password = @NewPassword where id = @id;";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id", GlobalVar.id);
-                cmd.Parameters.AddWithValue("@NewPassword", txtChangePass.Text);
-                if (cmd.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("密碼修改成功!!", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtChangePass.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("密碼修改失敗!!", "失敗", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally { conn.Close(); }
-        }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Close();
@@ -101,21 +63,6 @@ namespace PharmacyShop
         private void btnCustInfo_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void ShowPass_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ShowPass_MouseHover(object sender, EventArgs e)
-        {
-            txtChangePass.PasswordChar = '\0';
-        }
-
-        private void ShowPass_MouseLeave(object sender, EventArgs e)
-        {
-            txtChangePass.PasswordChar = '●';
         }
     }
 }
