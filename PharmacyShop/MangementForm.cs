@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,14 +14,14 @@ namespace PharmacyShop
     public partial class MangementForm : Form
     {
         private Form1 login;
-        private string username;
         private int id;
         public Drag drag;
-        public MangementForm(Form1 login, string username, int id)
+        public OpenForm open;
+
+        public MangementForm(Form1 login, int id)
         {
             InitializeComponent();
             this.login = login;
-            this.username = username;
             this.id = id;
         }
 
@@ -28,6 +29,7 @@ namespace PharmacyShop
         {
             drag = new Drag(this);
             drag.setPanel(pnlTopBar);
+            open = new OpenForm();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -42,6 +44,46 @@ namespace PharmacyShop
             {
                 return;
             }
+        }
+
+        private void btnCustSys_Click(object sender, EventArgs e)
+        {
+            open.openForm(new CustSYSForm(), pnlMgr);
+        }
+
+        private void btnOrdSys_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProdSys_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDrop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNoright_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCustInsert_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

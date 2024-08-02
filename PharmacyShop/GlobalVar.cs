@@ -13,6 +13,7 @@ namespace PharmacyShop
         public static string User = "";
         public static int id = 0;
         public static string strDBConnectionString = "";
+        public static int CustPrivilage = 0;//1 正常 0黑名單
         public static List<ArrayList> listProductCollection = new List<ArrayList>();
     }
 }

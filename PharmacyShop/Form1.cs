@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Web;
+using System.Windows.Media.Animation;
 
 namespace PharmacyShop
 {
@@ -58,13 +59,14 @@ namespace PharmacyShop
                     conn.Open();
                     string username = txtUser.Text.Trim();
                     string password = txtPass.Text.Trim();
-                    string sqlselect = @"select 'customer' as userType, id, name from customer where name = @username and password = @password 
+                    string sqlselect = @"select 'customer' as userType, id, name, lv from customer where name = @username and password = @password
                       UNION 
-                      select 'employee' as userType, id, name from employee where name = @username and password = @password";
+                      select 'employee' as userType, id, name, lv from employee where name = @username and password = @password";
                     SqlCommand cmd = new SqlCommand(sqlselect, conn);
                     
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
+
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     if (reader.HasRows)
@@ -72,19 +74,24 @@ namespace PharmacyShop
                         reader.Read();
                         string userType = reader["userType"].ToString();
                         int userid = (int)reader["id"];
+                        GlobalVar.id = userid;
+                        GlobalVar.CustPrivilage = (int)reader["lv"];
                         MessageBox.Show("登入成功，將為您轉跳...", "登入", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        GlobalVar.id = userid;
-
-                        if (userType == "customer")
+                        if (userType == "customer" && GlobalVar.CustPrivilage == 1)
                         {
                             OrderForm order = new OrderForm(this, username, userid);
                             order.Show();
                         }
                         else if (userType == "employee")
                         {
-                            MangementForm mgr = new MangementForm(this, username, userid);
+                            MangementForm mgr = new MangementForm(this, userid);
                             mgr.Show();
+                        }
+                        else
+                        {
+                            BlackForm b = new BlackForm();
+                            b.Show();
                         }
                         this.Hide();
                     }

@@ -31,7 +31,6 @@ namespace PharmacyShop
         public Drag drag;
         public OpenForm open;
 
-
         private void OrderForm_Load(object sender, EventArgs e)
         {
             GlobalVar.id = (int)id;
@@ -68,6 +67,8 @@ namespace PharmacyShop
             DialogResult R = MessageBox.Show("應用程式登出?", "登出", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (R == DialogResult.Yes)
             {
+                GlobalVar.id = 0;
+                GlobalVar.User = "";
                 login.Show();
                 this.Close();
             }

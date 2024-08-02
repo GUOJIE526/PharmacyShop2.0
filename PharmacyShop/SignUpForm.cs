@@ -131,8 +131,9 @@ namespace PharmacyShop
                                 reader.Close();
                             }
                         }
-                        string insertdata = "insert into customer (name, password, phone, email, address, createdate) values (@name, @password, @phone, @email, @address, @date)";
+                        string insertdata = "insert into customer (name, password, phone, email, address, createdate, lv) values (@name, @password, @phone, @email, @address, @date, @lv)";
                         DateTime date = DateTime.Today;
+                        GlobalVar.CustPrivilage = 1;
                         SqlCommand sql = new SqlCommand(insertdata, conn);
                         sql.Parameters.AddWithValue("@name", txtName.Text.Trim());
                         sql.Parameters.AddWithValue("@password", txtPass.Text.Trim());
@@ -140,6 +141,7 @@ namespace PharmacyShop
                         sql.Parameters.AddWithValue("@email", txtEmail.Text.Trim());
                         sql.Parameters.AddWithValue("@address", txtAddress.Text.Trim());
                         sql.Parameters.AddWithValue("@date", date);
+                        sql.Parameters.AddWithValue("@lv", GlobalVar.CustPrivilage);
 
                         if (sql.ExecuteNonQuery() > 0)
                         {
