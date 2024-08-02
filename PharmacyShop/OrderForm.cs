@@ -24,7 +24,7 @@ namespace PharmacyShop
         {
             InitializeComponent();
             this.login = login;
-            this.username = username;
+            GlobalVar.User = username;
             this.id = id;
         }
 
@@ -35,7 +35,6 @@ namespace PharmacyShop
         private void OrderForm_Load(object sender, EventArgs e)
         {
             GlobalVar.id = (int)id;
-            GlobalVar.User = username;
             drag = new Drag(this);
             drag.setPanel(pnlHome);
             drag.setPanel(pnlside);
@@ -62,7 +61,7 @@ namespace PharmacyShop
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-            CartForm cart = new CartForm(username, id);
+            CartForm cart = new CartForm(id);
             cart.ShowDialog();
         }
 

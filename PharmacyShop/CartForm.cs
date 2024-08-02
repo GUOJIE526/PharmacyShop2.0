@@ -19,10 +19,9 @@ namespace PharmacyShop
     {
         List<string> listOnSale = new List<string>();
         string OnSale = "";
-        public CartForm(string user, int id)
+        public CartForm(int id)
         {
             InitializeComponent();
-            GlobalVar.User = user;
             GlobalVar.id = id;
         }
 

@@ -147,7 +147,8 @@ namespace PharmacyShop
                     txtAddress.ReadOnly = true;
                     txtAddress.BackColor = Color.DarkGray;
                     btnConfirm.Visible = false;
-                    GlobalVar.User = txtUser.Text;
+                    GlobalVar.User = txtUser.Text;//想想怎麼傳過去orderform刷新名稱
+                    Console.WriteLine(GlobalVar.User);
                 }
                 con.Close();
             }
