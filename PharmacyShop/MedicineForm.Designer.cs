@@ -71,7 +71,7 @@
             this.tabBaby.Location = new System.Drawing.Point(285, 201);
             this.tabBaby.Name = "tabBaby";
             this.tabBaby.SelectedIndex = 0;
-            this.tabBaby.Size = new System.Drawing.Size(863, 489);
+            this.tabBaby.Size = new System.Drawing.Size(863, 474);
             this.tabBaby.TabIndex = 31;
             // 
             // Med
@@ -81,8 +81,8 @@
             this.Med.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Med.Location = new System.Drawing.Point(4, 33);
             this.Med.Name = "Med";
-            this.Med.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Med.Size = new System.Drawing.Size(855, 452);
+            this.Med.Padding = new System.Windows.Forms.Padding(3);
+            this.Med.Size = new System.Drawing.Size(855, 437);
             this.Med.TabIndex = 0;
             this.Med.Text = "保健";
             this.Med.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@
             this.MM.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.MM.Location = new System.Drawing.Point(4, 33);
             this.MM.Name = "MM";
-            this.MM.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.MM.Padding = new System.Windows.Forms.Padding(3);
             this.MM.Size = new System.Drawing.Size(855, 452);
             this.MM.TabIndex = 1;
             this.MM.Text = "醫材";

@@ -7,7 +7,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace PharmacyShop
@@ -47,11 +46,6 @@ namespace PharmacyShop
         {
             DataHistory.Visible = true;
             ShowDataSet();
-        }
-
-        private void btnCallus_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -147,8 +141,8 @@ namespace PharmacyShop
                     txtAddress.ReadOnly = true;
                     txtAddress.BackColor = Color.DarkGray;
                     btnConfirm.Visible = false;
-                    GlobalVar.User = txtUser.Text;//想想怎麼傳過去orderform刷新名稱
-                    Console.WriteLine(GlobalVar.User);
+                    GlobalVar.User = txtUser.Text;
+                    //Console.WriteLine(GlobalVar.User);
                 }
                 con.Close();
             }

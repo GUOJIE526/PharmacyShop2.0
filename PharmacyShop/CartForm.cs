@@ -123,114 +123,121 @@ namespace PharmacyShop
 
         private void btnPrinter_Click(object sender, EventArgs e)
         {
-            string strSavePath = @"D:\資策會課程\Project\PharmacyShop\訂單明細";
-            Random random = new Random();
-            int randNum = random.Next(1000, 10000);
-            string FileName = DateTime.Now.ToString("yyMMddHHmmss") + randNum + "訂購檔.txt";
-            string FullSavePath = strSavePath + @"\" + FileName;
-
-            //Console.WriteLine(FullSavePath);
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.InitialDirectory = strSavePath;
-            sfd.FileName = FileName;
-            sfd.Filter = "文字檔Text File|*.txt";
-            DialogResult R = sfd.ShowDialog();
-
-            if (R == DialogResult.OK)
+            if (GlobalVar.listProductCollection.Count == 0)
             {
-                FullSavePath = sfd.FileName;
+                MessageBox.Show("尚未購買商品", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                return;
-            }
-            //輸出訂單
-            
-            List<string> list訂單輸出 = new List<string>();
-            list訂單輸出.Add("************ PA PA Pharmacy訂購單 *************");
-            list訂單輸出.Add("------------------------------------");
-            list訂單輸出.Add($"訂購時間: {DateTime.Now}");
-            list訂單輸出.Add($"訂購人: {GlobalVar.User}");
-            list訂單輸出.Add("========== << 訂購明細 >> =========");
-            foreach (ArrayList item in GlobalVar.listProductCollection)
-            {
-                string ProdName = (string)item[0];
-                int Prodqty = (int)item[1];
-                int ProdPrice = (int)item[2];
-                if(ProdName == "【Okamoto岡本】 002 Hydro水感勁薄")
+                string strSavePath = @"D:\資策會課程\Project\PharmacyShop\訂單明細";
+                Random random = new Random();
+                int randNum = random.Next(1000, 10000);
+                string FileName = DateTime.Now.ToString("yyMMddHHmmss") + randNum + "訂購檔.txt";
+                string FullSavePath = strSavePath + @"\" + FileName;
+
+                //Console.WriteLine(FullSavePath);
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.InitialDirectory = strSavePath;
+                sfd.FileName = FileName;
+                sfd.Filter = "文字檔Text File|*.txt";
+                DialogResult R = sfd.ShowDialog();
+
+                if (R == DialogResult.OK)
                 {
-                    list訂單輸出.Add($"{ProdName}    {Prodqty}件    ${ProdPrice}");
-                    list訂單輸出.Add("【Okamoto岡本】 002 Hydro水感勁薄    1件    $FREE");
+                    FullSavePath = sfd.FileName;
                 }
                 else
                 {
-                    list訂單輸出.Add($"{ProdName}    {Prodqty}件    ${ProdPrice}");
+                    return;
                 }
-            }
-            list訂單輸出.Add("=====================================");
-            list訂單輸出.Add("-------------------------------------");
-            list訂單輸出.Add($"                總金額: {lblTotalPay.Text}");
-            list訂單輸出.Add("===================================");
-            list訂單輸出.Add("************ 謝謝光臨 **************");
-            System.IO.File.WriteAllLines(FullSavePath, list訂單輸出, Encoding.UTF8);
-            //輸出資料表
-            SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
-            try
-            {
-                if (conn.State != ConnectionState.Open)
+                //輸出訂單
+
+
+                List<string> list訂單輸出 = new List<string>();
+                list訂單輸出.Add("************ PA PA Pharmacy訂購單 *************");
+                list訂單輸出.Add("------------------------------------");
+                list訂單輸出.Add($"訂購時間: {DateTime.Now}");
+                list訂單輸出.Add($"訂購人: {GlobalVar.User}");
+                list訂單輸出.Add("========== << 訂購明細 >> =========");
+                foreach (ArrayList item in GlobalVar.listProductCollection)
                 {
-                    conn.Open();
-                    foreach (ArrayList item in GlobalVar.listProductCollection)
-                    {//記錄優惠後的價格
-                        string ProdName = (string)item[0];
-                        int Prodqty = (int)item[1];
-                        int ProdPrice = (int)item[2];
-                        double sum = 0;
-                        if (Prodqty >= 2 && Prodqty % 2 == 0)
-                        {
-                            ProdPrice = Convert.ToInt32(Math.Round(sum += ProdPrice * 0.75, MidpointRounding.AwayFromZero));
-                        }
-                        else if (Prodqty >= 2 && Prodqty % 2 != 0)
-                        {
-                            int singleprice = ProdPrice / Prodqty;
-                            int evenQtyPrice = ProdPrice - singleprice;
-                            ProdPrice = Convert.ToInt32(Math.Round(sum += (evenQtyPrice * 0.75) + singleprice, MidpointRounding.AwayFromZero));
-                        }
-                        else
-                        {
-                            sum += ProdPrice;
-                        }
-
-                        int userid = GlobalVar.id;
-                        string query = $"insert into historycart (name, qty, price, cust_id, buydate) values (@ProdName, @Prodqty, @ProdPrice, @userid, @date)";
-                        DateTime date = DateTime.Today;
-                        SqlCommand cmd = new SqlCommand(query, conn);
-                        cmd.Parameters.AddWithValue("@ProdName", ProdName);
-                        cmd.Parameters.AddWithValue("@Prodqty", Prodqty);
-                        cmd.Parameters.AddWithValue("@ProdPrice", ProdPrice);
-                        cmd.Parameters.AddWithValue("@userid", userid);
-                        cmd.Parameters.AddWithValue("@date", date);
-                        if (cmd.ExecuteNonQuery() > 0)
-                        {
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("訂購單儲存失敗", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                    string ProdName = (string)item[0];
+                    int Prodqty = (int)item[1];
+                    int ProdPrice = (int)item[2];
+                    if (ProdName == "【Okamoto岡本】 002 Hydro水感勁薄")
+                    {
+                        list訂單輸出.Add($"{ProdName}    {Prodqty}件    ${ProdPrice}");
+                        list訂單輸出.Add("【Okamoto岡本】 002 Hydro水感勁薄    1件    $FREE");
                     }
-                    MessageBox.Show("訂購單傳送成功", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    GlobalVar.listProductCollection.Clear();
-                    購物清單.Items.Clear();
-                    OnSalePrice();
+                    else
+                    {
+                        list訂單輸出.Add($"{ProdName}    {Prodqty}件    ${ProdPrice}");
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally { conn.Close(); }
+                list訂單輸出.Add("=====================================");
+                list訂單輸出.Add("-------------------------------------");
+                list訂單輸出.Add($"                總金額: {lblTotalPay.Text}");
+                list訂單輸出.Add("===================================");
+                list訂單輸出.Add("************ 謝謝光臨 **************");
+                System.IO.File.WriteAllLines(FullSavePath, list訂單輸出, Encoding.UTF8);
+                //輸出資料表
+                SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
+                try
+                {
+                    if (conn.State != ConnectionState.Open)
+                    {
+                        conn.Open();
+                        foreach (ArrayList item in GlobalVar.listProductCollection)
+                        {//記錄優惠後的價格
+                            string ProdName = (string)item[0];
+                            int Prodqty = (int)item[1];
+                            int ProdPrice = (int)item[2];
+                            double sum = 0;
+                            if (Prodqty >= 2 && Prodqty % 2 == 0)
+                            {
+                                ProdPrice = Convert.ToInt32(Math.Round(sum += ProdPrice * 0.75, MidpointRounding.AwayFromZero));
+                            }
+                            else if (Prodqty >= 2 && Prodqty % 2 != 0)
+                            {
+                                int singleprice = ProdPrice / Prodqty;
+                                int evenQtyPrice = ProdPrice - singleprice;
+                                ProdPrice = Convert.ToInt32(Math.Round(sum += (evenQtyPrice * 0.75) + singleprice, MidpointRounding.AwayFromZero));
+                            }
+                            else
+                            {
+                                sum += ProdPrice;
+                            }
 
+                            int userid = GlobalVar.id;
+                            string query = $"insert into historycart (name, qty, price, cust_id, buydate) values (@ProdName, @Prodqty, @ProdPrice, @userid, @date)";
+                            DateTime date = DateTime.Today;
+                            SqlCommand cmd = new SqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@ProdName", ProdName);
+                            cmd.Parameters.AddWithValue("@Prodqty", Prodqty);
+                            cmd.Parameters.AddWithValue("@ProdPrice", ProdPrice);
+                            cmd.Parameters.AddWithValue("@userid", userid);
+                            cmd.Parameters.AddWithValue("@date", date);
+                            if (cmd.ExecuteNonQuery() > 0)
+                            {
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("訂購單儲存失敗", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        MessageBox.Show("訂購單傳送成功", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GlobalVar.listProductCollection.Clear();
+                        購物清單.Items.Clear();
+                        OnSalePrice();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally { conn.Close(); }
+            }
         }
 
         private void cbxOnSale_SelectedIndexChanged(object sender, EventArgs e)
