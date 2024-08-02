@@ -145,6 +145,7 @@ namespace PharmacyShop
                 return;
             }
             //輸出訂單
+            
             List<string> list訂單輸出 = new List<string>();
             list訂單輸出.Add("************ PA PA Pharmacy訂購單 *************");
             list訂單輸出.Add("------------------------------------");
