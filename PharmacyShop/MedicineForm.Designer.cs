@@ -68,10 +68,11 @@
             this.tabBaby.Controls.Add(this.Med);
             this.tabBaby.Controls.Add(this.MM);
             this.tabBaby.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tabBaby.Location = new System.Drawing.Point(286, 215);
+            this.tabBaby.Location = new System.Drawing.Point(381, 269);
+            this.tabBaby.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabBaby.Name = "tabBaby";
             this.tabBaby.SelectedIndex = 0;
-            this.tabBaby.Size = new System.Drawing.Size(904, 489);
+            this.tabBaby.Size = new System.Drawing.Size(1205, 611);
             this.tabBaby.TabIndex = 31;
             // 
             // Med
@@ -79,10 +80,11 @@
             this.Med.Controls.Add(this.dataMed);
             this.Med.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Med.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Med.Location = new System.Drawing.Point(4, 33);
+            this.Med.Location = new System.Drawing.Point(4, 40);
+            this.Med.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Med.Name = "Med";
-            this.Med.Padding = new System.Windows.Forms.Padding(3);
-            this.Med.Size = new System.Drawing.Size(896, 452);
+            this.Med.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Med.Size = new System.Drawing.Size(1197, 567);
             this.Med.TabIndex = 0;
             this.Med.Text = "保健";
             this.Med.UseVisualStyleBackColor = true;
@@ -110,13 +112,15 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataMed.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataMed.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataMed.Location = new System.Drawing.Point(6, 3);
+            this.dataMed.Location = new System.Drawing.Point(8, 4);
+            this.dataMed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataMed.Name = "dataMed";
             this.dataMed.ReadOnly = true;
             this.dataMed.RowHeadersVisible = false;
+            this.dataMed.RowHeadersWidth = 51;
             this.dataMed.RowTemplate.Height = 50;
             this.dataMed.RowTemplate.ReadOnly = true;
-            this.dataMed.Size = new System.Drawing.Size(887, 443);
+            this.dataMed.Size = new System.Drawing.Size(1183, 554);
             this.dataMed.TabIndex = 0;
             this.dataMed.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataMed.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -147,10 +151,11 @@
             this.MM.Controls.Add(this.dataMM);
             this.MM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MM.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.MM.Location = new System.Drawing.Point(4, 33);
+            this.MM.Location = new System.Drawing.Point(4, 40);
+            this.MM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MM.Name = "MM";
-            this.MM.Padding = new System.Windows.Forms.Padding(3);
-            this.MM.Size = new System.Drawing.Size(896, 452);
+            this.MM.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MM.Size = new System.Drawing.Size(1197, 567);
             this.MM.TabIndex = 1;
             this.MM.Text = "醫材";
             this.MM.UseVisualStyleBackColor = true;
@@ -178,13 +183,15 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataMM.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataMM.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataMM.Location = new System.Drawing.Point(6, 6);
+            this.dataMM.Location = new System.Drawing.Point(8, 8);
+            this.dataMM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataMM.Name = "dataMM";
             this.dataMM.ReadOnly = true;
             this.dataMM.RowHeadersVisible = false;
+            this.dataMM.RowHeadersWidth = 51;
             this.dataMM.RowTemplate.Height = 50;
             this.dataMM.RowTemplate.ReadOnly = true;
-            this.dataMM.Size = new System.Drawing.Size(884, 440);
+            this.dataMM.Size = new System.Drawing.Size(1179, 550);
             this.dataMM.TabIndex = 0;
             this.dataMM.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataMM.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -222,8 +229,9 @@
             this.panel1.Controls.Add(this.btnReturn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1202, 144);
+            this.panel1.Size = new System.Drawing.Size(1603, 180);
             this.panel1.TabIndex = 40;
             // 
             // lblSumPrice
@@ -231,9 +239,10 @@
             this.lblSumPrice.AutoSize = true;
             this.lblSumPrice.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblSumPrice.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblSumPrice.Location = new System.Drawing.Point(970, 73);
+            this.lblSumPrice.Location = new System.Drawing.Point(1048, 97);
+            this.lblSumPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSumPrice.Name = "lblSumPrice";
-            this.lblSumPrice.Size = new System.Drawing.Size(28, 31);
+            this.lblSumPrice.Size = new System.Drawing.Size(35, 38);
             this.lblSumPrice.TabIndex = 48;
             this.lblSumPrice.Text = "$";
             // 
@@ -241,9 +250,10 @@
             // 
             this.btnAddCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCart.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCart.Image")));
-            this.btnAddCart.Location = new System.Drawing.Point(891, 48);
+            this.btnAddCart.Location = new System.Drawing.Point(943, 66);
+            this.btnAddCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddCart.Name = "btnAddCart";
-            this.btnAddCart.Size = new System.Drawing.Size(55, 50);
+            this.btnAddCart.Size = new System.Drawing.Size(73, 62);
             this.btnAddCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAddCart.TabIndex = 47;
             this.btnAddCart.TabStop = false;
@@ -253,9 +263,10 @@
             // 
             this.btnMinus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinus.Image = ((System.Drawing.Image)(resources.GetObject("btnMinus.Image")));
-            this.btnMinus.Location = new System.Drawing.Point(807, 48);
+            this.btnMinus.Location = new System.Drawing.Point(831, 66);
+            this.btnMinus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMinus.Name = "btnMinus";
-            this.btnMinus.Size = new System.Drawing.Size(55, 50);
+            this.btnMinus.Size = new System.Drawing.Size(73, 62);
             this.btnMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinus.TabIndex = 46;
             this.btnMinus.TabStop = false;
@@ -265,9 +276,10 @@
             // 
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(647, 49);
+            this.btnAdd.Location = new System.Drawing.Point(618, 67);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(55, 50);
+            this.btnAdd.Size = new System.Drawing.Size(73, 62);
             this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAdd.TabIndex = 45;
             this.btnAdd.TabStop = false;
@@ -276,9 +288,10 @@
             // txtqty
             // 
             this.txtqty.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtqty.Location = new System.Drawing.Point(724, 67);
+            this.txtqty.Location = new System.Drawing.Point(720, 90);
+            this.txtqty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtqty.Name = "txtqty";
-            this.txtqty.Size = new System.Drawing.Size(60, 25);
+            this.txtqty.Size = new System.Drawing.Size(79, 29);
             this.txtqty.TabIndex = 44;
             this.txtqty.TextChanged += new System.EventHandler(this.txtqty_TextChanged_1);
             // 
@@ -288,10 +301,11 @@
             this.txtProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProd.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtProd.Location = new System.Drawing.Point(286, 73);
+            this.txtProd.Location = new System.Drawing.Point(136, 97);
+            this.txtProd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtProd.Name = "txtProd";
             this.txtProd.ReadOnly = true;
-            this.txtProd.Size = new System.Drawing.Size(288, 22);
+            this.txtProd.Size = new System.Drawing.Size(384, 27);
             this.txtProd.TabIndex = 43;
             // 
             // label1
@@ -299,9 +313,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(200, 74);
+            this.label1.Location = new System.Drawing.Point(22, 98);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 21);
+            this.label1.Size = new System.Drawing.Size(103, 25);
             this.label1.TabIndex = 41;
             this.label1.Text = "Prouduct";
             // 
@@ -311,9 +326,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(1148, 12);
+            this.btnReturn.Location = new System.Drawing.Point(1531, 15);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(42, 36);
+            this.btnReturn.Size = new System.Drawing.Size(56, 45);
             this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnReturn.TabIndex = 40;
             this.btnReturn.TabStop = false;
@@ -321,22 +337,24 @@
             // 
             // picProd
             // 
-            this.picProd.Location = new System.Drawing.Point(21, 309);
+            this.picProd.Location = new System.Drawing.Point(28, 386);
+            this.picProd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picProd.Name = "picProd";
-            this.picProd.Size = new System.Drawing.Size(247, 316);
+            this.picProd.Size = new System.Drawing.Size(329, 395);
             this.picProd.TabIndex = 41;
             this.picProd.TabStop = false;
             // 
             // MedicineForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(1202, 744);
+            this.ClientSize = new System.Drawing.Size(1603, 930);
             this.Controls.Add(this.picProd);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabBaby);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MedicineForm";
             this.Text = "MedicineForm";
             this.Load += new System.EventHandler(this.MedicineForm_Load);

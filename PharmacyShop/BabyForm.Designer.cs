@@ -36,6 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlbaby = new System.Windows.Forms.Panel();
+            this.picProd = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSumPrice = new System.Windows.Forms.Label();
             this.btnAddCart = new System.Windows.Forms.PictureBox();
@@ -50,8 +51,8 @@
             this.dataMilk = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Diaper = new System.Windows.Forms.TabPage();
             this.dataDiaper = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.picProd = new System.Windows.Forms.PictureBox();
             this.pnlbaby.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProd)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinus)).BeginInit();
@@ -62,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataMilk)).BeginInit();
             this.Diaper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDiaper)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProd)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlbaby
@@ -72,9 +72,19 @@
             this.pnlbaby.Controls.Add(this.tabBaby);
             this.pnlbaby.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlbaby.Location = new System.Drawing.Point(0, 0);
+            this.pnlbaby.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlbaby.Name = "pnlbaby";
-            this.pnlbaby.Size = new System.Drawing.Size(1202, 744);
+            this.pnlbaby.Size = new System.Drawing.Size(1603, 930);
             this.pnlbaby.TabIndex = 0;
+            // 
+            // picProd
+            // 
+            this.picProd.Location = new System.Drawing.Point(31, 394);
+            this.picProd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picProd.Name = "picProd";
+            this.picProd.Size = new System.Drawing.Size(329, 395);
+            this.picProd.TabIndex = 42;
+            this.picProd.TabStop = false;
             // 
             // panel1
             // 
@@ -88,8 +98,9 @@
             this.panel1.Controls.Add(this.btnReturn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1202, 148);
+            this.panel1.Size = new System.Drawing.Size(1603, 185);
             this.panel1.TabIndex = 1;
             // 
             // lblSumPrice
@@ -97,9 +108,10 @@
             this.lblSumPrice.AutoSize = true;
             this.lblSumPrice.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblSumPrice.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblSumPrice.Location = new System.Drawing.Point(972, 68);
+            this.lblSumPrice.Location = new System.Drawing.Point(1098, 85);
+            this.lblSumPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSumPrice.Name = "lblSumPrice";
-            this.lblSumPrice.Size = new System.Drawing.Size(28, 31);
+            this.lblSumPrice.Size = new System.Drawing.Size(35, 38);
             this.lblSumPrice.TabIndex = 38;
             this.lblSumPrice.Text = "$";
             // 
@@ -107,9 +119,10 @@
             // 
             this.btnAddCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCart.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCart.Image")));
-            this.btnAddCart.Location = new System.Drawing.Point(873, 46);
+            this.btnAddCart.Location = new System.Drawing.Point(966, 58);
+            this.btnAddCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddCart.Name = "btnAddCart";
-            this.btnAddCart.Size = new System.Drawing.Size(64, 49);
+            this.btnAddCart.Size = new System.Drawing.Size(85, 61);
             this.btnAddCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAddCart.TabIndex = 37;
             this.btnAddCart.TabStop = false;
@@ -119,9 +132,10 @@
             // 
             this.btnMinus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinus.Image = ((System.Drawing.Image)(resources.GetObject("btnMinus.Image")));
-            this.btnMinus.Location = new System.Drawing.Point(788, 46);
+            this.btnMinus.Location = new System.Drawing.Point(853, 58);
+            this.btnMinus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMinus.Name = "btnMinus";
-            this.btnMinus.Size = new System.Drawing.Size(64, 49);
+            this.btnMinus.Size = new System.Drawing.Size(85, 61);
             this.btnMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinus.TabIndex = 36;
             this.btnMinus.TabStop = false;
@@ -131,9 +145,10 @@
             // 
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(625, 46);
+            this.btnAdd.Location = new System.Drawing.Point(635, 58);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(64, 49);
+            this.btnAdd.Size = new System.Drawing.Size(85, 61);
             this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAdd.TabIndex = 35;
             this.btnAdd.TabStop = false;
@@ -142,9 +157,10 @@
             // txtqty
             // 
             this.txtqty.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtqty.Location = new System.Drawing.Point(706, 68);
+            this.txtqty.Location = new System.Drawing.Point(743, 85);
+            this.txtqty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtqty.Name = "txtqty";
-            this.txtqty.Size = new System.Drawing.Size(65, 25);
+            this.txtqty.Size = new System.Drawing.Size(85, 29);
             this.txtqty.TabIndex = 34;
             this.txtqty.TextChanged += new System.EventHandler(this.txtqty_TextChanged_1);
             // 
@@ -154,10 +170,11 @@
             this.txtProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProd.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtProd.Location = new System.Drawing.Point(255, 71);
+            this.txtProd.Location = new System.Drawing.Point(142, 89);
+            this.txtProd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtProd.Name = "txtProd";
             this.txtProd.ReadOnly = true;
-            this.txtProd.Size = new System.Drawing.Size(316, 22);
+            this.txtProd.Size = new System.Drawing.Size(421, 27);
             this.txtProd.TabIndex = 33;
             // 
             // label1
@@ -165,9 +182,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(169, 72);
+            this.label1.Location = new System.Drawing.Point(27, 90);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 21);
+            this.label1.Size = new System.Drawing.Size(103, 25);
             this.label1.TabIndex = 31;
             this.label1.Text = "Prouduct";
             // 
@@ -177,9 +195,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(1150, 12);
+            this.btnReturn.Location = new System.Drawing.Point(1533, 15);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(40, 40);
+            this.btnReturn.Size = new System.Drawing.Size(53, 50);
             this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnReturn.TabIndex = 30;
             this.btnReturn.TabStop = false;
@@ -190,10 +209,11 @@
             this.tabBaby.Controls.Add(this.Milk);
             this.tabBaby.Controls.Add(this.Diaper);
             this.tabBaby.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tabBaby.Location = new System.Drawing.Point(290, 230);
+            this.tabBaby.Location = new System.Drawing.Point(387, 288);
+            this.tabBaby.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabBaby.Name = "tabBaby";
             this.tabBaby.SelectedIndex = 0;
-            this.tabBaby.Size = new System.Drawing.Size(882, 475);
+            this.tabBaby.Size = new System.Drawing.Size(1176, 594);
             this.tabBaby.TabIndex = 21;
             // 
             // Milk
@@ -201,10 +221,11 @@
             this.Milk.Controls.Add(this.dataMilk);
             this.Milk.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Milk.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Milk.Location = new System.Drawing.Point(4, 33);
+            this.Milk.Location = new System.Drawing.Point(4, 40);
+            this.Milk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Milk.Name = "Milk";
-            this.Milk.Padding = new System.Windows.Forms.Padding(3);
-            this.Milk.Size = new System.Drawing.Size(874, 438);
+            this.Milk.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Milk.Size = new System.Drawing.Size(1168, 550);
             this.Milk.TabIndex = 0;
             this.Milk.Text = "奶粉";
             this.Milk.UseVisualStyleBackColor = true;
@@ -232,13 +253,15 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataMilk.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataMilk.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataMilk.Location = new System.Drawing.Point(6, 6);
+            this.dataMilk.Location = new System.Drawing.Point(8, 8);
+            this.dataMilk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataMilk.Name = "dataMilk";
             this.dataMilk.ReadOnly = true;
             this.dataMilk.RowHeadersVisible = false;
+            this.dataMilk.RowHeadersWidth = 51;
             this.dataMilk.RowTemplate.Height = 50;
             this.dataMilk.RowTemplate.ReadOnly = true;
-            this.dataMilk.Size = new System.Drawing.Size(862, 426);
+            this.dataMilk.Size = new System.Drawing.Size(1149, 532);
             this.dataMilk.TabIndex = 0;
             this.dataMilk.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataMilk.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -269,10 +292,11 @@
             this.Diaper.Controls.Add(this.dataDiaper);
             this.Diaper.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Diaper.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Diaper.Location = new System.Drawing.Point(4, 33);
+            this.Diaper.Location = new System.Drawing.Point(4, 40);
+            this.Diaper.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Diaper.Name = "Diaper";
-            this.Diaper.Padding = new System.Windows.Forms.Padding(3);
-            this.Diaper.Size = new System.Drawing.Size(874, 438);
+            this.Diaper.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Diaper.Size = new System.Drawing.Size(1168, 550);
             this.Diaper.TabIndex = 1;
             this.Diaper.Text = "尿布";
             this.Diaper.UseVisualStyleBackColor = true;
@@ -300,13 +324,15 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataDiaper.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataDiaper.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataDiaper.Location = new System.Drawing.Point(6, 6);
+            this.dataDiaper.Location = new System.Drawing.Point(8, 8);
+            this.dataDiaper.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataDiaper.Name = "dataDiaper";
             this.dataDiaper.ReadOnly = true;
             this.dataDiaper.RowHeadersVisible = false;
+            this.dataDiaper.RowHeadersWidth = 51;
             this.dataDiaper.RowTemplate.Height = 50;
             this.dataDiaper.RowTemplate.ReadOnly = true;
-            this.dataDiaper.Size = new System.Drawing.Size(862, 426);
+            this.dataDiaper.Size = new System.Drawing.Size(1149, 532);
             this.dataDiaper.TabIndex = 0;
             this.dataDiaper.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataDiaper.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -332,27 +358,21 @@
             this.dataDiaper.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDiaper_CellContentClick);
             this.dataDiaper.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataDiaper_DataBindingComplete);
             // 
-            // picProd
-            // 
-            this.picProd.Location = new System.Drawing.Point(23, 315);
-            this.picProd.Name = "picProd";
-            this.picProd.Size = new System.Drawing.Size(247, 316);
-            this.picProd.TabIndex = 42;
-            this.picProd.TabStop = false;
-            // 
             // BabyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(1202, 744);
+            this.ClientSize = new System.Drawing.Size(1603, 930);
             this.Controls.Add(this.pnlbaby);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BabyForm";
             this.Text = "BabyForm";
             this.Load += new System.EventHandler(this.BabyForm_Load);
             this.pnlbaby.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picProd)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddCart)).EndInit();
@@ -364,7 +384,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataMilk)).EndInit();
             this.Diaper.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataDiaper)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProd)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -42,8 +42,6 @@ namespace PharmacyShop
             lblUser.Text = $"{GlobalVar.User}";
         }
 
-
-
         private void btnBaby_Click(object sender, EventArgs e)
         {
             open.openForm(new BabyForm(), pnlHome);
@@ -112,6 +110,11 @@ namespace PharmacyShop
         private void lbl會員中心_Click(object sender, EventArgs e)
         {
             open.openForm(new CustCenter(), pnlHome);
+        }
+
+        private void OrderForm_Activated(object sender, EventArgs e)
+        {
+            lblUser.Text = $"{GlobalVar.User}";
         }
     }
 }

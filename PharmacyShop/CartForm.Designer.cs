@@ -62,9 +62,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Viner Hand ITC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label3.Location = new System.Drawing.Point(167, 9);
+            this.label3.Location = new System.Drawing.Point(223, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(256, 44);
+            this.label3.Size = new System.Drawing.Size(320, 55);
             this.label3.TabIndex = 4;
             this.label3.Text = "PAPA Pharmacy";
             // 
@@ -72,9 +73,10 @@
             // 
             this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(12, 9);
+            this.btnReturn.Location = new System.Drawing.Point(16, 11);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(66, 51);
+            this.btnReturn.Size = new System.Drawing.Size(88, 64);
             this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnReturn.TabIndex = 6;
             this.btnReturn.TabStop = false;
@@ -84,9 +86,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(497, 573);
+            this.label2.Location = new System.Drawing.Point(663, 716);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 17);
+            this.label2.Size = new System.Drawing.Size(78, 22);
             this.label2.TabIndex = 19;
             this.label2.Text = "訂單明細";
             // 
@@ -94,9 +97,10 @@
             // 
             this.btnPrinter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrinter.Image = ((System.Drawing.Image)(resources.GetObject("btnPrinter.Image")));
-            this.btnPrinter.Location = new System.Drawing.Point(500, 520);
+            this.btnPrinter.Location = new System.Drawing.Point(667, 650);
+            this.btnPrinter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrinter.Name = "btnPrinter";
-            this.btnPrinter.Size = new System.Drawing.Size(54, 50);
+            this.btnPrinter.Size = new System.Drawing.Size(72, 62);
             this.btnPrinter.TabIndex = 18;
             this.btnPrinter.TabStop = false;
             this.btnPrinter.Click += new System.EventHandler(this.btnPrinter_Click);
@@ -106,18 +110,20 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.cbxOnSale);
             this.panel2.Controls.Add(this.lblTotalPay);
-            this.panel2.Location = new System.Drawing.Point(24, 437);
+            this.panel2.Location = new System.Drawing.Point(32, 546);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(564, 77);
+            this.panel2.Size = new System.Drawing.Size(752, 96);
             this.panel2.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(21, 18);
+            this.label1.Location = new System.Drawing.Point(28, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "促銷活動";
             // 
@@ -125,9 +131,10 @@
             // 
             this.cbxOnSale.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxOnSale.FormattingEnabled = true;
-            this.cbxOnSale.Location = new System.Drawing.Point(24, 34);
+            this.cbxOnSale.Location = new System.Drawing.Point(32, 42);
+            this.cbxOnSale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxOnSale.Name = "cbxOnSale";
-            this.cbxOnSale.Size = new System.Drawing.Size(170, 24);
+            this.cbxOnSale.Size = new System.Drawing.Size(225, 27);
             this.cbxOnSale.TabIndex = 2;
             this.cbxOnSale.SelectedIndexChanged += new System.EventHandler(this.cbxOnSale_SelectedIndexChanged);
             // 
@@ -136,9 +143,10 @@
             this.lblTotalPay.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblTotalPay.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblTotalPay.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblTotalPay.Location = new System.Drawing.Point(428, 0);
+            this.lblTotalPay.Location = new System.Drawing.Point(571, 0);
+            this.lblTotalPay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalPay.Name = "lblTotalPay";
-            this.lblTotalPay.Size = new System.Drawing.Size(136, 77);
+            this.lblTotalPay.Size = new System.Drawing.Size(181, 96);
             this.lblTotalPay.TabIndex = 0;
             this.lblTotalPay.Text = "$0";
             this.lblTotalPay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -156,9 +164,10 @@
             this.btnPay.FillColor2 = System.Drawing.Color.DarkGreen;
             this.btnPay.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnPay.ForeColor = System.Drawing.Color.White;
-            this.btnPay.Location = new System.Drawing.Point(359, 520);
+            this.btnPay.Location = new System.Drawing.Point(479, 650);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(103, 48);
+            this.btnPay.Size = new System.Drawing.Size(137, 60);
             this.btnPay.TabIndex = 16;
             this.btnPay.Text = "立即結帳";
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
@@ -176,9 +185,10 @@
             this.btnDeleteAll.FillColor2 = System.Drawing.Color.DarkGreen;
             this.btnDeleteAll.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnDeleteAll.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteAll.Location = new System.Drawing.Point(221, 522);
+            this.btnDeleteAll.Location = new System.Drawing.Point(295, 652);
+            this.btnDeleteAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeleteAll.Name = "btnDeleteAll";
-            this.btnDeleteAll.Size = new System.Drawing.Size(114, 46);
+            this.btnDeleteAll.Size = new System.Drawing.Size(152, 58);
             this.btnDeleteAll.TabIndex = 21;
             this.btnDeleteAll.Text = "清空購物車";
             this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
@@ -196,9 +206,10 @@
             this.btnDelete.FillColor2 = System.Drawing.Color.DarkGreen;
             this.btnDelete.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(96, 520);
+            this.btnDelete.Location = new System.Drawing.Point(128, 650);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(93, 48);
+            this.btnDelete.Size = new System.Drawing.Size(124, 60);
             this.btnDelete.TabIndex = 22;
             this.btnDelete.Text = "刪除";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -211,19 +222,21 @@
             this.購物清單.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.購物清單.ForeColor = System.Drawing.Color.DarkCyan;
             this.購物清單.FormattingEnabled = true;
-            this.購物清單.ItemHeight = 26;
-            this.購物清單.Location = new System.Drawing.Point(12, 108);
+            this.購物清單.ItemHeight = 33;
+            this.購物清單.Location = new System.Drawing.Point(16, 135);
+            this.購物清單.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.購物清單.Name = "購物清單";
-            this.購物清單.Size = new System.Drawing.Size(576, 290);
+            this.購物清單.Size = new System.Drawing.Size(767, 334);
             this.購物清單.TabIndex = 23;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.Location = new System.Drawing.Point(396, 73);
+            this.label4.Location = new System.Drawing.Point(528, 91);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 21);
+            this.label4.Size = new System.Drawing.Size(34, 25);
             this.label4.TabIndex = 24;
             this.label4.Text = "Hi";
             // 
@@ -232,17 +245,18 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblUser.ForeColor = System.Drawing.Color.Indigo;
-            this.lblUser.Location = new System.Drawing.Point(467, 73);
+            this.lblUser.Location = new System.Drawing.Point(623, 91);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(0, 21);
+            this.lblUser.Size = new System.Drawing.Size(0, 25);
             this.lblUser.TabIndex = 25;
             // 
             // CartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(223)))), ((int)(((byte)(175)))));
-            this.ClientSize = new System.Drawing.Size(600, 600);
+            this.ClientSize = new System.Drawing.Size(800, 750);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.購物清單);
@@ -255,9 +269,11 @@
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CartForm";
+            this.Activated += new System.EventHandler(this.CartForm_Activated);
             this.Load += new System.EventHandler(this.CartForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrinter)).EndInit();

@@ -260,5 +260,9 @@ namespace PharmacyShop
             }
         }
 
+        private void CartForm_Activated(object sender, EventArgs e)
+        {
+            lblUser.Text = $"{GlobalVar.User}";
+        }
     }
 }

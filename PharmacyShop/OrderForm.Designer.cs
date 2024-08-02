@@ -73,7 +73,7 @@
             this.pnlside.Location = new System.Drawing.Point(0, 0);
             this.pnlside.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlside.Name = "pnlside";
-            this.pnlside.Size = new System.Drawing.Size(211, 930);
+            this.pnlside.Size = new System.Drawing.Size(211, 900);
             this.pnlside.TabIndex = 2;
             // 
             // label3
@@ -145,7 +145,7 @@
             this.pnlHome.Location = new System.Drawing.Point(211, 0);
             this.pnlHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(1602, 930);
+            this.pnlHome.Size = new System.Drawing.Size(1589, 900);
             this.pnlHome.TabIndex = 3;
             // 
             // panel5
@@ -159,10 +159,10 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.btnLogout);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 882);
+            this.panel5.Location = new System.Drawing.Point(0, 852);
             this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1602, 48);
+            this.panel5.Size = new System.Drawing.Size(1589, 48);
             this.panel5.TabIndex = 7;
             // 
             // lbl會員中心
@@ -171,7 +171,7 @@
             this.lbl會員中心.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl會員中心.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbl會員中心.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl會員中心.Location = new System.Drawing.Point(1071, 0);
+            this.lbl會員中心.Location = new System.Drawing.Point(1058, 0);
             this.lbl會員中心.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl會員中心.Name = "lbl會員中心";
             this.lbl會員中心.Size = new System.Drawing.Size(107, 48);
@@ -185,7 +185,7 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label6.Location = new System.Drawing.Point(1178, 0);
+            this.label6.Location = new System.Drawing.Point(1165, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 48);
@@ -198,7 +198,7 @@
             this.lblUser.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblUser.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lblUser.Location = new System.Drawing.Point(1258, 0);
+            this.lblUser.Location = new System.Drawing.Point(1245, 0);
             this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(80, 48);
@@ -210,7 +210,7 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(1338, 0);
+            this.label4.Location = new System.Drawing.Point(1325, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 48);
@@ -223,7 +223,7 @@
             this.btnCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCart.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCart.Image = ((System.Drawing.Image)(resources.GetObject("btnCart.Image")));
-            this.btnCart.Location = new System.Drawing.Point(1418, 0);
+            this.btnCart.Location = new System.Drawing.Point(1405, 0);
             this.btnCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCart.Name = "btnCart";
             this.btnCart.Size = new System.Drawing.Size(63, 48);
@@ -237,7 +237,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(1481, 0);
+            this.label2.Location = new System.Drawing.Point(1468, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 48);
@@ -250,7 +250,7 @@
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(1550, 0);
+            this.btnLogout.Location = new System.Drawing.Point(1537, 0);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(52, 48);
@@ -275,14 +275,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1813, 930);
+            this.ClientSize = new System.Drawing.Size(1800, 900);
             this.Controls.Add(this.pnlHome);
             this.Controls.Add(this.pnlside);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(1813, 930);
             this.Name = "OrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderForm";
+            this.Activated += new System.EventHandler(this.OrderForm_Activated);
             this.Load += new System.EventHandler(this.OrderForm_Load);
             this.pnlside.ResumeLayout(false);
             this.pnlside.PerformLayout();
