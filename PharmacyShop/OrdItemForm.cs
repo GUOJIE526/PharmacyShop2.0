@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Animation;
 
 namespace PharmacyShop
 {
@@ -91,12 +92,60 @@ namespace PharmacyShop
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            if (txtUser.Text != "")
+            {
+                SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
+                conn.Open();
+                try
+                {
+                    string query = "delete from orditem where id = @id";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@id", txtProdID.Text.Trim());
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("刪除訂單成功", "刪除", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    pd.ShowData("orditem", DGVOrdItem);
+                    txtClear();
+                    conn.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("欄位錯誤", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            if ((txtProdName.Text != "") && (txtPrice.Text != "") && (txtQty.Text != "") && (txtdate.Text != ""))
+            {
+                SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
+                conn.Open();
+                try
+                {
+                    string query = "update orditem set name = @name, price = @price, qty = @qty where id = @id";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@name", txtProdName.Text.Trim());
+                    cmd.Parameters.AddWithValue("@price", txtPrice.Text.Trim());
+                    cmd.Parameters.AddWithValue("@qty", txtQty.Text.Trim());
+                    cmd.Parameters.AddWithValue("@id", txtProdID.Text.Trim());
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("修改訂單成功", "修改", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    conn.Close();
+                    pd.ShowData("orditem", DGVOrdItem);
+                }
+                catch( Exception ex )
+                {
+                    MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("欄位未填寫", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnDrop_Click(object sender, EventArgs e)
