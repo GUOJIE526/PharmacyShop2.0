@@ -32,7 +32,7 @@ namespace PharmacyShop
             
             cmd.Parameters.AddWithValue("@id", GlobalVar.id);
             SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
                 DataTable dt = new DataTable();
                 dt.Load(reader);

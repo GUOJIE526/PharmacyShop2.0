@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,34 @@ namespace PharmacyShop
             drag = new Drag(this);
             drag.setPanel(pnlTopBar);
             open = new OpenForm();
+            ShowDataSet("milk", dataMilk);
+            ShowDataSet("diaper", dataDiaper);
+            ShowDataSet("beauty", dataBeauty);
+            ShowDataSet("perfume", dataPerfume);
+            ShowDataSet("medicine", dataMed);
+            ShowDataSet("mm", dataMM);
+        }
+
+        void ShowDataSet(string tableName, Guna2DataGridView DGV)
+        {
+            SqlConnection conn  = new SqlConnection(GlobalVar.strDBConnectionString);
+            conn.Open();
+            try
+            {
+                string strDB = $"select id as 商品編號, name as 商品, price as 價格, qty as 數量 from {tableName}";
+                SqlCommand cmd = new SqlCommand(strDB, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+                    DGV.DataSource = dt;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("資料庫連接失敗: " + ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -56,32 +85,12 @@ namespace PharmacyShop
 
         }
 
-        private void btnProdSys_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDrop_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNoright_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCustInsert_Click(object sender, EventArgs e)
         {
 
         }

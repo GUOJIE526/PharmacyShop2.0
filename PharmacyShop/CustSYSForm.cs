@@ -232,5 +232,10 @@ namespace PharmacyShop
                 MessageBox.Show("請選擇會員", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
