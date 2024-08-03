@@ -16,6 +16,7 @@ namespace PharmacyShop
     {
         OpenForm op = new OpenForm();
         ProductClass pd = new ProductClass();
+        public Drag drag;
         Guna2DataGridView GDVBB = new Guna2DataGridView();
         Guna2DataGridView GDVBTY = new Guna2DataGridView();
         Guna2DataGridView GDVM = new Guna2DataGridView();
@@ -28,6 +29,8 @@ namespace PharmacyShop
 
         private void ManagementForm_Load(object sender, EventArgs e)
         {
+            drag = new Drag(this);
+            drag.setPanel(pnlTop);
             GDVBB = dataBaby;
             GDVBTY = dataBeauty;
             GDVM = dataMed;
@@ -57,7 +60,7 @@ namespace PharmacyShop
 
         }
 
-        void UpdateInfo(string tableName, Guna2DataGridView GDV)
+        void UpdateProd(string tableName, Guna2DataGridView GDV)
         {
             int ID = 0;
             Int32.TryParse(txtid.Text, out ID);
@@ -90,28 +93,139 @@ namespace PharmacyShop
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (tabctrl.SelectedTab == tabBaby)
+            if ((txtProdName.Text != "") && (txtPrice.Text != "") && (txtQty.Text != "") && (txtimg.Text != ""))
             {
-                UpdateInfo("baby", GDVBB);
+                switch (tabctrl.SelectedTab.Name)
+                {
+                    case "tabBaby":
+                        UpdateProd("baby", GDVBB);
+                        break;
+                    case "tabBeauty":
+                        UpdateProd("beauty", GDVBTY);
+                        break;
+                    case "tabMed":
+                        UpdateProd("medicine", GDVM);
+                        break;
+                    default:
+                        MessageBox.Show("無法識別的選項卡", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                }
             }
-            else if (tabctrl.SelectedTab == tabBeauty)
+            else
             {
-                UpdateInfo("beauty", GDVBTY);
+                MessageBox.Show("欄位未填寫", "Wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (tabctrl.SelectedTab == tabMed)
+        }
+
+        void InsertProd(string tableName, Guna2DataGridView GDV)
+        {
+            SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+            con.Open();
+            try
             {
-                UpdateInfo("medicine", GDVM);
+                string query = $"Insert into {tableName} (name, price, qty, photo) values (@name, @price, @qty, @photo)";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@name", txtProdName.Text.Trim());
+                cmd.Parameters.AddWithValue("@price", txtPrice.Text.Trim());
+                cmd.Parameters.AddWithValue("@qty", txtQty.Text.Trim());
+                cmd.Parameters.AddWithValue("@photo", txtimg.Text.Trim());
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("商品上架成功", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    pd.ShowData(tableName, GDV);
+                }
+                else
+                {
+                    MessageBox.Show("商品上架失敗", "失敗", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
 
+            if ((txtProdName.Text != "") && (txtPrice.Text != "") && (txtQty.Text != "") && (txtimg.Text != "")) 
+            {
+                switch (tabctrl.SelectedTab.Name)
+                {
+                    case "tabBaby":
+                        InsertProd("baby", GDVBB);
+                        break;
+                    case "tabBeauty":
+                        InsertProd("beauty", GDVBTY);
+                        break;
+                    case "tabMed":
+                        InsertProd("medicine", GDVM);
+                        break;
+                    default:
+                        MessageBox.Show("無法識別的選項卡", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("欄位未填寫", "Wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        void DeleteProd(string tableName, Guna2DataGridView GDV, int ID)
+        {
+            SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+            con.Open();
+            try
+            {
+                string query = $"delete from {tableName} where id = @id";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@id", ID);
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("商品下架成功", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    pd.ShowData(tableName, GDV);
+                }
+                else
+                {
+                    MessageBox.Show("商品下架失敗", "失敗", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            int ID = 0;
+            Int32.TryParse(txtid.Text, out ID);
+            if ((txtProdName.Text != "") && (txtPrice.Text != "") && (txtQty.Text != "") && (txtimg.Text != ""))
+            {
+                switch (tabctrl.SelectedTab.Name)
+                {
+                    case "tabBaby":
+                        DeleteProd("baby", GDVBB, ID);
+                        break;
+                    case "tabBeauty":
+                        DeleteProd("beauty", GDVBTY, ID);
+                        break;
+                    case "tabMed":
+                        DeleteProd("medicine", GDVM, ID);
+                        break;
+                    default:
+                        MessageBox.Show("無法識別的選項卡", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("欄位未填寫", "Wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         void DisplayMember(string tableName, int myid)
