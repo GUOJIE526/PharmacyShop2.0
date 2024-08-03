@@ -71,7 +71,7 @@
             this.groupBox1.Controls.Add(this.txtkeyword);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox1.Location = new System.Drawing.Point(30, 303);
+            this.groupBox1.Location = new System.Drawing.Point(33, 336);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(303, 179);
             this.groupBox1.TabIndex = 49;
@@ -136,7 +136,7 @@
             // btnNoright
             // 
             this.btnNoright.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnNoright.Location = new System.Drawing.Point(189, 263);
+            this.btnNoright.Location = new System.Drawing.Point(192, 296);
             this.btnNoright.Name = "btnNoright";
             this.btnNoright.Size = new System.Drawing.Size(81, 34);
             this.btnNoright.TabIndex = 49;
@@ -147,7 +147,7 @@
             // btnDrop
             // 
             this.btnDrop.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnDrop.Location = new System.Drawing.Point(101, 263);
+            this.btnDrop.Location = new System.Drawing.Point(104, 296);
             this.btnDrop.Name = "btnDrop";
             this.btnDrop.Size = new System.Drawing.Size(81, 34);
             this.btnDrop.TabIndex = 48;
@@ -158,7 +158,7 @@
             // btnCustUpdate
             // 
             this.btnCustUpdate.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnCustUpdate.Location = new System.Drawing.Point(13, 263);
+            this.btnCustUpdate.Location = new System.Drawing.Point(16, 296);
             this.btnCustUpdate.Name = "btnCustUpdate";
             this.btnCustUpdate.Size = new System.Drawing.Size(81, 34);
             this.btnCustUpdate.TabIndex = 47;
@@ -194,7 +194,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataCust.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataCust.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataCust.Location = new System.Drawing.Point(391, 52);
+            this.dataCust.Location = new System.Drawing.Point(407, 85);
             this.dataCust.Name = "dataCust";
             this.dataCust.ReadOnly = true;
             this.dataCust.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -238,7 +238,7 @@
             // 
             this.txtphone.BackColor = System.Drawing.Color.White;
             this.txtphone.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtphone.Location = new System.Drawing.Point(103, 119);
+            this.txtphone.Location = new System.Drawing.Point(106, 152);
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(186, 29);
             this.txtphone.TabIndex = 63;
@@ -250,7 +250,7 @@
             this.lblphone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblphone.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblphone.ForeColor = System.Drawing.Color.Black;
-            this.lblphone.Location = new System.Drawing.Point(25, 122);
+            this.lblphone.Location = new System.Drawing.Point(28, 155);
             this.lblphone.Name = "lblphone";
             this.lblphone.Size = new System.Drawing.Size(42, 21);
             this.lblphone.TabIndex = 62;
@@ -260,7 +260,7 @@
             // 
             this.txtAddress.BackColor = System.Drawing.Color.White;
             this.txtAddress.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtAddress.Location = new System.Drawing.Point(103, 187);
+            this.txtAddress.Location = new System.Drawing.Point(106, 220);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(272, 29);
             this.txtAddress.TabIndex = 61;
@@ -269,7 +269,7 @@
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
             this.txtEmail.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtEmail.Location = new System.Drawing.Point(103, 153);
+            this.txtEmail.Location = new System.Drawing.Point(106, 186);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(272, 29);
             this.txtEmail.TabIndex = 60;
@@ -278,7 +278,7 @@
             // 
             this.txtUser.BackColor = System.Drawing.Color.White;
             this.txtUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtUser.Location = new System.Drawing.Point(103, 85);
+            this.txtUser.Location = new System.Drawing.Point(106, 118);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(186, 29);
             this.txtUser.TabIndex = 58;
@@ -290,7 +290,7 @@
             this.lbladdress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbladdress.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbladdress.ForeColor = System.Drawing.Color.Black;
-            this.lbladdress.Location = new System.Drawing.Point(25, 190);
+            this.lbladdress.Location = new System.Drawing.Point(28, 223);
             this.lbladdress.Name = "lbladdress";
             this.lbladdress.Size = new System.Drawing.Size(42, 21);
             this.lbladdress.TabIndex = 56;
@@ -303,7 +303,7 @@
             this.lblemail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblemail.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblemail.ForeColor = System.Drawing.Color.Black;
-            this.lblemail.Location = new System.Drawing.Point(25, 156);
+            this.lblemail.Location = new System.Drawing.Point(28, 189);
             this.lblemail.Name = "lblemail";
             this.lblemail.Size = new System.Drawing.Size(51, 21);
             this.lblemail.TabIndex = 55;
@@ -316,7 +316,7 @@
             this.lbluser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbluser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbluser.ForeColor = System.Drawing.Color.Black;
-            this.lbluser.Location = new System.Drawing.Point(25, 88);
+            this.lbluser.Location = new System.Drawing.Point(28, 121);
             this.lbluser.Name = "lbluser";
             this.lbluser.Size = new System.Drawing.Size(58, 21);
             this.lbluser.TabIndex = 53;
@@ -326,7 +326,7 @@
             // 
             this.txtid.BackColor = System.Drawing.Color.DarkGray;
             this.txtid.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtid.Location = new System.Drawing.Point(103, 51);
+            this.txtid.Location = new System.Drawing.Point(106, 84);
             this.txtid.Name = "txtid";
             this.txtid.ReadOnly = true;
             this.txtid.Size = new System.Drawing.Size(77, 29);
@@ -339,7 +339,7 @@
             this.lblid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblid.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblid.ForeColor = System.Drawing.Color.Black;
-            this.lblid.Location = new System.Drawing.Point(25, 54);
+            this.lblid.Location = new System.Drawing.Point(28, 87);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(27, 21);
             this.lblid.TabIndex = 64;
@@ -349,7 +349,7 @@
             // 
             this.txtLV.BackColor = System.Drawing.Color.White;
             this.txtLV.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtLV.Location = new System.Drawing.Point(103, 222);
+            this.txtLV.Location = new System.Drawing.Point(106, 255);
             this.txtLV.Name = "txtLV";
             this.txtLV.ReadOnly = true;
             this.txtLV.Size = new System.Drawing.Size(77, 29);
@@ -362,7 +362,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(25, 225);
+            this.label1.Location = new System.Drawing.Point(28, 258);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 66;
@@ -371,7 +371,7 @@
             // btnNormal
             // 
             this.btnNormal.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnNormal.Location = new System.Drawing.Point(277, 263);
+            this.btnNormal.Location = new System.Drawing.Point(280, 296);
             this.btnNormal.Name = "btnNormal";
             this.btnNormal.Size = new System.Drawing.Size(81, 34);
             this.btnNormal.TabIndex = 68;
@@ -396,7 +396,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(206)))), ((int)(((byte)(203)))));
-            this.ClientSize = new System.Drawing.Size(1150, 541);
+            this.ClientSize = new System.Drawing.Size(1150, 580);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnNormal);
             this.Controls.Add(this.txtLV);

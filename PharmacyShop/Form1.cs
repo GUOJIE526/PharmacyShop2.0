@@ -85,7 +85,7 @@ namespace PharmacyShop
                         }
                         else if (userType == "employee")
                         {
-                            MangementForm mgr = new MangementForm(this, userid);
+                            ManagementForm mgr = new ManagementForm(this);
                             mgr.Show();
                         }
                         else

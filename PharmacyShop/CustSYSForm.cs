@@ -14,7 +14,7 @@ namespace PharmacyShop
 {
     public partial class CustSYSForm : Form
     {
-        public ProductClass pd = new ProductClass();
+        ProductClass pd = new ProductClass();
         Guna2DataGridView DGV = new Guna2DataGridView();
         int DGVqty = 0;
         public CustSYSForm()
