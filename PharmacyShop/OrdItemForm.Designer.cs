@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdItemForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVOrdItem = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtLV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,6 +64,8 @@
             this.DGVFinishitem = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtdate = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrdItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVFinishitem)).BeginInit();
@@ -71,26 +73,26 @@
             // 
             // DGVOrdItem
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DGVOrdItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Brown;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVOrdItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.DGVOrdItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVOrdItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DGVOrdItem.ColumnHeadersHeight = 30;
             this.DGVOrdItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVOrdItem.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVOrdItem.DefaultCellStyle = dataGridViewCellStyle9;
             this.DGVOrdItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DGVOrdItem.Location = new System.Drawing.Point(477, 37);
             this.DGVOrdItem.Name = "DGVOrdItem";
@@ -130,7 +132,7 @@
             // 
             this.txtLV.BackColor = System.Drawing.Color.White;
             this.txtLV.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtLV.Location = new System.Drawing.Point(121, 241);
+            this.txtLV.Location = new System.Drawing.Point(121, 228);
             this.txtLV.Name = "txtLV";
             this.txtLV.ReadOnly = true;
             this.txtLV.Size = new System.Drawing.Size(77, 29);
@@ -143,7 +145,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(43, 244);
+            this.label1.Location = new System.Drawing.Point(43, 231);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 78;
@@ -153,7 +155,7 @@
             // 
             this.txtid.BackColor = System.Drawing.Color.DarkGray;
             this.txtid.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtid.Location = new System.Drawing.Point(121, 70);
+            this.txtid.Location = new System.Drawing.Point(121, 58);
             this.txtid.Name = "txtid";
             this.txtid.ReadOnly = true;
             this.txtid.Size = new System.Drawing.Size(77, 29);
@@ -166,7 +168,7 @@
             this.lblid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblid.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblid.ForeColor = System.Drawing.Color.Black;
-            this.lblid.Location = new System.Drawing.Point(43, 73);
+            this.lblid.Location = new System.Drawing.Point(43, 61);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(27, 21);
             this.lblid.TabIndex = 76;
@@ -176,7 +178,7 @@
             // 
             this.txtphone.BackColor = System.Drawing.Color.White;
             this.txtphone.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtphone.Location = new System.Drawing.Point(121, 138);
+            this.txtphone.Location = new System.Drawing.Point(121, 126);
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(186, 29);
             this.txtphone.TabIndex = 75;
@@ -188,7 +190,7 @@
             this.lblphone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblphone.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblphone.ForeColor = System.Drawing.Color.Black;
-            this.lblphone.Location = new System.Drawing.Point(43, 141);
+            this.lblphone.Location = new System.Drawing.Point(43, 129);
             this.lblphone.Name = "lblphone";
             this.lblphone.Size = new System.Drawing.Size(42, 21);
             this.lblphone.TabIndex = 74;
@@ -198,7 +200,7 @@
             // 
             this.txtAddress.BackColor = System.Drawing.Color.White;
             this.txtAddress.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtAddress.Location = new System.Drawing.Point(121, 206);
+            this.txtAddress.Location = new System.Drawing.Point(121, 194);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(272, 29);
             this.txtAddress.TabIndex = 73;
@@ -207,7 +209,7 @@
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
             this.txtEmail.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtEmail.Location = new System.Drawing.Point(121, 172);
+            this.txtEmail.Location = new System.Drawing.Point(121, 160);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(272, 29);
             this.txtEmail.TabIndex = 72;
@@ -216,7 +218,7 @@
             // 
             this.txtUser.BackColor = System.Drawing.Color.White;
             this.txtUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtUser.Location = new System.Drawing.Point(121, 104);
+            this.txtUser.Location = new System.Drawing.Point(121, 92);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(186, 29);
             this.txtUser.TabIndex = 71;
@@ -228,7 +230,7 @@
             this.lbladdress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbladdress.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbladdress.ForeColor = System.Drawing.Color.Black;
-            this.lbladdress.Location = new System.Drawing.Point(43, 209);
+            this.lbladdress.Location = new System.Drawing.Point(43, 197);
             this.lbladdress.Name = "lbladdress";
             this.lbladdress.Size = new System.Drawing.Size(42, 21);
             this.lbladdress.TabIndex = 70;
@@ -241,7 +243,7 @@
             this.lblemail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblemail.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblemail.ForeColor = System.Drawing.Color.Black;
-            this.lblemail.Location = new System.Drawing.Point(43, 175);
+            this.lblemail.Location = new System.Drawing.Point(43, 163);
             this.lblemail.Name = "lblemail";
             this.lblemail.Size = new System.Drawing.Size(51, 21);
             this.lblemail.TabIndex = 69;
@@ -254,7 +256,7 @@
             this.lbluser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbluser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbluser.ForeColor = System.Drawing.Color.Black;
-            this.lbluser.Location = new System.Drawing.Point(43, 107);
+            this.lbluser.Location = new System.Drawing.Point(43, 95);
             this.lbluser.Name = "lbluser";
             this.lbluser.Size = new System.Drawing.Size(58, 21);
             this.lbluser.TabIndex = 68;
@@ -264,7 +266,7 @@
             // 
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnDelete.Location = new System.Drawing.Point(144, 297);
+            this.btnDelete.Location = new System.Drawing.Point(144, 268);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(81, 34);
             this.btnDelete.TabIndex = 83;
@@ -276,7 +278,7 @@
             // 
             this.btnShip.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShip.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnShip.Location = new System.Drawing.Point(47, 297);
+            this.btnShip.Location = new System.Drawing.Point(47, 268);
             this.btnShip.Name = "btnShip";
             this.btnShip.Size = new System.Drawing.Size(81, 34);
             this.btnShip.TabIndex = 82;
@@ -312,7 +314,7 @@
             // 
             this.txtQty.BackColor = System.Drawing.Color.White;
             this.txtQty.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtQty.Location = new System.Drawing.Point(121, 470);
+            this.txtQty.Location = new System.Drawing.Point(121, 469);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(186, 29);
             this.txtQty.TabIndex = 93;
@@ -324,7 +326,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(43, 473);
+            this.label2.Location = new System.Drawing.Point(41, 472);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 21);
             this.label2.TabIndex = 92;
@@ -337,7 +339,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(43, 368);
+            this.label3.Location = new System.Drawing.Point(43, 320);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(27, 21);
             this.label3.TabIndex = 90;
@@ -347,7 +349,7 @@
             // 
             this.txtPrice.BackColor = System.Drawing.Color.White;
             this.txtPrice.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPrice.Location = new System.Drawing.Point(121, 435);
+            this.txtPrice.Location = new System.Drawing.Point(121, 431);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(186, 29);
             this.txtPrice.TabIndex = 89;
@@ -359,7 +361,7 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(43, 438);
+            this.label4.Location = new System.Drawing.Point(41, 434);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 21);
             this.label4.TabIndex = 88;
@@ -369,7 +371,7 @@
             // 
             this.txtProdName.BackColor = System.Drawing.Color.White;
             this.txtProdName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtProdName.Location = new System.Drawing.Point(121, 400);
+            this.txtProdName.Location = new System.Drawing.Point(121, 355);
             this.txtProdName.Name = "txtProdName";
             this.txtProdName.Size = new System.Drawing.Size(285, 29);
             this.txtProdName.TabIndex = 87;
@@ -381,7 +383,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(41, 403);
+            this.label5.Location = new System.Drawing.Point(41, 358);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 21);
             this.label5.TabIndex = 86;
@@ -403,7 +405,7 @@
             // 
             this.txtProdID.BackColor = System.Drawing.Color.DarkGray;
             this.txtProdID.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtProdID.Location = new System.Drawing.Point(121, 365);
+            this.txtProdID.Location = new System.Drawing.Point(121, 317);
             this.txtProdID.Name = "txtProdID";
             this.txtProdID.ReadOnly = true;
             this.txtProdID.Size = new System.Drawing.Size(77, 29);
@@ -411,26 +413,26 @@
             // 
             // DGVFinishitem
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.DGVFinishitem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Brown;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVFinishitem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.DGVFinishitem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVFinishitem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.DGVFinishitem.ColumnHeadersHeight = 30;
             this.DGVFinishitem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVFinishitem.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVFinishitem.DefaultCellStyle = dataGridViewCellStyle12;
             this.DGVFinishitem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DGVFinishitem.Location = new System.Drawing.Point(477, 297);
             this.DGVFinishitem.Name = "DGVFinishitem";
@@ -464,7 +466,6 @@
             this.DGVFinishitem.ThemeStyle.RowsStyle.Height = 30;
             this.DGVFinishitem.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DGVFinishitem.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DGVFinishitem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVFinishitem_CellContentClick);
             // 
             // label6
             // 
@@ -488,12 +489,36 @@
             this.label7.TabIndex = 98;
             this.label7.Text = "完成訂單";
             // 
+            // txtdate
+            // 
+            this.txtdate.BackColor = System.Drawing.Color.White;
+            this.txtdate.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtdate.Location = new System.Drawing.Point(121, 393);
+            this.txtdate.Name = "txtdate";
+            this.txtdate.Size = new System.Drawing.Size(186, 29);
+            this.txtdate.TabIndex = 102;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label8.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(41, 396);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 21);
+            this.label8.TabIndex = 101;
+            this.label8.Text = "訂購日期";
+            // 
             // OrdItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(186)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1150, 580);
+            this.Controls.Add(this.txtdate);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.DGVFinishitem);
@@ -566,5 +591,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView DGVFinishitem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtdate;
+        private System.Windows.Forms.Label label8;
     }
 }

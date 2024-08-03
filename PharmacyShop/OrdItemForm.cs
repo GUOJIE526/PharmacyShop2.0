@@ -21,7 +21,7 @@ namespace PharmacyShop
 
         private void OrdItemForm_Load(object sender, EventArgs e)
         {
-            pd.ShowData("historycart", DGVOrdItem);
+            pd.ShowData("orditem", DGVOrdItem);
             pd.ShowData("finishitem", DGVFinishitem);
         }
 
@@ -30,9 +30,63 @@ namespace PharmacyShop
             Close();
         }
 
+        void ShipProd(int id)
+        {
+            SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
+            conn.Open();
+            SqlTransaction trans = conn.BeginTransaction();
+            DateTime date = DateTime.Today;
+            try
+            {
+                string ship = "delete from orditem where id = @id";
+                SqlCommand cmdhis = new SqlCommand(ship, conn, trans);
+                cmdhis.Parameters.AddWithValue("@id", id);
+                Console.WriteLine(id);
+                cmdhis.ExecuteNonQuery();
+
+                string finish = "insert into finishitem (name, price, qty, cust_id, order_date, finish_date) values (@name, @price, @qty, @cust_id, @orddate, @finidate)";
+                SqlCommand cmdfinish = new SqlCommand(finish, conn, trans);
+                cmdfinish.Parameters.AddWithValue("@name", txtProdName.Text.Trim());
+                cmdfinish.Parameters.AddWithValue("@price", txtPrice.Text.Trim());
+                cmdfinish.Parameters.AddWithValue("@qty", txtQty.Text.Trim());
+                cmdfinish.Parameters.AddWithValue("@cust_id", txtid.Text.Trim());
+                cmdfinish.Parameters.AddWithValue("@orddate", txtdate.Text.Trim());
+                cmdfinish.Parameters.AddWithValue("@finidate", date);
+                cmdfinish.ExecuteNonQuery();
+
+                MessageBox.Show("出貨成功!!", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtClear();
+                trans.Commit();
+                conn.Close();
+                pd.ShowData("orditem", DGVOrdItem);
+                pd.ShowData("finishitem", DGVFinishitem);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        void txtClear()
+        {
+            txtid.Clear();
+            txtUser.Clear();
+            txtphone.Clear();
+            txtEmail.Clear();
+            txtAddress.Clear();
+            txtLV.Clear();
+            txtProdID.Clear();
+            txtProdName.Clear();
+            txtPrice.Clear();
+            txtQty.Clear();
+        }
+
         private void btnShip_Click(object sender, EventArgs e)
         {
-
+            int id = 0;
+            Int32.TryParse(txtProdID.Text, out id);
+            ShipProd(id);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -84,7 +138,7 @@ namespace PharmacyShop
             conn.Open();
             try
             {
-                string query = "select * from historycart where id = @id";
+                string query = "select * from orditem where id = @id";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", ID);
                 SqlDataReader re = cmd.ExecuteReader();
@@ -92,6 +146,7 @@ namespace PharmacyShop
                 {
                     txtProdID.Text = re["id"].ToString();
                     txtProdName.Text = re["name"].ToString();
+                    txtdate.Text = Convert.ToDateTime(re["order_date"]).ToString("yyyy/MM/dd");
                     txtPrice.Text = re["price"].ToString();
                     txtQty.Text = re["qty"].ToString();
                 }
@@ -115,11 +170,6 @@ namespace PharmacyShop
                 Int32.TryParse(DGVOrdItem.Rows[e.RowIndex].Cells["id"].Value.ToString(), out prodID);
                 displayProd(prodID);
             }
-        }
-
-        private void DGVFinishitem_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
