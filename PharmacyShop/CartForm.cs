@@ -1,5 +1,4 @@
-﻿using Guna.UI2.WinForms;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -121,7 +120,6 @@ namespace PharmacyShop
 
         private void btnPrinter_Click(object sender, EventArgs e)
         {
-            
             if (GlobalVar.listProductCollection.Count == 0)
             {
                 MessageBox.Show("尚未購買商品", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -150,8 +148,6 @@ namespace PharmacyShop
                     return;
                 }
                 //輸出訂單
-
-
                 List<string> list訂單輸出 = new List<string>();
                 list訂單輸出.Add("************ PA PA Pharmacy訂購單 *************");
                 list訂單輸出.Add("------------------------------------");
@@ -236,7 +232,6 @@ namespace PharmacyShop
                 {
                     MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
             }
         }
 

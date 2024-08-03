@@ -33,7 +33,6 @@ namespace PharmacyShop
                         DataTable dt = new DataTable();
                         dt.Load(dr);
                         gridView.DataSource = dt;
-                        gridView.Columns[4].Visible = false;
                     }
                 }
             }

@@ -31,10 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdItemForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdItemForm));
             this.DGVOrdItem = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtLV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,7 +52,6 @@
             this.btnShip = new System.Windows.Forms.Button();
             this.btnDrop = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.DGVFinishItem = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,9 +61,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.txtProdID = new System.Windows.Forms.TextBox();
+            this.DGVFinishitem = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrdItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVFinishItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVFinishitem)).BeginInit();
             this.SuspendLayout();
             // 
             // DGVOrdItem
@@ -72,14 +74,15 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.DGVOrdItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGVOrdItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DGVOrdItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVOrdItem.ColumnHeadersHeight = 30;
+            this.DGVOrdItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -89,11 +92,16 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVOrdItem.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVOrdItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DGVOrdItem.Location = new System.Drawing.Point(477, 12);
+            this.DGVOrdItem.Location = new System.Drawing.Point(477, 37);
             this.DGVOrdItem.Name = "DGVOrdItem";
+            this.DGVOrdItem.ReadOnly = true;
             this.DGVOrdItem.RowHeadersVisible = false;
-            this.DGVOrdItem.RowTemplate.Height = 24;
-            this.DGVOrdItem.Size = new System.Drawing.Size(661, 253);
+            this.DGVOrdItem.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.DGVOrdItem.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.DGVOrdItem.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVOrdItem.RowTemplate.Height = 30;
+            this.DGVOrdItem.RowTemplate.ReadOnly = true;
+            this.DGVOrdItem.Size = new System.Drawing.Size(661, 233);
             this.DGVOrdItem.TabIndex = 1;
             this.DGVOrdItem.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DGVOrdItem.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -106,16 +114,17 @@
             this.DGVOrdItem.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGVOrdItem.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.DGVOrdItem.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.DGVOrdItem.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVOrdItem.ThemeStyle.HeaderStyle.Height = 4;
-            this.DGVOrdItem.ThemeStyle.ReadOnly = false;
+            this.DGVOrdItem.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DGVOrdItem.ThemeStyle.HeaderStyle.Height = 30;
+            this.DGVOrdItem.ThemeStyle.ReadOnly = true;
             this.DGVOrdItem.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DGVOrdItem.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGVOrdItem.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.DGVOrdItem.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DGVOrdItem.ThemeStyle.RowsStyle.Height = 24;
+            this.DGVOrdItem.ThemeStyle.RowsStyle.Height = 30;
             this.DGVOrdItem.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DGVOrdItem.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DGVOrdItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVOrdItem_CellContentClick);
             // 
             // txtLV
             // 
@@ -249,7 +258,7 @@
             this.lbluser.Name = "lbluser";
             this.lbluser.Size = new System.Drawing.Size(58, 21);
             this.lbluser.TabIndex = 68;
-            this.lbluser.Text = "用戶名";
+            this.lbluser.Text = "訂購人";
             // 
             // btnDelete
             // 
@@ -261,6 +270,7 @@
             this.btnDelete.TabIndex = 83;
             this.btnDelete.Text = "刪除";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnShip
             // 
@@ -272,6 +282,7 @@
             this.btnShip.TabIndex = 82;
             this.btnShip.Text = "出貨";
             this.btnShip.UseVisualStyleBackColor = true;
+            this.btnShip.Click += new System.EventHandler(this.btnShip_Click);
             // 
             // btnDrop
             // 
@@ -283,6 +294,7 @@
             this.btnDrop.TabIndex = 81;
             this.btnDrop.Text = "刪除";
             this.btnDrop.UseVisualStyleBackColor = true;
+            this.btnDrop.Click += new System.EventHandler(this.btnDrop_Click);
             // 
             // btnUpdate
             // 
@@ -294,57 +306,7 @@
             this.btnUpdate.TabIndex = 80;
             this.btnUpdate.Text = "修改";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // DGVFinishItem
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.DGVFinishItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVFinishItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.DGVFinishItem.ColumnHeadersHeight = 4;
-            this.DGVFinishItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVFinishItem.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DGVFinishItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DGVFinishItem.Location = new System.Drawing.Point(477, 297);
-            this.DGVFinishItem.Name = "DGVFinishItem";
-            this.DGVFinishItem.RowHeadersVisible = false;
-            this.DGVFinishItem.RowTemplate.Height = 24;
-            this.DGVFinishItem.Size = new System.Drawing.Size(661, 258);
-            this.DGVFinishItem.TabIndex = 85;
-            this.DGVFinishItem.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.DGVFinishItem.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.DGVFinishItem.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.DGVFinishItem.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.DGVFinishItem.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.DGVFinishItem.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DGVFinishItem.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DGVFinishItem.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DGVFinishItem.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DGVFinishItem.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DGVFinishItem.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.DGVFinishItem.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DGVFinishItem.ThemeStyle.HeaderStyle.Height = 4;
-            this.DGVFinishItem.ThemeStyle.ReadOnly = false;
-            this.DGVFinishItem.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.DGVFinishItem.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DGVFinishItem.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DGVFinishItem.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DGVFinishItem.ThemeStyle.RowsStyle.Height = 24;
-            this.DGVFinishItem.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DGVFinishItem.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtQty
             // 
@@ -447,12 +409,94 @@
             this.txtProdID.Size = new System.Drawing.Size(77, 29);
             this.txtProdID.TabIndex = 95;
             // 
+            // DGVFinishitem
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.DGVFinishitem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVFinishitem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.DGVFinishitem.ColumnHeadersHeight = 30;
+            this.DGVFinishitem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVFinishitem.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DGVFinishitem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DGVFinishitem.Location = new System.Drawing.Point(477, 297);
+            this.DGVFinishitem.Name = "DGVFinishitem";
+            this.DGVFinishitem.ReadOnly = true;
+            this.DGVFinishitem.RowHeadersVisible = false;
+            this.DGVFinishitem.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.DGVFinishitem.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.DGVFinishitem.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVFinishitem.RowTemplate.Height = 30;
+            this.DGVFinishitem.RowTemplate.ReadOnly = true;
+            this.DGVFinishitem.Size = new System.Drawing.Size(661, 271);
+            this.DGVFinishitem.TabIndex = 96;
+            this.DGVFinishitem.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DGVFinishitem.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DGVFinishitem.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DGVFinishitem.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DGVFinishitem.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DGVFinishitem.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DGVFinishitem.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DGVFinishitem.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DGVFinishitem.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DGVFinishitem.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DGVFinishitem.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DGVFinishitem.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DGVFinishitem.ThemeStyle.HeaderStyle.Height = 30;
+            this.DGVFinishitem.ThemeStyle.ReadOnly = true;
+            this.DGVFinishitem.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DGVFinishitem.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DGVFinishitem.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DGVFinishitem.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DGVFinishitem.ThemeStyle.RowsStyle.Height = 30;
+            this.DGVFinishitem.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DGVFinishitem.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DGVFinishitem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVFinishitem_CellContentClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
+            this.label6.Location = new System.Drawing.Point(473, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 21);
+            this.label6.TabIndex = 97;
+            this.label6.Text = "待處裡訂單";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
+            this.label7.Location = new System.Drawing.Point(474, 275);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 21);
+            this.label7.TabIndex = 98;
+            this.label7.Text = "完成訂單";
+            // 
             // OrdItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(186)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1150, 580);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.DGVFinishitem);
             this.Controls.Add(this.txtProdID);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtQty);
@@ -462,7 +506,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtProdName);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.DGVFinishItem);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnShip);
             this.Controls.Add(this.btnDrop);
@@ -485,8 +528,8 @@
             this.Text = "OrdItemForm";
             this.Load += new System.EventHandler(this.OrdItemForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrdItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVFinishItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVFinishitem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,7 +554,6 @@
         private System.Windows.Forms.Button btnShip;
         private System.Windows.Forms.Button btnDrop;
         private System.Windows.Forms.Button btnUpdate;
-        private Guna.UI2.WinForms.Guna2DataGridView DGVFinishItem;
         private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -521,5 +563,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.TextBox txtProdID;
+        private Guna.UI2.WinForms.Guna2DataGridView DGVFinishitem;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
