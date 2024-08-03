@@ -116,6 +116,7 @@ namespace PharmacyShop
                     txtphone.Text = reader["phone"].ToString();
                     txtEmail.Text = reader["email"].ToString();
                     txtAddress.Text = reader["address"].ToString();
+                    txtLV.Text = reader["lv"].ToString() ;
                 }
                 else
                 {
@@ -146,7 +147,7 @@ namespace PharmacyShop
                 string strMsg = cbxSearch.SelectedItem.ToString();
                 SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
                 con.Open();
-                string strDB = $"select id as 會員編號, name as 姓名, phone as 電話, email as 信箱, address as 地址 from customer where {strMsg} like @keyword";
+                string strDB = $"select id as 會員編號, name as 姓名, phone as 電話, email as 信箱, address as 地址, lv as 會員等級 from customer where {strMsg} like @keyword";
                 SqlCommand cmd = new SqlCommand(strDB, con);
                 cmd.Parameters.AddWithValue("@keyword", $"%{txtkeyword.Text.Trim()}%");
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -198,6 +199,37 @@ namespace PharmacyShop
                 {
                     MessageBox.Show("資料庫連接失敗: " + ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+        }
+
+        private void btnNormal_Click(object sender, EventArgs e)
+        {
+            if (dataCust.SelectedRows.Count > 0)
+            {
+                dataCust.SelectedRows[0].Cells["lv"].Value = 1;
+                GlobalVar.CustPrivilage = 1;
+                SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
+                conn.Open();
+                try
+                {
+                    string strDB = "update customer set lv = @lv where id = @id";
+                    SqlCommand cmd = new SqlCommand(strDB, conn);
+                    cmd.Parameters.AddWithValue("@lv", GlobalVar.CustPrivilage);
+                    cmd.Parameters.AddWithValue("@id", dataCust.SelectedRows[0].Cells["id"].Value);
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("回復成功", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("資料庫連接失敗: " + ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("請選擇會員", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
