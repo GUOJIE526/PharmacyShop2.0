@@ -10,6 +10,7 @@ namespace PharmacyShop
 {
     public static class GlobalVar
     {
+        public static string image_dir = @"D:\資策會課程\Project\PharmacyShop\assets";
         public static string User = "";
         public static int id = 0;
         public static string strDBConnectionString = "";

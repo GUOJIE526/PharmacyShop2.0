@@ -28,351 +28,257 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BeautyForm));
-            this.tabBeauty = new System.Windows.Forms.TabControl();
-            this.Beauty = new System.Windows.Forms.TabPage();
-            this.dataBeauty = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Perfume = new System.Windows.Forms.TabPage();
-            this.dataPerfume = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblSumPrice = new System.Windows.Forms.Label();
-            this.btnAddCart = new System.Windows.Forms.PictureBox();
+            this.btnCell = new System.Windows.Forms.Button();
+            this.btnPic = new System.Windows.Forms.Button();
+            this.lsvBeauty = new System.Windows.Forms.ListView();
+            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.imglist = new System.Windows.Forms.ImageList(this.components);
+            this.btnAddCart = new System.Windows.Forms.Button();
+            this.txtprodprice = new System.Windows.Forms.TextBox();
+            this.txtprodname = new System.Windows.Forms.TextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblSumprice = new System.Windows.Forms.Label();
             this.btnMinus = new System.Windows.Forms.PictureBox();
-            this.btnAdd = new System.Windows.Forms.PictureBox();
+            this.btnPlus = new System.Windows.Forms.PictureBox();
             this.txtqty = new System.Windows.Forms.TextBox();
-            this.txtProd = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnReturn = new System.Windows.Forms.PictureBox();
-            this.picProd = new System.Windows.Forms.PictureBox();
-            this.tabBeauty.SuspendLayout();
-            this.Beauty.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBeauty)).BeginInit();
-            this.Perfume.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataPerfume)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddCart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPlus)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabBeauty
+            // btnCell
             // 
-            this.tabBeauty.Controls.Add(this.Beauty);
-            this.tabBeauty.Controls.Add(this.Perfume);
-            this.tabBeauty.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tabBeauty.Location = new System.Drawing.Point(277, 194);
-            this.tabBeauty.Name = "tabBeauty";
-            this.tabBeauty.SelectedIndex = 0;
-            this.tabBeauty.Size = new System.Drawing.Size(871, 482);
-            this.tabBeauty.TabIndex = 31;
+            this.btnCell.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCell.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCell.Font = new System.Drawing.Font("微軟正黑體", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnCell.Location = new System.Drawing.Point(71, 157);
+            this.btnCell.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCell.Name = "btnCell";
+            this.btnCell.Size = new System.Drawing.Size(113, 40);
+            this.btnCell.TabIndex = 8;
+            this.btnCell.Text = "列表模式";
+            this.btnCell.UseVisualStyleBackColor = false;
+            this.btnCell.Click += new System.EventHandler(this.btnCell_Click);
             // 
-            // Beauty
+            // btnPic
             // 
-            this.Beauty.Controls.Add(this.dataBeauty);
-            this.Beauty.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Beauty.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Beauty.Location = new System.Drawing.Point(4, 33);
-            this.Beauty.Name = "Beauty";
-            this.Beauty.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Beauty.Size = new System.Drawing.Size(863, 445);
-            this.Beauty.TabIndex = 0;
-            this.Beauty.Text = "美顏";
-            this.Beauty.UseVisualStyleBackColor = true;
+            this.btnPic.BackColor = System.Drawing.Color.LightCoral;
+            this.btnPic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPic.Font = new System.Drawing.Font("微軟正黑體", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPic.Location = new System.Drawing.Point(71, 104);
+            this.btnPic.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPic.Name = "btnPic";
+            this.btnPic.Size = new System.Drawing.Size(113, 40);
+            this.btnPic.TabIndex = 7;
+            this.btnPic.Text = "圖片模式";
+            this.btnPic.UseVisualStyleBackColor = false;
+            this.btnPic.Click += new System.EventHandler(this.btnPic_Click);
             // 
-            // dataBeauty
+            // lsvBeauty
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataBeauty.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataBeauty.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataBeauty.ColumnHeadersHeight = 30;
-            this.dataBeauty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataBeauty.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataBeauty.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataBeauty.Location = new System.Drawing.Point(6, 6);
-            this.dataBeauty.Name = "dataBeauty";
-            this.dataBeauty.ReadOnly = true;
-            this.dataBeauty.RowHeadersVisible = false;
-            this.dataBeauty.RowHeadersWidth = 51;
-            this.dataBeauty.RowTemplate.Height = 50;
-            this.dataBeauty.RowTemplate.ReadOnly = true;
-            this.dataBeauty.Size = new System.Drawing.Size(854, 433);
-            this.dataBeauty.TabIndex = 0;
-            this.dataBeauty.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataBeauty.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dataBeauty.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dataBeauty.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dataBeauty.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataBeauty.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dataBeauty.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataBeauty.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dataBeauty.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataBeauty.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dataBeauty.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataBeauty.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataBeauty.ThemeStyle.HeaderStyle.Height = 30;
-            this.dataBeauty.ThemeStyle.ReadOnly = true;
-            this.dataBeauty.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataBeauty.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataBeauty.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dataBeauty.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataBeauty.ThemeStyle.RowsStyle.Height = 50;
-            this.dataBeauty.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataBeauty.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataBeauty.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBeauty_CellContentClick);
-            this.dataBeauty.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataBeauty_DataBindingComplete);
+            this.lsvBeauty.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lsvBeauty.HideSelection = false;
+            this.lsvBeauty.Location = new System.Drawing.Point(377, 37);
+            this.lsvBeauty.Name = "lsvBeauty";
+            this.lsvBeauty.Size = new System.Drawing.Size(760, 590);
+            this.lsvBeauty.TabIndex = 6;
+            this.lsvBeauty.UseCompatibleStateImageBehavior = false;
+            this.lsvBeauty.ItemActivate += new System.EventHandler(this.lsvBeauty_ItemActivate);
             // 
-            // Perfume
+            // btnClose
             // 
-            this.Perfume.Controls.Add(this.dataPerfume);
-            this.Perfume.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Perfume.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Perfume.Location = new System.Drawing.Point(4, 33);
-            this.Perfume.Name = "Perfume";
-            this.Perfume.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Perfume.Size = new System.Drawing.Size(863, 445);
-            this.Perfume.TabIndex = 1;
-            this.Perfume.Text = "香水";
-            this.Perfume.UseVisualStyleBackColor = true;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(12, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(52, 44);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 9;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // dataPerfume
+            // imglist
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dataPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataPerfume.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataPerfume.ColumnHeadersHeight = 30;
-            this.dataPerfume.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataPerfume.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataPerfume.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataPerfume.Location = new System.Drawing.Point(6, 6);
-            this.dataPerfume.Name = "dataPerfume";
-            this.dataPerfume.ReadOnly = true;
-            this.dataPerfume.RowHeadersVisible = false;
-            this.dataPerfume.RowHeadersWidth = 51;
-            this.dataPerfume.RowTemplate.Height = 50;
-            this.dataPerfume.RowTemplate.ReadOnly = true;
-            this.dataPerfume.Size = new System.Drawing.Size(854, 436);
-            this.dataPerfume.TabIndex = 0;
-            this.dataPerfume.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataPerfume.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dataPerfume.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dataPerfume.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dataPerfume.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataPerfume.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dataPerfume.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataPerfume.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dataPerfume.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataPerfume.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dataPerfume.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataPerfume.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataPerfume.ThemeStyle.HeaderStyle.Height = 30;
-            this.dataPerfume.ThemeStyle.ReadOnly = true;
-            this.dataPerfume.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataPerfume.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataPerfume.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dataPerfume.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataPerfume.ThemeStyle.RowsStyle.Height = 50;
-            this.dataPerfume.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataPerfume.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataPerfume.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPerfume_CellContentClick);
-            this.dataPerfume.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataPerfume_DataBindingComplete);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblSumPrice);
-            this.panel1.Controls.Add(this.btnAddCart);
-            this.panel1.Controls.Add(this.btnMinus);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.txtqty);
-            this.panel1.Controls.Add(this.txtProd);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnReturn);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1160, 142);
-            this.panel1.TabIndex = 1;
-            // 
-            // lblSumPrice
-            // 
-            this.lblSumPrice.AutoSize = true;
-            this.lblSumPrice.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblSumPrice.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblSumPrice.Location = new System.Drawing.Point(806, 72);
-            this.lblSumPrice.Name = "lblSumPrice";
-            this.lblSumPrice.Size = new System.Drawing.Size(28, 31);
-            this.lblSumPrice.TabIndex = 48;
-            this.lblSumPrice.Text = "$";
+            this.imglist.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imglist.ImageSize = new System.Drawing.Size(16, 16);
+            this.imglist.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // btnAddCart
             // 
-            this.btnAddCart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCart.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCart.Image")));
-            this.btnAddCart.Location = new System.Drawing.Point(734, 52);
+            this.btnAddCart.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnAddCart.Location = new System.Drawing.Point(119, 592);
+            this.btnAddCart.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCart.Name = "btnAddCart";
-            this.btnAddCart.Size = new System.Drawing.Size(51, 47);
-            this.btnAddCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAddCart.TabIndex = 47;
-            this.btnAddCart.TabStop = false;
-            this.btnAddCart.Click += new System.EventHandler(this.btnAddCart_Click_1);
+            this.btnAddCart.Size = new System.Drawing.Size(104, 35);
+            this.btnAddCart.TabIndex = 39;
+            this.btnAddCart.Text = "加入購物車";
+            this.btnAddCart.UseVisualStyleBackColor = true;
+            this.btnAddCart.Click += new System.EventHandler(this.btnAddCart_Click);
+            // 
+            // txtprodprice
+            // 
+            this.txtprodprice.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtprodprice.Location = new System.Drawing.Point(136, 384);
+            this.txtprodprice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtprodprice.Name = "txtprodprice";
+            this.txtprodprice.ReadOnly = true;
+            this.txtprodprice.Size = new System.Drawing.Size(229, 26);
+            this.txtprodprice.TabIndex = 36;
+            // 
+            // txtprodname
+            // 
+            this.txtprodname.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtprodname.Location = new System.Drawing.Point(136, 348);
+            this.txtprodname.Margin = new System.Windows.Forms.Padding(2);
+            this.txtprodname.Name = "txtprodname";
+            this.txtprodname.ReadOnly = true;
+            this.txtprodname.Size = new System.Drawing.Size(229, 26);
+            this.txtprodname.TabIndex = 35;
+            // 
+            // txtid
+            // 
+            this.txtid.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtid.Location = new System.Drawing.Point(64, 313);
+            this.txtid.Margin = new System.Windows.Forms.Padding(2);
+            this.txtid.Name = "txtid";
+            this.txtid.ReadOnly = true;
+            this.txtid.Size = new System.Drawing.Size(76, 26);
+            this.txtid.TabIndex = 34;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.Location = new System.Drawing.Point(20, 385);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 28);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "商品價格";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(20, 349);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 28);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "商品資訊";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(20, 313);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 28);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "id";
+            // 
+            // lblSumprice
+            // 
+            this.lblSumprice.AutoSize = true;
+            this.lblSumprice.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblSumprice.ForeColor = System.Drawing.Color.Maroon;
+            this.lblSumprice.Location = new System.Drawing.Point(39, 533);
+            this.lblSumprice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSumprice.Name = "lblSumprice";
+            this.lblSumprice.Size = new System.Drawing.Size(25, 28);
+            this.lblSumprice.TabIndex = 47;
+            this.lblSumprice.Text = "$";
             // 
             // btnMinus
             // 
             this.btnMinus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinus.Image = ((System.Drawing.Image)(resources.GetObject("btnMinus.Image")));
-            this.btnMinus.Location = new System.Drawing.Point(656, 52);
+            this.btnMinus.Location = new System.Drawing.Point(225, 457);
             this.btnMinus.Name = "btnMinus";
-            this.btnMinus.Size = new System.Drawing.Size(51, 47);
+            this.btnMinus.Size = new System.Drawing.Size(33, 35);
             this.btnMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinus.TabIndex = 46;
             this.btnMinus.TabStop = false;
-            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click_1);
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
-            // btnAdd
+            // btnPlus
             // 
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(511, 52);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(51, 47);
-            this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAdd.TabIndex = 45;
-            this.btnAdd.TabStop = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
+            this.btnPlus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPlus.Image = ((System.Drawing.Image)(resources.GetObject("btnPlus.Image")));
+            this.btnPlus.Location = new System.Drawing.Point(82, 457);
+            this.btnPlus.Name = "btnPlus";
+            this.btnPlus.Size = new System.Drawing.Size(33, 35);
+            this.btnPlus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPlus.TabIndex = 45;
+            this.btnPlus.TabStop = false;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // txtqty
             // 
-            this.txtqty.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtqty.Location = new System.Drawing.Point(578, 70);
+            this.txtqty.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtqty.Location = new System.Drawing.Point(136, 466);
+            this.txtqty.Margin = new System.Windows.Forms.Padding(2);
             this.txtqty.Name = "txtqty";
-            this.txtqty.Size = new System.Drawing.Size(62, 25);
+            this.txtqty.Size = new System.Drawing.Size(68, 26);
             this.txtqty.TabIndex = 44;
-            this.txtqty.TextChanged += new System.EventHandler(this.txtqty_TextChanged_1);
-            // 
-            // txtProd
-            // 
-            this.txtProd.BackColor = System.Drawing.Color.White;
-            this.txtProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtProd.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtProd.Location = new System.Drawing.Point(98, 70);
-            this.txtProd.Name = "txtProd";
-            this.txtProd.ReadOnly = true;
-            this.txtProd.Size = new System.Drawing.Size(342, 22);
-            this.txtProd.TabIndex = 43;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 21);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Prouduct";
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(1104, 12);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(44, 33);
-            this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnReturn.TabIndex = 40;
-            this.btnReturn.TabStop = false;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click_1);
-            // 
-            // picProd
-            // 
-            this.picProd.Location = new System.Drawing.Point(17, 317);
-            this.picProd.Name = "picProd";
-            this.picProd.Size = new System.Drawing.Size(247, 316);
-            this.picProd.TabIndex = 42;
-            this.picProd.TabStop = false;
+            this.txtqty.TextChanged += new System.EventHandler(this.txtqty_TextChanged);
             // 
             // BeautyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(1160, 702);
-            this.Controls.Add(this.picProd);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tabBeauty);
+            this.ClientSize = new System.Drawing.Size(1160, 662);
+            this.Controls.Add(this.lblSumprice);
+            this.Controls.Add(this.btnMinus);
+            this.Controls.Add(this.btnPlus);
+            this.Controls.Add(this.txtqty);
+            this.Controls.Add(this.btnAddCart);
+            this.Controls.Add(this.txtprodprice);
+            this.Controls.Add(this.txtprodname);
+            this.Controls.Add(this.txtid);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnCell);
+            this.Controls.Add(this.btnPic);
+            this.Controls.Add(this.lsvBeauty);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BeautyForm";
             this.Text = "BeautyForm";
             this.Load += new System.EventHandler(this.BeautyForm_Load);
-            this.tabBeauty.ResumeLayout(false);
-            this.Beauty.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataBeauty)).EndInit();
-            this.Perfume.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataPerfume)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddCart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPlus)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TabControl tabBeauty;
-        private System.Windows.Forms.TabPage Beauty;
-        private Guna.UI2.WinForms.Guna2DataGridView dataBeauty;
-        private System.Windows.Forms.TabPage Perfume;
-        private Guna.UI2.WinForms.Guna2DataGridView dataPerfume;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblSumPrice;
-        private System.Windows.Forms.PictureBox btnAddCart;
+
+        private System.Windows.Forms.Button btnCell;
+        private System.Windows.Forms.Button btnPic;
+        private System.Windows.Forms.PictureBox btnClose;
+        private System.Windows.Forms.ImageList imglist;
+        public System.Windows.Forms.ListView lsvBeauty;
+        private System.Windows.Forms.Button btnAddCart;
+        private System.Windows.Forms.TextBox txtprodprice;
+        private System.Windows.Forms.TextBox txtprodname;
+        private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSumprice;
         private System.Windows.Forms.PictureBox btnMinus;
-        private System.Windows.Forms.PictureBox btnAdd;
+        private System.Windows.Forms.PictureBox btnPlus;
         private System.Windows.Forms.TextBox txtqty;
-        private System.Windows.Forms.TextBox txtProd;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox btnReturn;
-        private System.Windows.Forms.PictureBox picProd;
     }
 }

@@ -1,5 +1,4 @@
-﻿using Guna.UI2.WinForms;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,17 +8,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace PharmacyShop
 {
     public partial class BeautyForm : Form
     {
-        List<string> listProd = new List<string>();
-        List<int> listPdPrice = new List<int>();
-        Guna2DataGridView gridView1 = new Guna2DataGridView();
-        Guna2DataGridView gridView2 = new Guna2DataGridView();
-
+        List<string> listProdName = new List<string>();//value
+        List<int> listProdPrice = new List<int>();//value
+        List<int> listID = new List<int>();//key
+        int loadid = 0;
         int qty = 0;
         int price = 0;
         int sumprice = 0;
@@ -29,238 +28,190 @@ namespace PharmacyShop
             InitializeComponent();
         }
 
-        public ProductClass product = new ProductClass();
-
         private void BeautyForm_Load(object sender, EventArgs e)
         {
-            gridView1 = dataBeauty;
-            product.ShowData("beauty", dataBeauty);
-            gridView2 = dataPerfume;
-            product.ShowData("perfume", gridView2);
-
-            //預設
+            GetProdInfo();
+            DisplayPicMode();
             qty = 1;
             txtqty.Text = qty.ToString();
-            lblSumPrice.Text = "$0";
-
+            //price = listProdPrice[lsvBeauty.SelectedIndices];
         }
 
-        private void UpdateSumPrice()
+        void GetProdInfo()
         {
-            sumprice = price * qty;
-            lblSumPrice.Text = $"${sumprice}";
-
-        }
-
-        private void dataBeauty_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataBeauty.SelectedRows.Count > 0)
+            try
             {
-                txtProd.Text = dataBeauty.SelectedRows[0].Cells[1].Value.ToString();
-                picProd.Image = Image.FromFile(dataBeauty.SelectedRows[0].Cells[4].Value.ToString());
-                picProd.SizeMode = PictureBoxSizeMode.Zoom;
+                SqlConnection con = new SqlConnection(GlobalVar.strDBConnectionString);
+                con.Open();
+                string strsql = "select * from beauty";
+                SqlCommand cmd = new SqlCommand(strsql, con);
+                SqlDataReader rd = cmd.ExecuteReader();
 
+                int count = 0;
+                while (rd.Read())
+                {
+                    listID.Add((int)rd["id"]);
+                    listProdName.Add((string)rd["name"]);
+                    listProdPrice.Add((int)rd["price"]);
+                    string img_name = (string)rd["photo"];
+                    string FilePath = $"{GlobalVar.image_dir}\\{img_name}";
+                    //Console.WriteLine(FilePath);
+                    System.IO.FileStream fs = System.IO.File.OpenRead(FilePath);
+                    Image imgProdPic = Image.FromStream(fs);
+
+                    imglist.Images.Add(imgProdPic);
+                    fs.Close();
+                    count++;
+                }
+                rd.Close();
+                con.Close();
+                Console.WriteLine($"讀取了{count}筆資料");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void DisplayPicMode()
+        {
+            lsvBeauty.Clear();
+            lsvBeauty.View = View.LargeIcon;//4種變化: LargeIcon, Tile, List, SmallIcon
+            imglist.ImageSize = new Size(150, 150);
+            lsvBeauty.LargeImageList = imglist; //LargeIcon, Tile
+            lsvBeauty.SmallImageList = imglist; //SmallIcon, List
+
+            for (int i = 0; i < listID.Count; i++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.ImageIndex = i;
+                item.Text = $"{listProdName[i]} {listProdPrice[i]}元";
+                item.Font = new Font("微軟正黑體", 14, FontStyle.Bold);
+                item.Tag = listID[i];
+                lsvBeauty.Items.Add(item);
+            }
+        }
+
+        void displayListViewCellMode()
+        {
+            lsvBeauty.Clear();
+            lsvBeauty.LargeImageList = null;
+            lsvBeauty.SmallImageList = null;
+            lsvBeauty.View = View.Details;
+            lsvBeauty.Columns.Add("id", 150);
+            lsvBeauty.Columns.Add("商品名稱", 250);
+            lsvBeauty.Columns.Add("商品價格", 150);
+            lsvBeauty.GridLines = true;
+            lsvBeauty.FullRowSelect = true;
+
+            for (int i = 0; i < listID.Count; i++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Font = new Font("微軟正黑體", 14, FontStyle.Bold);
+                item.Tag = listID[i];
+                item.Text = listID[i].ToString();
+                item.SubItems.Add(listProdName[i]);
+                item.SubItems.Add(listProdPrice[i].ToString());
+                item.ForeColor = Color.DarkBlue;
+
+                lsvBeauty.Items.Add(item);
+            }
+        }
+
+        void CountSum()
+        {
+            if (lsvBeauty.SelectedItems.Count > 0)
+            {
+                sumprice = price * qty;
+                lblSumprice.Text = sumprice.ToString("C");
+            }
+        }
+
+        void showProdDesc()
+        {
+            if (lsvBeauty.SelectedItems.Count > 0)
+            {
+                SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
+                conn.Open();
                 try
                 {
-                    price = Convert.ToInt32(dataBeauty.SelectedRows[0].Cells[2].Value);
-                    UpdateSumPrice();
-                }
-                catch (InvalidCastException)
-                {
-                    MessageBox.Show("沒有商品項目", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void dataPerfume_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataPerfume.SelectedRows.Count > 0)
-            {
-                txtProd.Text = dataPerfume.SelectedRows[0].Cells[1].Value.ToString();
-                picProd.Image = Image.FromFile(dataPerfume.SelectedRows[0].Cells[4].Value.ToString());
-                picProd.SizeMode = PictureBoxSizeMode.Zoom;
-
-                try
-                {
-                    price = Convert.ToInt32(dataPerfume.SelectedRows[0].Cells[2].Value);
-                    UpdateSumPrice();
-                }
-                catch (InvalidCastException)
-                {
-                    MessageBox.Show("沒有商品項目", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void dataBeauty_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow row in dataBeauty.Rows)
-            {
-                if (row.Cells["qty"].Value != null)
-                {
-                    int quantity = Convert.ToInt32(row.Cells["qty"].Value);
-                    if (quantity <= 0)
+                    string strDB = "select * from beauty where id = @id";
+                    SqlCommand cmd = new SqlCommand(strDB, conn);
+                    cmd.Parameters.AddWithValue("@id", lsvBeauty.SelectedItems[0].Tag);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
                     {
-                        row.Cells["name"].Style.ForeColor = Color.Red;
-                        row.Cells["price"].Style.ForeColor = Color.Red;
-                        row.Cells["qty"].Style.ForeColor = Color.Red;
+                        txtid.Text = reader["id"].ToString();
+                        txtprodname.Text = reader["name"].ToString();
+                        price = (int)reader["price"];
+                        txtprodprice.Text = price.ToString("C");
+                        CountSum();
                     }
+                    reader.Close();
+                    conn.Close();
                 }
-            }
-
-        }
-
-        private void dataPerfume_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow row in dataPerfume.Rows)
-            {
-                if (row.Cells["qty"].Value != null)
+                catch(Exception ex)
                 {
-                    int quantity = Convert.ToInt32(row.Cells["qty"].Value);
-                    if (quantity <= 0)
-                    {
-                        row.Cells["name"].Style.ForeColor = Color.Red;
-                        row.Cells["price"].Style.ForeColor = Color.Red;
-                        row.Cells["qty"].Style.ForeColor = Color.Red;
-                    }
+                    MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnPic_Click(object sender, EventArgs e)
+        {
+            DisplayPicMode();
+        }
+
+        private void btnCell_Click(object sender, EventArgs e)
+        {
+            displayListViewCellMode();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAddCart_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void txtqty_TextChanged_1(object sender, EventArgs e)
+        private void lsvBeauty_ItemActivate(object sender, EventArgs e)
+        {
+            showProdDesc();
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            txtqty.Text = $"{++qty}";
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            if(qty > 1)
+            {
+                txtqty.Text = $"{--qty}";
+            }
+        }
+
+        private void txtqty_TextChanged(object sender, EventArgs e)
         {
             if (txtqty.Text != "")
             {
-                bool isqty = Int32.TryParse(txtqty.Text, out qty);
-
-                if ((isqty) && (qty > 0))
+                bool isCorrect = Int32.TryParse(txtqty.Text, out qty);
+                if (isCorrect && qty > 0)
                 {
-                    UpdateSumPrice();
-                }
+
+                } 
                 else
                 {
-                    MessageBox.Show("請輸入正確數量", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("輸入錯誤, 請重新輸入", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     qty = 1;
                     txtqty.Text = qty.ToString();
                 }
+                CountSum();
             }
-        }
-
-        private void btnAdd_Click_1(object sender, EventArgs e)
-        {
-            txtqty.Text = $"{++qty}";
-            UpdateSumPrice();
-        }
-
-        private void btnMinus_Click_1(object sender, EventArgs e)
-        {
-            if (qty > 1)
-            {
-                txtqty.Text = $"{--qty}";
-                UpdateSumPrice();
-            }
-        }
-
-        private void btnAddCart_Click_1(object sender, EventArgs e)
-        {
-            if (txtProd.Text != "")
-            {//挑選中的row
-
-                DataGridViewRow selectRow = null;
-                string table = "";
-                if ((dataBeauty.SelectedRows.Count > 0) && (tabBeauty.SelectedTab == Beauty))
-                {
-                    selectRow = dataBeauty.SelectedRows[0];
-                    table = "beauty";//對應的資料表
-                }
-                else if ((dataPerfume.SelectedRows.Count > 0) && (tabBeauty.SelectedTab == Perfume))
-                {
-                    selectRow = dataPerfume.SelectedRows[0];
-                    table = "perfume";//對應的資料表
-                }
-
-                if (selectRow != null && !string.IsNullOrEmpty(table))
-                {
-                    int availableQty = (int)selectRow.Cells["qty"].Value;
-                    //MessageBox.Show($"目前的數量: {availableQty}");
-                    if (availableQty <= 0)
-                    {
-                        MessageBox.Show("產品已售盡", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txtProd.Text = "";
-                        return;
-                    }
-
-                    // 檢查裡面有沒有重複商品，有的話qty+qty
-                    bool found = false;
-                    foreach (ArrayList item in GlobalVar.listProductCollection)
-                    {
-                        if (item[0].ToString() == txtProd.Text)
-                        {
-                            item[1] = (int)item[1] + qty;
-                            item[2] = (int)item[2] + sumprice;
-                            found = true;
-                            break;
-                        }
-                    }
-                    //沒有重複再加進去
-                    if (!found)
-                    {
-                        ArrayList listProdAll = new ArrayList();
-                        listProdAll.Add(txtProd.Text);
-                        listProdAll.Add(qty);
-                        listProdAll.Add(sumprice);
-                        GlobalVar.listProductCollection.Add(listProdAll);
-                    }
-
-                    int ProdID = (int)selectRow.Cells["id"].Value;
-                    string updatequery = $"update {table} set qty = qty - @qty where id = @ProdID";
-                    
-                    SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
-                    try
-                    {
-                        if (conn.State != ConnectionState.Open)
-                        {
-                            conn.Open();
-                        }
-                        SqlCommand cmd = new SqlCommand(updatequery, conn);
-                        cmd.Parameters.AddWithValue("@qty", qty);
-                        cmd.Parameters.AddWithValue("@ProdID", ProdID);
-                        cmd.ExecuteNonQuery();
-
-                        selectRow.Cells["qty"].Value = availableQty - qty;//刷新頁面數量
-
-                        MessageBox.Show("加入購物車成功", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtProd.Text = "";
-                        txtqty.Text = "1"; // 重置數量為 1
-                        lblSumPrice.Text = "$0";
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("更新商品數量失敗: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("未選擇商品", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("請選擇要購買的產品", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtProd.Text = "";
-            }
-        }
-
-        private void btnReturn_Click_1(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

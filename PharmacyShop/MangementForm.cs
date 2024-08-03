@@ -31,12 +31,6 @@ namespace PharmacyShop
             drag = new Drag(this);
             drag.setPanel(pnlTopBar);
             open = new OpenForm();
-            ShowDataSet("milk", dataMilk);
-            ShowDataSet("diaper", dataDiaper);
-            ShowDataSet("beauty", dataBeauty);
-            ShowDataSet("perfume", dataPerfume);
-            ShowDataSet("medicine", dataMed);
-            ShowDataSet("mm", dataMM);
         }
 
         void ShowDataSet(string tableName, Guna2DataGridView DGV)
@@ -87,10 +81,15 @@ namespace PharmacyShop
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnchange_Click(object sender, EventArgs e)
         {
 
         }

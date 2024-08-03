@@ -53,7 +53,7 @@ namespace PharmacyShop
 
         private void btnMedicine_Click(object sender, EventArgs e)
         {
-            open.openForm(new MedicineForm(), pnlHome);
+            open.openForm(new MedForm(), pnlHome);
         }
 
         private void btnCart_Click(object sender, EventArgs e)

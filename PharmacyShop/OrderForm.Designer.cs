@@ -72,7 +72,7 @@
             this.pnlside.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlside.Location = new System.Drawing.Point(0, 0);
             this.pnlside.Name = "pnlside";
-            this.pnlside.Size = new System.Drawing.Size(158, 702);
+            this.pnlside.Size = new System.Drawing.Size(158, 700);
             this.pnlside.TabIndex = 2;
             // 
             // label3
@@ -139,7 +139,7 @@
             this.pnlHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlHome.Location = new System.Drawing.Point(158, 0);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(1160, 702);
+            this.pnlHome.Size = new System.Drawing.Size(1160, 700);
             this.pnlHome.TabIndex = 3;
             // 
             // panel5
@@ -153,7 +153,7 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.btnLogout);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 664);
+            this.panel5.Location = new System.Drawing.Point(0, 662);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1160, 38);
             this.panel5.TabIndex = 7;
@@ -260,7 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1318, 702);
+            this.ClientSize = new System.Drawing.Size(1318, 700);
             this.Controls.Add(this.pnlHome);
             this.Controls.Add(this.pnlside);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
