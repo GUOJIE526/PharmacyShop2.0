@@ -40,7 +40,7 @@ namespace PharmacyShop
                 string ProdName = (string)item[0];
                 int ProdQty = (int)item[1];
                 int ProdPrice = (int)item[2];
-                購物清單.Items.Add($"{ProdName}      {ProdQty}個      ${ProdPrice}");
+                購物清單.Items.Add($"{ProdName}  {ProdQty}個  單價: ${ProdPrice}");
             }
             TotalPrice();
         }
@@ -50,9 +50,9 @@ namespace PharmacyShop
             int sum = 0;
             foreach (ArrayList item in GlobalVar.listProductCollection)
             {
-                sum += (int)item[2];
+                sum += (int)item[1] * (int)item[2];
             }
-            lblTotalPay.Text = $"${sum}";
+            lblTotalPay.Text = $"總價: ${sum}";
         }
 
         void OnSalePrice()
@@ -65,20 +65,18 @@ namespace PharmacyShop
 
                 if (qty >= 2 && qty % 2 == 0)
                 {
-                    sum += price * 0.75;
+                    sum += price * qty * 0.75;
                 }
-                else if(qty >= 2 && qty % 2 != 0)
+                else if(qty >= 2 && qty % 2 == 1)
                 {
-                    int singleprice = price / qty;
-                    int evenQtyPrice = price - singleprice;
-                    sum += (evenQtyPrice * 0.75) + singleprice;
+                    sum += (price * (qty - 1) * 0.75) + price; 
                 }
                 else
                 {
-                    sum += price;
+                    sum += price * qty;
                 }
             }
-            lblTotalPay.Text = $"${Math.Round(sum, MidpointRounding.AwayFromZero)}";
+            lblTotalPay.Text = $"總價: ${Math.Round(sum, MidpointRounding.AwayFromZero)}";
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -171,7 +169,7 @@ namespace PharmacyShop
                     }
                     else
                     {
-                        list訂單輸出.Add($"{ProdName}    {Prodqty}件    ${ProdPrice}");
+                        list訂單輸出.Add($"{ProdName}  {Prodqty}件  單價: ${ProdPrice}");
                     }
                 }
                 list訂單輸出.Add("=====================================");
@@ -195,13 +193,11 @@ namespace PharmacyShop
                             double sum = 0;
                             if (Prodqty >= 2 && Prodqty % 2 == 0)
                             {
-                                ProdPrice = Convert.ToInt32(Math.Round(sum += ProdPrice * 0.75, MidpointRounding.AwayFromZero));
+                                ProdPrice = Convert.ToInt32(Math.Round(sum += ProdPrice * Prodqty * 0.75, MidpointRounding.AwayFromZero));
                             }
-                            else if (Prodqty >= 2 && Prodqty % 2 != 0)
+                            else if (Prodqty >= 2 && Prodqty % 2 == 1)
                             {
-                                int singleprice = ProdPrice / Prodqty;
-                                int evenQtyPrice = ProdPrice - singleprice;
-                                ProdPrice = Convert.ToInt32(Math.Round(sum += (evenQtyPrice * 0.75) + singleprice, MidpointRounding.AwayFromZero));
+                                ProdPrice = Convert.ToInt32(Math.Round(sum += (ProdPrice * (Prodqty - 1) * 0.75) + ProdPrice, MidpointRounding.AwayFromZero));
                             }
                             else
                             {
@@ -251,7 +247,7 @@ namespace PharmacyShop
                 
                 if (cbxOnSale.SelectedIndex == 1 && ProdName == "【Okamoto岡本】 002 Hydro水感勁薄")
                 {
-                    string freeItem = "【Okamoto岡本】 002 Hydro水感勁薄      1個      $FREE";
+                    string freeItem = "【Okamoto岡本】 002 Hydro水感勁薄    1個    $FREE";
                     if (!購物清單.Items.Contains(freeItem))
                     {
                         購物清單.Items.Add(freeItem);

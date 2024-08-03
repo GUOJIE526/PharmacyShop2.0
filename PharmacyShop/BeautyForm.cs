@@ -15,13 +15,15 @@ namespace PharmacyShop
 {
     public partial class BeautyForm : Form
     {
+        List<int> listqty = new List<int>();
         List<string> listProdName = new List<string>();//value
         List<int> listProdPrice = new List<int>();//value
         List<int> listID = new List<int>();//key
-        int loadid = 0;
+        int ProdQty = 0;
         int qty = 0;
         int price = 0;
         int sumprice = 0;
+        string ProdName = "";
 
         public BeautyForm()
         {
@@ -34,7 +36,6 @@ namespace PharmacyShop
             DisplayPicMode();
             qty = 1;
             txtqty.Text = qty.ToString();
-            //price = listProdPrice[lsvBeauty.SelectedIndices];
         }
 
         void GetProdInfo()
@@ -53,6 +54,7 @@ namespace PharmacyShop
                     listID.Add((int)rd["id"]);
                     listProdName.Add((string)rd["name"]);
                     listProdPrice.Add((int)rd["price"]);
+                    listqty.Add((int)rd["qty"]);
                     string img_name = (string)rd["photo"];
                     string FilePath = $"{GlobalVar.image_dir}\\{img_name}";
                     //Console.WriteLine(FilePath);
@@ -143,6 +145,7 @@ namespace PharmacyShop
                     {
                         txtid.Text = reader["id"].ToString();
                         txtprodname.Text = reader["name"].ToString();
+                        txtprodQty.Text = reader["qty"].ToString();
                         price = (int)reader["price"];
                         txtprodprice.Text = price.ToString("C");
                         CountSum();
@@ -174,6 +177,49 @@ namespace PharmacyShop
 
         private void btnAddCart_Click(object sender, EventArgs e)
         {
+            ProdName = txtprodname.Text;
+            txtprodprice.Text = price.ToString();
+            txtqty.Text = qty.ToString();
+
+            if (!int.TryParse(txtprodQty.Text, out int prodQty) || prodQty == 0)
+            {
+                MessageBox.Show("產品已完售", "完售", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            int lastqty = prodQty - qty;
+
+            if (lsvBeauty.SelectedItems.Count > 0)
+            {
+                ArrayList OrderItem = new ArrayList();
+                OrderItem.Add(ProdName);
+                OrderItem.Add(qty);
+                OrderItem.Add(price);
+                GlobalVar.listProductCollection.Add(OrderItem);
+
+                SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
+                conn.Open();
+                try
+                {
+                    string strDB = "update beauty set qty = @qty where id = @id";
+                    SqlCommand cmd = new SqlCommand(strDB, conn);
+                    cmd.Parameters.AddWithValue("@qty", lastqty);
+                    cmd.Parameters.AddWithValue("@id", lsvBeauty.SelectedItems[0].Tag);
+                    Console.WriteLine(lsvBeauty.SelectedItems[0].Tag);
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("商品購買成功", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtprodQty.Text = lastqty.ToString(); // 更新顯示的庫存數量
+                        qty = 1;
+                        txtqty.Text = qty.ToString();
+                        CountSum();
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("資料庫接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 
         }
 

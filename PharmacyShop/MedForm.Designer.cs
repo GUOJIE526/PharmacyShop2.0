@@ -46,6 +46,8 @@
             this.btnPlus = new System.Windows.Forms.PictureBox();
             this.txtqty = new System.Windows.Forms.TextBox();
             this.lblSumPrice = new System.Windows.Forms.Label();
+            this.txtprodQty = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlus)).BeginInit();
@@ -83,11 +85,12 @@
             // 
             this.lsvMed.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.lsvMed.HideSelection = false;
-            this.lsvMed.Location = new System.Drawing.Point(388, 35);
+            this.lsvMed.Location = new System.Drawing.Point(428, 35);
             this.lsvMed.Name = "lsvMed";
-            this.lsvMed.Size = new System.Drawing.Size(760, 590);
+            this.lsvMed.Size = new System.Drawing.Size(708, 590);
             this.lsvMed.TabIndex = 9;
             this.lsvMed.UseCompatibleStateImageBehavior = false;
+            this.lsvMed.ItemActivate += new System.EventHandler(this.lsvMed_ItemActivate_1);
             // 
             // btnClose
             // 
@@ -122,27 +125,27 @@
             // txtprodprice
             // 
             this.txtprodprice.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtprodprice.Location = new System.Drawing.Point(134, 381);
+            this.txtprodprice.Location = new System.Drawing.Point(151, 382);
             this.txtprodprice.Margin = new System.Windows.Forms.Padding(2);
             this.txtprodprice.Name = "txtprodprice";
             this.txtprodprice.ReadOnly = true;
-            this.txtprodprice.Size = new System.Drawing.Size(229, 26);
+            this.txtprodprice.Size = new System.Drawing.Size(263, 26);
             this.txtprodprice.TabIndex = 36;
             // 
             // txtprodname
             // 
             this.txtprodname.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtprodname.Location = new System.Drawing.Point(134, 345);
+            this.txtprodname.Location = new System.Drawing.Point(151, 346);
             this.txtprodname.Margin = new System.Windows.Forms.Padding(2);
             this.txtprodname.Name = "txtprodname";
             this.txtprodname.ReadOnly = true;
-            this.txtprodname.Size = new System.Drawing.Size(229, 26);
+            this.txtprodname.Size = new System.Drawing.Size(263, 26);
             this.txtprodname.TabIndex = 35;
             // 
             // txtid
             // 
             this.txtid.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtid.Location = new System.Drawing.Point(62, 310);
+            this.txtid.Location = new System.Drawing.Point(151, 310);
             this.txtid.Margin = new System.Windows.Forms.Padding(2);
             this.txtid.Name = "txtid";
             this.txtid.ReadOnly = true;
@@ -186,32 +189,35 @@
             // 
             this.btnMinus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinus.Image = ((System.Drawing.Image)(resources.GetObject("btnMinus.Image")));
-            this.btnMinus.Location = new System.Drawing.Point(233, 450);
+            this.btnMinus.Location = new System.Drawing.Point(257, 464);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(33, 35);
             this.btnMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinus.TabIndex = 42;
             this.btnMinus.TabStop = false;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
             // btnPlus
             // 
             this.btnPlus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlus.Image = ((System.Drawing.Image)(resources.GetObject("btnPlus.Image")));
-            this.btnPlus.Location = new System.Drawing.Point(90, 450);
+            this.btnPlus.Location = new System.Drawing.Point(114, 464);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(33, 35);
             this.btnPlus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnPlus.TabIndex = 41;
             this.btnPlus.TabStop = false;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // txtqty
             // 
             this.txtqty.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtqty.Location = new System.Drawing.Point(144, 459);
+            this.txtqty.Location = new System.Drawing.Point(168, 473);
             this.txtqty.Margin = new System.Windows.Forms.Padding(2);
             this.txtqty.Name = "txtqty";
             this.txtqty.Size = new System.Drawing.Size(68, 26);
             this.txtqty.TabIndex = 40;
+            this.txtqty.TextChanged += new System.EventHandler(this.txtqty_TextChanged);
             // 
             // lblSumPrice
             // 
@@ -225,12 +231,35 @@
             this.lblSumPrice.TabIndex = 43;
             this.lblSumPrice.Text = "$";
             // 
+            // txtprodQty
+            // 
+            this.txtprodQty.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtprodQty.Location = new System.Drawing.Point(151, 418);
+            this.txtprodQty.Margin = new System.Windows.Forms.Padding(2);
+            this.txtprodQty.Name = "txtprodQty";
+            this.txtprodQty.ReadOnly = true;
+            this.txtprodQty.Size = new System.Drawing.Size(76, 26);
+            this.txtprodQty.TabIndex = 51;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(18, 418);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 28);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "商品庫存量";
+            // 
             // MedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(1160, 662);
+            this.Controls.Add(this.txtprodQty);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblSumPrice);
             this.Controls.Add(this.btnMinus);
             this.Controls.Add(this.btnPlus);
@@ -276,5 +305,7 @@
         private System.Windows.Forms.PictureBox btnPlus;
         private System.Windows.Forms.TextBox txtqty;
         private System.Windows.Forms.Label lblSumPrice;
+        private System.Windows.Forms.TextBox txtprodQty;
+        private System.Windows.Forms.Label label1;
     }
 }
