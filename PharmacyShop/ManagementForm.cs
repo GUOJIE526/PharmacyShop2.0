@@ -57,7 +57,7 @@ namespace PharmacyShop
 
         private void btnOrdSYS_Click(object sender, EventArgs e)
         {
-
+            op.openForm(new OrdItemForm(), pnlMgr);
         }
 
         void UpdateProd(string tableName, Guna2DataGridView GDV)

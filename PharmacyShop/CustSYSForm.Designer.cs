@@ -71,7 +71,7 @@
             this.groupBox1.Controls.Add(this.txtkeyword);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox1.Location = new System.Drawing.Point(33, 336);
+            this.groupBox1.Location = new System.Drawing.Point(44, 351);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(303, 179);
             this.groupBox1.TabIndex = 49;
@@ -80,6 +80,7 @@
             // 
             // btnShowAll
             // 
+            this.btnShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowAll.Font = new System.Drawing.Font("微軟正黑體", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnShowAll.Location = new System.Drawing.Point(134, 122);
             this.btnShowAll.Margin = new System.Windows.Forms.Padding(2);
@@ -92,6 +93,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.Font = new System.Drawing.Font("微軟正黑體", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnSearch.Location = new System.Drawing.Point(197, 84);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
@@ -135,6 +137,7 @@
             // 
             // btnNoright
             // 
+            this.btnNoright.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNoright.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnNoright.Location = new System.Drawing.Point(192, 296);
             this.btnNoright.Name = "btnNoright";
@@ -146,6 +149,7 @@
             // 
             // btnDrop
             // 
+            this.btnDrop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDrop.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnDrop.Location = new System.Drawing.Point(104, 296);
             this.btnDrop.Name = "btnDrop";
@@ -157,6 +161,7 @@
             // 
             // btnCustUpdate
             // 
+            this.btnCustUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustUpdate.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCustUpdate.Location = new System.Drawing.Point(16, 296);
             this.btnCustUpdate.Name = "btnCustUpdate";
@@ -370,6 +375,7 @@
             // 
             // btnNormal
             // 
+            this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNormal.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnNormal.Location = new System.Drawing.Point(280, 296);
             this.btnNormal.Name = "btnNormal";
@@ -395,7 +401,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(206)))), ((int)(((byte)(203)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(186)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1150, 580);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnNormal);
