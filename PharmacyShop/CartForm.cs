@@ -171,67 +171,14 @@ namespace PharmacyShop
                 }
                 list訂單輸出.Add("=====================================");
                 list訂單輸出.Add("-------------------------------------");
-                list訂單輸出.Add($"                總金額: {lblTotalPay.Text}");
+                list訂單輸出.Add($"                {lblTotalPay.Text}");
                 list訂單輸出.Add("===================================");
                 list訂單輸出.Add("************ 謝謝光臨 **************");
                 System.IO.File.WriteAllLines(FullSavePath, list訂單輸出, Encoding.UTF8);
-                //輸出資料表
-                SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
-                conn.Open();
-                SqlTransaction trans = conn.BeginTransaction();
-                try
-                {
-                    foreach (ArrayList item in GlobalVar.listProductCollection)
-                    {//記錄優惠後的價格
-                        string ProdName = (string)item[0];
-                        int Prodqty = (int)item[1];
-                        int ProdPrice = (int)item[2];
-                        double sum = 0;
-                        DateTime date = DateTime.Today;
-                        if (Prodqty >= 2 && Prodqty % 2 == 0)
-                        {
-                            ProdPrice = Convert.ToInt32(Math.Round(sum += ProdPrice * Prodqty * 0.75, MidpointRounding.AwayFromZero));
-                        }
-                        else if (Prodqty >= 2 && Prodqty % 2 == 1)
-                        {
-                            ProdPrice = Convert.ToInt32(Math.Round(sum += (ProdPrice * (Prodqty - 1) * 0.75) + ProdPrice, MidpointRounding.AwayFromZero));
-                        }
-                        else
-                        {
-                            sum += ProdPrice;
-                        }
-
-                        int userid = GlobalVar.id;
-                        string query = $"insert into historycart (name, qty, price, cust_id, buydate) values (@ProdName, @Prodqty, @ProdPrice, @userid, @date)";
-                        SqlCommand cmdhistory = new SqlCommand(query, conn, trans);
-                        cmdhistory.Parameters.AddWithValue("@ProdName", ProdName);
-                        cmdhistory.Parameters.AddWithValue("@Prodqty", Prodqty);
-                        cmdhistory.Parameters.AddWithValue("@ProdPrice", ProdPrice);
-                        cmdhistory.Parameters.AddWithValue("@userid", userid);
-                        cmdhistory.Parameters.AddWithValue("@date", date);
-                        cmdhistory.ExecuteNonQuery();
-
-                        //insert orditem
-                        string strDB = "insert into orditem (name, price, qty, cust_id, order_date) values (@name, @price, @qty, @id, @date)";
-                        SqlCommand cmdord = new SqlCommand(strDB, conn, trans);
-                        cmdord.Parameters.AddWithValue("@id", userid);
-                        cmdord.Parameters.AddWithValue("@name", ProdName);
-                        cmdord.Parameters.AddWithValue("@price", ProdPrice);
-                        cmdord.Parameters.AddWithValue("@qty", Prodqty);
-                        cmdord.Parameters.AddWithValue("@date", date);
-                        cmdord.ExecuteNonQuery();
-                    }
-                    trans.Commit();
-                    conn.Close();
-                    MessageBox.Show("訂購單傳送成功", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    GlobalVar.listProductCollection.Clear();
-                    購物清單.Items.Clear();
-                    OnSalePrice();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("資料庫連接失敗: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("訂單明細儲存成功", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                購物清單.Items.Clear();
+                GlobalVar.listProductCollection.Clear();
+                OnSalePrice();
             }
         }
 

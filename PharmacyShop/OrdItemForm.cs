@@ -81,6 +81,7 @@ namespace PharmacyShop
             txtProdName.Clear();
             txtPrice.Clear();
             txtQty.Clear();
+            txtdate.Clear();
         }
 
         private void btnShip_Click(object sender, EventArgs e)
