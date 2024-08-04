@@ -148,11 +148,6 @@ namespace PharmacyShop
             }
         }
 
-        private void btnDrop_Click(object sender, EventArgs e)
-        {
-
-        }
-
         void displayCustomer(int custID)
         {
             SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
