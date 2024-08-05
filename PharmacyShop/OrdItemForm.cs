@@ -90,14 +90,7 @@ namespace PharmacyShop
             Int32.TryParse(txtProdID.Text, out id);
             if (id > 0) 
             {
-                try
-                {
-                    ShipProd(id);
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("未選擇商品: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                ShipProd(id);
             }
         }
 
