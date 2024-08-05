@@ -88,7 +88,17 @@ namespace PharmacyShop
         {
             int id = 0;
             Int32.TryParse(txtProdID.Text, out id);
-            ShipProd(id);
+            if (id > 0) 
+            {
+                try
+                {
+                    ShipProd(id);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("未選擇商品: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

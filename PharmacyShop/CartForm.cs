@@ -171,7 +171,7 @@ namespace PharmacyShop
                 }
                 list訂單輸出.Add("=====================================");
                 list訂單輸出.Add("-------------------------------------");
-                list訂單輸出.Add($"                {lblTotalPay.Text}");
+                list訂單輸出.Add($"              {lblTotalPay.Text}");
                 list訂單輸出.Add("===================================");
                 list訂單輸出.Add("************ 謝謝光臨 **************");
                 System.IO.File.WriteAllLines(FullSavePath, list訂單輸出, Encoding.UTF8);
