@@ -23,7 +23,6 @@ namespace PharmacyShop
         private void OrdItemForm_Load(object sender, EventArgs e)
         {
             pd.ShowData("orditem", DGVOrdItem);
-            pd.ShowData("finishitem", DGVFinishitem);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -60,8 +59,6 @@ namespace PharmacyShop
                 trans.Commit();
                 conn.Close();
                 pd.ShowData("orditem", DGVOrdItem);
-                pd.ShowData("finishitem", DGVFinishitem);
-
             }
             catch (Exception ex)
             {
@@ -207,7 +204,7 @@ namespace PharmacyShop
             }
         }
 
-        private void DGVOrdItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DGVOrdItem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if ((e.RowIndex >= 0) && (e.RowIndex < DGVOrdItem.Rows.Count))
             {

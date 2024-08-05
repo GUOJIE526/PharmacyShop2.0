@@ -126,7 +126,7 @@ namespace PharmacyShop
             if (lsvMed.SelectedItems.Count > 0)
             {
                 sumprice = price * qty;
-                lblSumPrice.Text = sumprice.ToString("C");
+                lblSumPrice.Text = sumprice.ToString("C0");
             }
         }
 
@@ -149,7 +149,7 @@ namespace PharmacyShop
                         txtprodname.Text = reader["name"].ToString();
                         txtprodQty.Text = reader["qty"].ToString();
                         price = (int)reader["price"];
-                        txtprodprice.Text = price.ToString("C");
+                        txtprodprice.Text = price.ToString("C0");
                         CountSum();
                     }
                     reader.Close();
@@ -176,11 +176,6 @@ namespace PharmacyShop
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void lsvMed_ItemActivate(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAddCart_Click(object sender, EventArgs e)

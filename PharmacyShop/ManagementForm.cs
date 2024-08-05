@@ -306,5 +306,11 @@ namespace PharmacyShop
         {
             txtClear();
         }
+
+        private void btnTurnover_Click(object sender, EventArgs e)
+        {
+            TurnoverForm turnover = new TurnoverForm();
+            turnover.ShowDialog();
+        }
     }
 }
