@@ -67,6 +67,7 @@
             this.btnCustSYS = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnTurnover = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlMgr.SuspendLayout();
             this.tabctrl.SuspendLayout();
             this.tabBaby.SuspendLayout();
@@ -88,6 +89,7 @@
             // 
             // pnlMgr
             // 
+            this.pnlMgr.Controls.Add(this.label3);
             this.pnlMgr.Controls.Add(this.btnClear);
             this.pnlMgr.Controls.Add(this.btnDelete);
             this.pnlMgr.Controls.Add(this.btnInsert);
@@ -363,7 +365,7 @@
             this.dataBaby.ThemeStyle.RowsStyle.Height = 30;
             this.dataBaby.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataBaby.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataBaby.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBaby_CellContentClick);
+            this.dataBaby.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBaby_CellClick);
             // 
             // tabBeauty
             // 
@@ -429,7 +431,7 @@
             this.dataBeauty.ThemeStyle.RowsStyle.Height = 30;
             this.dataBeauty.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataBeauty.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataBeauty.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBeauty_CellContentClick);
+            this.dataBeauty.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBeauty_CellClick);
             // 
             // tabMed
             // 
@@ -494,7 +496,7 @@
             this.dataMed.ThemeStyle.RowsStyle.Height = 30;
             this.dataMed.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataMed.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataMed.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMed_CellContentClick);
+            this.dataMed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMed_CellClick);
             // 
             // pnlTop
             // 
@@ -558,6 +560,19 @@
             this.btnTurnover.UseVisualStyleBackColor = true;
             this.btnTurnover.Click += new System.EventHandler(this.btnTurnover_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(36, 141);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 31);
+            this.label3.TabIndex = 86;
+            this.label3.Text = "訂單管理";
+            // 
             // ManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -615,5 +630,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView dataMed;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnTurnover;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -42,23 +42,31 @@ namespace PharmacyShop
                 SqlCommand cmdhis = new SqlCommand(ship, conn, trans);
                 cmdhis.Parameters.AddWithValue("@id", id);
                 Console.WriteLine(id);
-                cmdhis.ExecuteNonQuery();
+                int rows = cmdhis.ExecuteNonQuery();
 
-                string finish = "insert into finishitem (name, price, qty, cust_id, order_date, finish_date) values (@name, @price, @qty, @cust_id, @orddate, @finidate)";
-                SqlCommand cmdfinish = new SqlCommand(finish, conn, trans);
-                cmdfinish.Parameters.AddWithValue("@name", txtProdName.Text.Trim());
-                cmdfinish.Parameters.AddWithValue("@price", txtPrice.Text.Trim());
-                cmdfinish.Parameters.AddWithValue("@qty", txtQty.Text.Trim());
-                cmdfinish.Parameters.AddWithValue("@cust_id", txtid.Text.Trim());
-                cmdfinish.Parameters.AddWithValue("@orddate", txtdate.Text.Trim());
-                cmdfinish.Parameters.AddWithValue("@finidate", date);
-                cmdfinish.ExecuteNonQuery();
+                if(rows > 0)
+                {
+                    string finish = "insert into finishitem (name, price, qty, cust_id, order_date, finish_date) values (@name, @price, @qty, @cust_id, @orddate, @finidate)";
+                    SqlCommand cmdfinish = new SqlCommand(finish, conn, trans);
+                    cmdfinish.Parameters.AddWithValue("@name", txtProdName.Text.Trim());
+                    cmdfinish.Parameters.AddWithValue("@price", txtPrice.Text.Trim());
+                    cmdfinish.Parameters.AddWithValue("@qty", txtQty.Text.Trim());
+                    cmdfinish.Parameters.AddWithValue("@cust_id", txtid.Text.Trim());
+                    cmdfinish.Parameters.AddWithValue("@orddate", txtdate.Text.Trim());
+                    cmdfinish.Parameters.AddWithValue("@finidate", date);
+                    cmdfinish.ExecuteNonQuery();
 
-                MessageBox.Show("出貨成功!!", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtClear();
-                trans.Commit();
+                    trans.Commit();
+                    MessageBox.Show("出貨成功!!", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtClear();
+                    pd.ShowData("orditem", DGVOrdItem);
+                }
+                else
+                {
+                    MessageBox.Show("刪除訂單失敗，無法找到對應的訂單。", "失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    trans.Rollback();
+                }
                 conn.Close();
-                pd.ShowData("orditem", DGVOrdItem);
             }
             catch (Exception ex)
             {

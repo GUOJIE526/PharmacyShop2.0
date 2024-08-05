@@ -237,7 +237,7 @@
             this.dataCust.ThemeStyle.RowsStyle.Height = 30;
             this.dataCust.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataCust.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataCust.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCust_CellContentClick);
+            this.dataCust.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCust_CellClick);
             // 
             // txtphone
             // 

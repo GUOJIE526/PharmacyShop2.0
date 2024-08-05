@@ -260,39 +260,6 @@ namespace PharmacyShop
             }
         }
 
-        private void dataBaby_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((e.RowIndex >= 0) && (e.RowIndex < dataBaby.RowCount))
-            {
-                string strID = dataBaby.Rows[e.RowIndex].Cells[0].Value.ToString();
-                int ID = 0;
-                Int32.TryParse(strID, out ID);
-                DisplayMember("baby", ID);
-            }
-        }
-
-        private void dataBeauty_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((e.RowIndex >= 0) && (e.RowIndex < dataBeauty.RowCount))
-            {
-                string strID = dataBeauty.Rows[e.RowIndex].Cells[0].Value.ToString();
-                int ID = 0;
-                Int32.TryParse(strID, out ID);
-                DisplayMember("beauty", ID);
-            }
-        }
-
-        private void dataMed_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((e.RowIndex >= 0) && (e.RowIndex < dataMed.RowCount))
-            {
-                string strID = dataMed.Rows[e.RowIndex].Cells[0].Value.ToString();
-                int ID = 0;
-                Int32.TryParse(strID, out ID);
-                DisplayMember("medicine", ID);
-            }
-        }
-
         void txtClear()
         {
             txtid.Clear();
@@ -311,6 +278,39 @@ namespace PharmacyShop
         {
             TurnoverForm turnover = new TurnoverForm();
             turnover.ShowDialog();
+        }
+
+        private void dataBaby_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((e.RowIndex >= 0) && (e.RowIndex < dataBaby.RowCount))
+            {
+                string strID = dataBaby.Rows[e.RowIndex].Cells[0].Value.ToString();
+                int ID = 0;
+                Int32.TryParse(strID, out ID);
+                DisplayMember("baby", ID);
+            }
+        }
+
+        private void dataBeauty_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((e.RowIndex >= 0) && (e.RowIndex < dataBeauty.RowCount))
+            {
+                string strID = dataBeauty.Rows[e.RowIndex].Cells[0].Value.ToString();
+                int ID = 0;
+                Int32.TryParse(strID, out ID);
+                DisplayMember("beauty", ID);
+            }
+        }
+
+        private void dataMed_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((e.RowIndex >= 0) && (e.RowIndex < dataMed.RowCount))
+            {
+                string strID = dataMed.Rows[e.RowIndex].Cells[0].Value.ToString();
+                int ID = 0;
+                Int32.TryParse(strID, out ID);
+                DisplayMember("medicine", ID);
+            }
         }
     }
 }

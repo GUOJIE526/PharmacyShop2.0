@@ -129,17 +129,6 @@ namespace PharmacyShop
             }
         }
 
-        private void dataCust_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataCust.SelectedRows.Count > 0)
-            {
-                string strID = dataCust.SelectedRows[0].Cells[0].Value.ToString();
-                int selectID = 0;
-                Int32.TryParse(strID, out selectID);
-                ShowCust(selectID);
-            }
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (txtkeyword.Text != "")
@@ -236,6 +225,17 @@ namespace PharmacyShop
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void dataCust_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataCust.SelectedRows.Count > 0)
+            {
+                string strID = dataCust.SelectedRows[0].Cells[0].Value.ToString();
+                int selectID = 0;
+                Int32.TryParse(strID, out selectID);
+                ShowCust(selectID);
+            }
         }
     }
 }
