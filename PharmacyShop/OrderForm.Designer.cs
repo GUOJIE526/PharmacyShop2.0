@@ -46,6 +46,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnlside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMedicine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBeauty)).BeginInit();
@@ -145,6 +147,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panel5.Controls.Add(this.lblTime);
             this.panel5.Controls.Add(this.lbl會員中心);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.lblUser);
@@ -164,7 +167,7 @@
             this.lbl會員中心.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl會員中心.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbl會員中心.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl會員中心.Location = new System.Drawing.Point(762, 0);
+            this.lbl會員中心.Location = new System.Drawing.Point(737, 0);
             this.lbl會員中心.Name = "lbl會員中心";
             this.lbl會員中心.Size = new System.Drawing.Size(80, 38);
             this.lbl會員中心.TabIndex = 9;
@@ -177,7 +180,7 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label6.Location = new System.Drawing.Point(842, 0);
+            this.label6.Location = new System.Drawing.Point(817, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 38);
             this.label6.TabIndex = 8;
@@ -189,9 +192,9 @@
             this.lblUser.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUser.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblUser.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lblUser.Location = new System.Drawing.Point(902, 0);
+            this.lblUser.Location = new System.Drawing.Point(877, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(60, 38);
+            this.lblUser.Size = new System.Drawing.Size(85, 38);
             this.lblUser.TabIndex = 7;
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -256,6 +259,22 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Welcome to PAPA Pharmacy";
             // 
+            // lblTime
+            // 
+            this.lblTime.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTime.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(0, 0);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(128, 38);
+            this.lblTime.TabIndex = 10;
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -301,5 +320,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lbl會員中心;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Timer timer;
     }
 }

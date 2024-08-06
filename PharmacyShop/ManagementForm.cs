@@ -48,6 +48,7 @@ namespace PharmacyShop
             pd.ShowData("beauty", GDVBTY);
             pd.ShowData("medicine", GDVM);
             
+            timer.Start();
         }
 
         private void btnCustSYS_Click(object sender, EventArgs e)
@@ -326,6 +327,11 @@ namespace PharmacyShop
         private void btnEmp_Click(object sender, EventArgs e)
         {
             op.openForm(new EmpForm(), pnlMgr);
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lbltime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }

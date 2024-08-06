@@ -39,6 +39,7 @@ namespace PharmacyShop
             drag.setPanel(pnlside);
             open = new OpenForm();
             lblUser.Text = $"{GlobalVar.User}";
+            timer.Start();
         }
 
         private void btnBaby_Click(object sender, EventArgs e)
@@ -116,6 +117,11 @@ namespace PharmacyShop
         private void OrderForm_Activated(object sender, EventArgs e)
         {
             lblUser.Text = $"{GlobalVar.User}";
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }
