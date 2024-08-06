@@ -21,14 +21,24 @@ namespace PharmacyShop
         Guna2DataGridView GDVBTY = new Guna2DataGridView();
         Guna2DataGridView GDVM = new Guna2DataGridView();
         private Form1 login;
-        public ManagementForm(Form1 login)
+        private int privilage;
+        public ManagementForm(Form1 login, int privilage)
         {
             InitializeComponent();
             this.login = login;
+            this.privilage = privilage;
         }
 
         private void ManagementForm_Load(object sender, EventArgs e)
         {
+            if (GlobalVar.EmpPrivilage == 1)
+            {
+                btnEmp.Visible = true;
+            }
+            if (GlobalVar.EmpPrivilage == 1)
+            {
+                btnTurnover.Visible = true;
+            }
             drag = new Drag(this);
             drag.setPanel(pnlTop);
             GDVBB = dataBaby;
@@ -311,6 +321,11 @@ namespace PharmacyShop
                 Int32.TryParse(strID, out ID);
                 DisplayMember("medicine", ID);
             }
+        }
+
+        private void btnEmp_Click(object sender, EventArgs e)
+        {
+            op.openForm(new EmpForm(), pnlMgr);
         }
     }
 }

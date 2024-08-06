@@ -72,8 +72,8 @@ namespace PharmacyShop
         {
             if (dataCust.SelectedRows.Count > 0)
             {
-                dataCust.SelectedRows[0].Cells["lv"].Value = 0;
-                GlobalVar.CustPrivilage = 0;
+                dataCust.SelectedRows[0].Cells["lv"].Value = 2;
+                GlobalVar.CustPrivilage = 2;
                 SqlConnection conn = new SqlConnection(GlobalVar.strDBConnectionString);
                 conn.Open();
                 try

@@ -77,6 +77,7 @@ namespace PharmacyShop
                         int userid = (int)reader["id"];
                         GlobalVar.id = userid;
                         GlobalVar.CustPrivilage = (int)reader["lv"];
+                        GlobalVar.EmpPrivilage = (int)reader["lv"];
                         MessageBox.Show("登入成功，將為您轉跳...", "登入", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         if (userType == "customer" && GlobalVar.CustPrivilage == 1)
@@ -86,7 +87,7 @@ namespace PharmacyShop
                         }
                         else if (userType == "employee")
                         {
-                            ManagementForm mgr = new ManagementForm(this);
+                            ManagementForm mgr = new ManagementForm(this, GlobalVar.EmpPrivilage);
                             mgr.Show();
                         }
                         else
