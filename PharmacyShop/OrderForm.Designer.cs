@@ -38,6 +38,7 @@
             this.btnBaby = new System.Windows.Forms.PictureBox();
             this.pnlHome = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
             this.lbl會員中心 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnlside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMedicine)).BeginInit();
@@ -161,6 +161,17 @@
             this.panel5.Size = new System.Drawing.Size(1160, 38);
             this.panel5.TabIndex = 7;
             // 
+            // lblTime
+            // 
+            this.lblTime.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTime.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(0, 0);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(128, 38);
+            this.lblTime.TabIndex = 10;
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lbl會員中心
             // 
             this.lbl會員中心.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -258,17 +269,6 @@
             this.label1.Size = new System.Drawing.Size(439, 47);
             this.label1.TabIndex = 4;
             this.label1.Text = "Welcome to PAPA Pharmacy";
-            // 
-            // lblTime
-            // 
-            this.lblTime.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTime.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(0, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(128, 38);
-            this.lblTime.TabIndex = 10;
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer
             // 

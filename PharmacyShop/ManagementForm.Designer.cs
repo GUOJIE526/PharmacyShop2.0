@@ -64,12 +64,12 @@
             this.tabMed = new System.Windows.Forms.TabPage();
             this.dataMed = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.lbltime = new System.Windows.Forms.Label();
+            this.btnEmp = new System.Windows.Forms.Button();
             this.btnTurnover = new System.Windows.Forms.Button();
             this.btnOrdSYS = new System.Windows.Forms.Button();
             this.btnCustSYS = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.btnEmp = new System.Windows.Forms.Button();
-            this.lbltime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnlMgr.SuspendLayout();
             this.tabctrl.SuspendLayout();
@@ -126,7 +126,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 31);
             this.label3.TabIndex = 86;
-            this.label3.Text = "訂單管理";
+            this.label3.Text = "商品管理";
             // 
             // btnClear
             // 
@@ -529,6 +529,32 @@
             this.pnlTop.Size = new System.Drawing.Size(1150, 120);
             this.pnlTop.TabIndex = 1;
             // 
+            // lbltime
+            // 
+            this.lbltime.AutoSize = true;
+            this.lbltime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbltime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbltime.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbltime.ForeColor = System.Drawing.Color.White;
+            this.lbltime.Location = new System.Drawing.Point(23, 18);
+            this.lbltime.Name = "lbltime";
+            this.lbltime.Size = new System.Drawing.Size(78, 21);
+            this.lbltime.TabIndex = 69;
+            this.lbltime.Text = "00:00:00";
+            // 
+            // btnEmp
+            // 
+            this.btnEmp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEmp.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnEmp.Location = new System.Drawing.Point(627, 59);
+            this.btnEmp.Name = "btnEmp";
+            this.btnEmp.Size = new System.Drawing.Size(111, 45);
+            this.btnEmp.TabIndex = 4;
+            this.btnEmp.Text = "員工管理";
+            this.btnEmp.UseVisualStyleBackColor = true;
+            this.btnEmp.Visible = false;
+            this.btnEmp.Click += new System.EventHandler(this.btnEmp_Click);
+            // 
             // btnTurnover
             // 
             this.btnTurnover.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -578,32 +604,6 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnEmp
-            // 
-            this.btnEmp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmp.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnEmp.Location = new System.Drawing.Point(627, 59);
-            this.btnEmp.Name = "btnEmp";
-            this.btnEmp.Size = new System.Drawing.Size(111, 45);
-            this.btnEmp.TabIndex = 4;
-            this.btnEmp.Text = "員工管理";
-            this.btnEmp.UseVisualStyleBackColor = true;
-            this.btnEmp.Visible = false;
-            this.btnEmp.Click += new System.EventHandler(this.btnEmp_Click);
-            // 
-            // lbltime
-            // 
-            this.lbltime.AutoSize = true;
-            this.lbltime.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbltime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbltime.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbltime.ForeColor = System.Drawing.Color.White;
-            this.lbltime.Location = new System.Drawing.Point(23, 18);
-            this.lbltime.Name = "lbltime";
-            this.lbltime.Size = new System.Drawing.Size(78, 21);
-            this.lbltime.TabIndex = 69;
-            this.lbltime.Text = "00:00:00";
             // 
             // timer
             // 

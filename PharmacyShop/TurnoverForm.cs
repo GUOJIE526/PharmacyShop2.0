@@ -57,7 +57,7 @@ namespace PharmacyShop
             conn.Open();
             try
             {
-                string query = "select sum(price) as 營業額 from finishitem where (finish_date >= @start) and (finish_date <= @end)";
+                string query = "select sum(price) as 營業額 from finishitem where (finish_date > @start) and (finish_date < @end)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@start", dTimeFrom.Value);
                 cmd.Parameters.AddWithValue("@end", dtimeNow.Value);
