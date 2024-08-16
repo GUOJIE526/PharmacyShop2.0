@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,21 +33,21 @@ namespace PharmacyShop
         private bool checkValid()
         {
             bool isValid = true;
-            if (!txtName.Text.All(char.IsLetterOrDigit))
+            string name = txtName.Text;
+            string phone = txtPhone.Text;
+            string email = txtEmail.Text;
+            bool chkname = Regex.IsMatch(name, @"^[a-z]|[A-Z]|[0-9]$");
+            bool chkphone = Regex.IsMatch(phone,@"^09[0-9]{8}$");
+            bool chkemail = Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+            if (!chkname)
             {
-                lblError1.Text = "請輸入英文或數字";
-                isValid = false;
-            }
-            else if (string.IsNullOrEmpty(txtName.Text))
-            {
-                lblError1.Text = "使用者帳號不可為空";
+                lblError1.Text = "用戶名格式錯誤";
                 isValid = false;
             }
             else
             {
                 lblError1.Text = "";
             }
-
             if (string.IsNullOrEmpty(txtPass.Text))
             {
                 lblError2.Text = "密碼不可為空";
@@ -56,22 +57,18 @@ namespace PharmacyShop
             {
                 lblError2.Text = "";
             }
-
-            string phoneNum = txtPhone.Text;
-            if (phoneNum.Length != 10 || phoneNum[0] != '0' || phoneNum[1] != '9' || string.IsNullOrEmpty(phoneNum))
+            if (!chkphone)
             {
-                lblError3.Text = "請輸入正確手機號碼";
+                lblError3.Text = "手機號碼錯誤";
                 isValid = false;
             }
             else
             {
                 lblError3.Text = "";
             }
-            string email = txtEmail.Text;
-            bool contains = email.Contains('@');
-            if (!contains || string.IsNullOrEmpty(email) || !email.EndsWith("gmail.com"))
+            if (!chkemail)
             {
-                lblError4.Text = "請輸入有效信箱";
+                lblError4.Text = "信箱格式錯誤";
                 isValid = false;
             }
             else
